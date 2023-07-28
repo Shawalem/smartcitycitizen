@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // usefetch
 
 const NewsCard = ({ allnews, collection }) => {
+  // console.log(allnews);
 
   if (!allnews) {
     return null; // or you can return a placeholder component or message

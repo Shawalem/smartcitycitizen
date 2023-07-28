@@ -363,7 +363,7 @@ const NewsDetails = () => {
                 <div className="newses">
                   <div className="newsDetails">
                     <div className="derailsImg">
-                      <img src={`VITE_REACT_APP_API_URL${img}`} alt="news" />
+                      <img src={`http://localhost:1337${img}`} alt="news" />
                     </div>
                     <div className="newsDescription">
                       <p>
