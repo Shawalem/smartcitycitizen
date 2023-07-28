@@ -1,0 +1,199 @@
+{
+  "kind": "collectionType",
+  "collectionName": "headerparagraphs",
+  "info": {
+    "singularName": "headerparagraph",
+    "pluralName": "headerparagraphs",
+    "displayName": "Header and Paragraph",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "home_title": {
+      "type": "string"
+    },
+    "home_paragraph": {
+      "type": "text"
+    },
+    "news_title": {
+      "type": "string"
+    },
+    "cityprofile_title": {
+      "type": "string"
+    },
+    "cityprofile_paragraph": {
+      "type": "text"
+    },
+    "citylight_title": {
+      "type": "string"
+    },
+    "citylight_paragraph": {
+      "type": "text"
+    },
+    "opinions_title": {
+      "type": "string"
+    },
+    "opinions_paragraph": {
+      "type": "text"
+    },
+    "editorblog_title": {
+      "type": "string"
+    },
+    "editorblog_paragraph": {
+      "type": "text"
+    },
+    "specialreport_title": {
+      "type": "string"
+    },
+    "specialreport_paragraph": {
+      "type": "text"
+    },
+    "research_title": {
+      "type": "string"
+    },
+    "Research_paragraph": {
+      "type": "text"
+    },
+    "webinars_title": {
+      "type": "string"
+    },
+    "whitepaper_title": {
+      "type": "string"
+    },
+    "trendreport_title": {
+      "type": "string"
+    },
+    "trendreport_paragraph": {
+      "type": "text"
+    },
+    "podcast_title": {
+      "type": "string"
+    },
+    "podcast_paragraph": {
+      "type": "text"
+    },
+    "connectivitydata_title": {
+      "type": "string"
+    },
+    "connectivitydata_paragraph": {
+      "type": "text"
+    },
+    "aimachinelearning_title": {
+      "type": "string"
+    },
+    "aimachinelearning_paragraph": {
+      "type": "text"
+    },
+    "analytics_title": {
+      "type": "string"
+    },
+    "datamarketplace_title": {
+      "type": "string"
+    },
+    "datamarketplace_paragraph": {
+      "type": "text"
+    },
+    "dataprivacysecurity_title": {
+      "type": "string"
+    },
+    "dataprivacysecurity_paragraph": {
+      "type": "text"
+    },
+    "governancecitizen_title": {
+      "type": "string"
+    },
+    "governancecitizen_paragraph": {
+      "type": "text"
+    },
+    "citizenengagement_title": {
+      "type": "string"
+    },
+    "citizenengagement_paragraph": {
+      "type": "text"
+    },
+    "citizensecurity_title": {
+      "type": "string"
+    },
+    "citizensecurity_paragraph": {
+      "type": "text"
+    },
+    "energyenvironment_title": {
+      "type": "string"
+    },
+    "energyenvironment_paragraph": {
+      "type": "text"
+    },
+    "airquality_title": {
+      "type": "string"
+    },
+    "airquality_paragraph": {
+      "type": "text"
+    },
+    "batteriesrenewable_title": {
+      "type": "string"
+    },
+    "solarpower_title": {
+      "type": "string"
+    },
+    "solarpower_paragraph": {
+      "type": "text"
+    },
+    "windpower_title": {
+      "type": "string"
+    },
+    "windpower_paragraph": {
+      "type": "text"
+    },
+    "mobility_title": {
+      "type": "string"
+    },
+    "mobility_paragraph": {
+      "type": "text"
+    },
+    "airtravel_title": {
+      "type": "string"
+    },
+    "airtravel_paragraph": {
+      "type": "text"
+    },
+    "electricvehicles_title": {
+      "type": "string"
+    },
+    "electricvehicles_paragraph": {
+      "type": "text"
+    },
+    "railtravel_title": {
+      "type": "string"
+    },
+    "railtravel_paragraph": {
+      "type": "text"
+    },
+    "urbanspace_title": {
+      "type": "string"
+    },
+    "urbanspace_paragraph": {
+      "type": "text"
+    },
+    "commercialbuildings_title": {
+      "type": "string"
+    },
+    "commercialbuildings_paragraph": {
+      "type": "text"
+    },
+    "culturalspace_title": {
+      "type": "string"
+    },
+    "culturalspace_paragraph": {
+      "type": "text"
+    },
+    "municipalbuildings_title": {
+      "type": "string"
+    },
+    "municipalbuildings_paragraph": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+@use "../../../variable.scss" as *;
+
+.webinars_wrapper {
+  margin-top: 100px;
+  padding: 2rem;
+  .heading {
+    h1 {
+      @include heading;
+      margin-bottom: 20px;
+    }
+  }
+  .latest_news {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    .news_sec {
+      grid-column: 1/3;
+      .intro {
+        h1 {
+          @include heading;
+        }
+      }
+      .newses {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+        .news {
+          &:first-child {
+            grid-column: 1 / 4;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            .news_desc {
+              h4 {
+                font-size: 1.3rem;
+                font-weight: 400;
+                margin: 8px;
+              }
+              h5 {
+                margin-bottom: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:992px){
+  .webinars_wrapper {
+    margin-top: 20px;
+    .latest_news {
+      grid-template-columns: repeat(2, 1fr);
+      .news_sec {
+        grid-column: 1 / 2;
+        .newses {
+          grid-template-columns: repeat(1, 1fr);
+          .news {
+            &:first-child {
+              grid-column: 1 / 2;
+              display: grid;
+              grid-template-columns: repeat(1, 1fr);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media(max-width:768px){
+  .webinars_wrapper {
+    .latest_news {
+      grid-template-columns: repeat(1, 1fr);
+      .news_sec {
+        grid-column: 1 / 2;
+        .newses {
+          grid-template-columns: repeat(2, 1fr);
+          .news {
+            &:first-child {
+              grid-column: 1 / 2;
+              display: grid;
+              grid-template-columns: repeat(1, 1fr);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media(max-width:576px){
+  .webinars_wrapper {
+    .latest_news {
+      grid-template-columns: repeat(1, 1fr);
+      .news_sec {
+        grid-column: 1 / 2;
+        .newses {
+          grid-template-columns: repeat(1, 1fr);
+          .news {
+            &:first-child {
+              grid-column: 1 / 2;
+              display: grid;
+              grid-template-columns: repeat(1, 1fr);
+            }
+          }
+        }
+      }
+    }
+  }
+}

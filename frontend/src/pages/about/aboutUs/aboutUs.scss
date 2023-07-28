@@ -1,0 +1,39 @@
+@use "../../../variable.scss" as *;
+
+.aboutUs_wrapper {
+  padding: 2rem;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  .about {
+    grid-column: 1 / 3;
+    .about_heading {
+      h1 {
+        @include heading;
+      }
+      p {
+        margin-bottom: 50px;
+        font-size: 1.1rem;
+      }
+    }
+    .about_desc {
+      h5 {
+        font-size: 1.1rem;
+      }
+      hr {
+        color: $primary-color;
+      }
+      p {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  .aboutUs_wrapper {
+    margin-top: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

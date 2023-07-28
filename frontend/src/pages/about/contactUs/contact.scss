@@ -1,0 +1,24 @@
+@use '../../../variable.scss' as *;
+
+.contact_wrapper{
+    padding: 2rem;
+    margin-top: 100px;
+    h1{
+        @include heading;
+        margin-bottom: 50px;
+    }
+    h2{
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin-top: 20px;
+    }
+    hr{
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:992px){
+    .contact_wrapper{
+        margin-top: 20px;
+    }
+}

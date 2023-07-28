@@ -1,0 +1,37 @@
+import "./team.scss";
+import { TeamCard } from "../../../components";
+import { Helmet } from "react-helmet";
+// useFetch
+import useFetch from "../../../hooks/useFetch";
+
+const Team = () => {
+  const { data: teampages } = useFetch("/teampages?populate=*");
+  return (
+    <>
+      <Helmet>
+        <title>The Team - Smart City Citizen</title>
+        <meta name="description" content="information about our team" />
+      </Helmet>
+      <section>
+        <div className="container">
+          <div className="team_wrapper">
+            <h1>The Team</h1>
+            <div className="the_team">
+              {teampages?.map((teampage) => (
+                <TeamCard key={teampage.id} team={teampage} collection={teampages} />
+              ))}
+              {/* <TeamCard
+              position="CHRIS COOKE | Founder & CEO"
+              email="+44 (0) 20 7062 2526 | chrisc@smartcitiesworld.net"
+              heading="Chris is an entrepreneur with over 23 years’ experience in launching, growing, acquiring, divesting media and events business brands."
+              details="His focus has been on technology driven markets. Smart Cities is an incredible sector to be involved in as it impacts over 55% of the world’s population today growing to 68% in by 2050.Digital transformation is revolutionising the design and function of urban spaces and how citizens live in and interact with them and he finds that fascinating.He is collaborative by nature and enjoys building long term partnerships that deliver ongoing value for all involved."
+            /> */}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Team;

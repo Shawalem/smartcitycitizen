@@ -1,0 +1,56 @@
+@use "../../variable.scss" as *;
+.register_wrapper {
+  padding: 2rem;
+  width: 500px;
+  max-width: 500px;
+  min-width: 320px;
+  margin: 100px auto;
+  .registration_para {
+    h1 {
+      @include heading;
+    }
+    p {
+      margin: 10px 0;
+    }
+  }
+  form {
+    margin-top: 50px;
+    .form_input {
+      @include flex-column;
+      margin-bottom: 20px;
+      span {
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+      input {
+        @include input;
+      }
+      select {
+        @include input;
+      }
+      p {
+        color: red;
+      }
+    }
+    .check {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    button {
+      padding: 0.6rem;
+      border: none;
+      background-color: black;
+      color: white;
+      font-size: 1rem;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media(max-width:992px){
+  .register_wrapper{
+    margin-top: 20px;
+  }
+}

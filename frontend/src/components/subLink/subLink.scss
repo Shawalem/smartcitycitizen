@@ -1,0 +1,37 @@
+@use '../../variable.scss' as *;
+
+.link{
+    position: relative;
+    a{
+        color: black;
+        &:hover{
+            color: $primary-color;
+        }
+    }
+    &:hover{
+        .subLink{
+            transform: scale(1);
+        }
+    }
+    .subLink{
+        width: 150px;
+        position: absolute;
+        @include flex-column;
+        align-items: flex-start;
+        left: 0;
+        border: 1px solid #eeeded;
+        transform: scaleY(0);
+        transform-origin: top   ;
+        transition: all .4s ease-in-out;
+        z-index: 1;
+        background-color: white;
+        a{
+            border-bottom: 1px solid #ddd;
+            padding: .3rem;
+            width: 100%;
+            &:last-child{
+                border-bottom:none;
+            }
+        }
+    }
+}

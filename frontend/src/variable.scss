@@ -1,0 +1,41 @@
+//mixin
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-column() {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+@mixin flex-between() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin input() {
+  padding: 0.3rem;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+@mixin heading {
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+@mixin subHeading {
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+//variable
+$primary-color: #e49b3e;
+$secondary-color: #dddddd;
+$blue:#0A6EBD;
+$black: #262626;

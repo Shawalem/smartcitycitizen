@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "citizensecurities",
+  "info": {
+    "singularName": "citizensecurity",
+    "pluralName": "citizensecurities",
+    "displayName": "Citizen security",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "para": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

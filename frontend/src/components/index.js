@@ -1,0 +1,8 @@
+export {default as Header} from './header/Header'
+export {default as SubLink} from './subLink/SubLink'
+export {default as NewsCard} from './newsCard/NewsCard'
+export {default as SideBar} from './sideBar/SideBar'
+export {default as footer} from './footer/Footer'
+export {default as TeamCard} from './team/TeamCard'
+export {default as MemberCard} from './memberCard/MemberCard'
+export {default as Page} from './page/Page'

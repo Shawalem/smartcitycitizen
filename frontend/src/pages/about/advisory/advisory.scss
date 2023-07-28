@@ -1,0 +1,72 @@
+@use "../../../variable.scss" as *;
+.advisory_wrapper {
+  padding: 2rem;
+  margin-top: 100px;
+  .heading {
+    margin-bottom: 40px;
+    h1 {
+      @include heading;
+    }
+  }
+  .advisory_member {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .advisory_wrapper {
+    margin-top: 20px;
+    .advisory_member {
+      grid-template-columns: repeat(4, 1fr);
+      .member_card {
+        h3,
+        p,
+        h4 {
+          text-align: center;
+        }
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .advisory_wrapper {
+    .advisory_member {
+      grid-template-columns: repeat(2, 1fr);
+      .member_card {
+        h3,
+        p,
+        h4 {
+          text-align: center;
+        }
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .advisory_wrapper {
+    .advisory_member {
+      grid-template-columns: repeat(1, 1fr);
+      .member_card {
+        h3,
+        p,
+        h4 {
+          text-align: center;
+        }
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

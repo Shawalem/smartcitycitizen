@@ -1,0 +1,282 @@
+@use "../../variable.scss" as *;
+
+#Navbar {
+  position: relative;
+}
+
+.Nav{
+  background-color: #262626;
+}
+
+.navbar_wrapper {
+  padding: 0.5rem 2rem;
+  @include flex-between;
+  .logo {
+    width: 275px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  nav {
+    .cross{
+      display: none;
+    }
+    .nav1 {
+      display: flex;
+      align-items: center;
+      .link {
+        margin-right: 20px;
+        &:hover {
+          a {
+            color: $blue;
+          }
+        }
+        a {
+          color: white;
+        }
+        svg {
+          fill: white;
+        }
+        .subLink {
+          a {
+            color: black;
+            &:hover {
+              color: $blue;
+            }
+          }
+        }
+      }
+    }
+    .nav2 {
+      position: absolute;
+      left: 0;
+      bottom: -49px;
+      padding: 0rem 11rem;
+      background-color: #0A6EBD;
+      width: 100%;
+      @include flex-between;
+      .link {
+        padding: 0.8rem;
+        a{
+          color: white;
+        }
+        svg{
+          color: white;
+        }
+        .subLink {
+          top: 48px;
+          left: 0;
+          width: 250px;
+          background-color: #0A6EBD
+        }
+      }
+    }
+  }
+  .search_wrap {
+    @include flex-center;
+    .search {
+      display: none;
+    }
+    .membership {
+      a {
+        color: white;
+        background-color: $blue;
+        padding: 0.6rem 1rem;
+        border-radius: 50px;
+        transition: all .3s ease;
+        &:hover{
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+    .bar {
+      color: white;
+      display: none;
+    }
+  }
+}
+
+
+@media (max-width: 1280px) {
+  .navbar_wrapper {
+    padding: .6rem 1rem;
+    .logo {
+      width: 220px;
+    }
+    nav {
+      position: fixed;
+      background-color: white;
+      color: white;
+      top: 0;
+      left: -1280px;
+      width: 100%;
+      height: 100%;
+      @include flex-column;
+      transition: all .5s ease;
+      z-index: 10;
+      overflow-y: scroll;
+      justify-content: flex-start;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .cross{
+        display: block;
+        color: black;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 1rem;
+        cursor: pointer;
+        svg{
+          font-size: 1.5rem;
+        }
+      }
+      .nav1 {
+        display: block;
+        align-items: center;
+        .link {
+          margin-right: 0px;
+          @include flex-column;
+          border-right: 1px solid #ddd;
+          border-bottom: 1px solid #ddd;
+          border-left: 1px solid #ddd;
+          &:first-child {
+            border-top: 1px solid #ddd;
+          }
+          &:hover {
+            a {
+              color: $primary-color;
+            }
+          }
+          a {
+            color: black;
+          }
+          svg {
+            fill: black;
+          }
+          .realLink {
+            padding: 0.4rem 1rem;
+            @include flex-between;
+            cursor: pointer;
+          }
+          // &:hover .subLink {
+          //   height: 100%;
+          //   opacity: 1;
+          //   pointer-events: none;
+          // }
+          .subLink {
+            @include flex-column;
+            transform: scale(1);
+            position: static;
+            width: 100%;
+            border: 0;
+            height: 0px;
+            opacity: 0;
+            pointer-events: none;
+            a {
+              color: black;
+              padding: 0.4rem 1rem;
+              border: 1px solid #ddd;
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+          .subLinkActive{
+            height: 100%;
+            opacity: 1;
+            pointer-events: all;
+          }
+        }
+      }
+      .nav2 {
+        position: sticky;
+        display: block;
+        padding: 0rem;
+        width: 100%;
+        background-color: white;
+        .link {
+          padding: 0rem;
+          @include flex-column;
+          border-right: 1px solid #ddd;
+          border-bottom: 1px solid #ddd;
+          border-left: 1px solid #ddd;
+          svg {
+            fill: black;
+          }
+          a{
+            color: black;
+          }
+          .realLink {
+            padding: 0.4rem 1rem;
+            @include flex-between;
+            cursor: pointer;
+          }
+          .subLink {
+            @include flex-column;
+            transform: scale(1);
+            position: static;
+            width: 100%;
+            height: 0px;
+            opacity: 0;
+            pointer-events: none;
+            background-color: white;
+            a {
+              color: black;
+              padding: 0.4rem 1rem;
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+          .subLinkActive{
+            height: 100%;
+            opacity: 1;
+            pointer-events: all;
+          }
+        }
+      }
+    }
+    .navActive{
+      left: 0px
+    }
+    .search_wrap {
+      @include flex-center;
+      .search {
+        display: none;
+      }
+      .membership {
+        a {
+          color: white;
+          background-color: $primary-color;
+          padding: 0.6rem;
+          border-radius: 10px;
+        }
+      }
+      .bar{
+        display: block;
+        margin-left: 10px;
+        cursor: pointer;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .navbar_wrapper {
+    .logo {
+      width: 220px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar_wrapper {
+    .logo {
+      width: 180px;
+    }
+  }
+}
+
