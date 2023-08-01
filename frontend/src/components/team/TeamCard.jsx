@@ -14,7 +14,7 @@ const TeamCard = ({ team }) => {
     <div className="memberCard">
       <h3>{team.attributes.position}</h3>
       <div className="member_info">
-        <img src={`http://localhost:1337${teamImg}`} alt="member" />
+        <img src={`https://smartcitycitizen-backend-jiv8q.ondigitalocean.app${teamImg}`} alt="member" />
         <div>
           <h4>{team.attributes.heading}</h4>
           <p>

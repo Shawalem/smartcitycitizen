@@ -17,7 +17,7 @@ const NewsCard = ({ allnews, collection }) => {
       <div className="news_img">
         <Link to={`/details/${collection}/${allnews.id}`}>
           <img
-            src={`http://localhost:1337${imageUrl}`}
+            src={`https://smartcitycitizen-backend-jiv8q.ondigitalocean.app${imageUrl}`}
             alt="news"
           />
         </Link>

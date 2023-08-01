@@ -363,7 +363,7 @@ const NewsDetails = () => {
                 <div className="newses">
                   <div className="newsDetails">
                     <div className="derailsImg">
-                      <img src={`http://localhost:1337${img}`} alt="news" />
+                      <img src={`https://smartcitycitizen-backend-jiv8q.ondigitalocean.app${img}`} alt="news" />
                     </div>
                     <div className="newsDescription">
                       <p>
