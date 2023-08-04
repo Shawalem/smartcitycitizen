@@ -36,6 +36,7 @@ const SideBar = () => {
                 <div>
                     <input type="text" placeholder='First Name' />
                     <input type="text" placeholder='Last Name' />
+                    <input type="text" placeholder='city' />
                     <input type="text" placeholder='Email' />
                     <button>SIGN ME UP</button>
                 </div>
