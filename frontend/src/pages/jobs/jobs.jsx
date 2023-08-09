@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import './jobs.scss'
 // useFetch
 import useFetch from "../../hooks/useFetch";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Jobs = () => {
   const { data: jobses } = useFetch("/jobses?populate=*");
@@ -23,9 +24,9 @@ const Jobs = () => {
           <div className="podcast_wrapper">
             <div className="heading">
               <h1>{headerparagraphs?.[0]?.attributes.jobs_title}</h1>
-              <p>
+              <ReactMarkdown>
               {headerparagraphs?.[0]?.attributes.jobs_paragraph}
-              </p>
+              </ReactMarkdown>
             </div>
             <div className="latest_news">
               <div className="news_sec">
