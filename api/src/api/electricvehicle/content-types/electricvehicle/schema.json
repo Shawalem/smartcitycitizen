@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "electricvehicles",
+  "info": {
+    "singularName": "electricvehicle",
+    "pluralName": "electricvehicles",
+    "displayName": "Mobile Health Camps & Clinics",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "para": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

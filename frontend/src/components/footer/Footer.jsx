@@ -1,6 +1,18 @@
+import React, { useEffect } from 'react';
 import "./footer.scss";
 
 const Footer = () => {
+  useEffect(() => {
+    const partnerLink = document.querySelector('.footer_nav a[href="/partner-withus"]');
+    
+    if (partnerLink) {
+      partnerLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = '/contact-us';
+      });
+    }
+  }, []);
+
   return (
     <>
       <div className="container Footer">
@@ -17,18 +29,18 @@ const Footer = () => {
               <a href="/about-us">About Us</a>
               <a href="/partner-withus">Partner with us</a>
               <a href="/contact-us">Contact us</a>
-              <a href="/smartcity-projectreports">Smart City Project Reports</a>
+              <a href="/smart-city-projects">Smart City Project Reports</a>
             </div>
             <div>
               <a href="/jobs">Jobs</a>
               <a href="/parners">Partners</a>
               <a href="/citizen-engagement">Citizen Engagement</a>
-              <a href="/support">Support</a>
+              <a href="/contact-us">Support</a>
             </div>
             <div>
               <a href="/city-profile">City Profile</a>
               <a href="/city-lights">City lights</a>
-              <a href="/editors-blog">Blog</a>
+              <a href="/blogs">Blog</a>
               <a href="/opinions">Opinions</a>
             </div>
           </div>

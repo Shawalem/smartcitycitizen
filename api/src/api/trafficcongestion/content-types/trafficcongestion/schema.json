@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trafficcongestions",
+  "info": {
+    "singularName": "trafficcongestion",
+    "pluralName": "trafficcongestions",
+    "displayName": "Traffic Congestion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "para": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { NewsCard, SideBar } from "../../components";
 import "./details.scss";
 import useFetch from "../../hooks/useFetch";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const NewsDetails = () => {
   const { id, collection } = useParams();
@@ -366,9 +367,9 @@ const NewsDetails = () => {
                       <img src={`${img}`} alt="news" />
                     </div>
                     <div className="newsDescription">
-                      <p>
+                      <ReactMarkdown>
                         {description}
-                      </p>
+                      </ReactMarkdown>
                     </div>
                   </div>
                 </div>

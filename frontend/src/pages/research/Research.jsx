@@ -32,9 +32,9 @@ const Research = () => {
           <div className="research_wrapper">
             <div className="heading">
               <h1>{headerparagraphs?.[0]?.attributes.research_title}</h1>
-              <p>
+              <ReactMarkdown>
                 {headerparagraphs?.[0]?.attributes.Research_paragraph}
-              </p>
+              </ReactMarkdown>
             </div>
             <div className="webinar">
               <h1>WEBINAR</h1>

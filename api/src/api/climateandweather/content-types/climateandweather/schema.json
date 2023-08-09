@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "climateandweathers",
+  "info": {
+    "singularName": "climateandweather",
+    "pluralName": "climateandweathers",
+    "displayName": "Climate & Weather"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "para": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

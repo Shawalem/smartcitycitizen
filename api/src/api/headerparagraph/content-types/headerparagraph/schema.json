@@ -1,0 +1,307 @@
+{
+  "kind": "collectionType",
+  "collectionName": "headerparagraphs",
+  "info": {
+    "singularName": "headerparagraph",
+    "pluralName": "headerparagraphs",
+    "displayName": "Header and Paragraph",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "home_title": {
+      "type": "string"
+    },
+    "home_paragraph": {
+      "type": "richtext"
+    },
+    "news_title": {
+      "type": "string"
+    },
+    "reports_title": {
+      "type": "string"
+    },
+    "reports_paragraph": {
+      "type": "richtext"
+    },
+    "opinions_title": {
+      "type": "string"
+    },
+    "opinions_paragraph": {
+      "type": "richtext"
+    },
+    "events_title": {
+      "type": "string"
+    },
+    "events_paragraph": {
+      "type": "richtext"
+    },
+    "blogs_title": {
+      "type": "string"
+    },
+    "blogs_paragraph": {
+      "type": "richtext"
+    },
+    "podcasts_title": {
+      "type": "string"
+    },
+    "podcasts_paragraph": {
+      "type": "richtext"
+    },
+    "smartprofile_title": {
+      "type": "string"
+    },
+    "smartprofile_paragraph": {
+      "type": "richtext"
+    },
+    "smartcityprojects_title": {
+      "type": "string"
+    },
+    "smartcityprojects_paragraph": {
+      "type": "richtext"
+    },
+    "articles_title": {
+      "type": "string"
+    },
+    "articles_paragraph": {
+      "type": "richtext"
+    },
+    "companies_title": {
+      "type": "string"
+    },
+    "companies_paragraph": {
+      "type": "richtext"
+    },
+    "inthenews_title": {
+      "type": "string"
+    },
+    "inthenews_paragraph": {
+      "type": "richtext"
+    },
+    "citizenengagement_title": {
+      "type": "string"
+    },
+    "citizenengagement_paragraph": {
+      "type": "richtext"
+    },
+    "getinvolved_title": {
+      "type": "string"
+    },
+    "getinvolved_paragraph": {
+      "type": "richtext"
+    },
+    "survey_title": {
+      "type": "string"
+    },
+    "survey_paragraph": {
+      "type": "richtext"
+    },
+    "suggestions_title": {
+      "type": "string"
+    },
+    "suggestions_paragraph": {
+      "type": "richtext"
+    },
+    "donate_title": {
+      "type": "string"
+    },
+    "donate_paragraph": {
+      "type": "richtext"
+    },
+    "volunteer_title": {
+      "type": "string"
+    },
+    "volunteer_paragraph": {
+      "type": "richtext"
+    },
+    "safetysecurity_title": {
+      "type": "string"
+    },
+    "safetysecurity_paragraph": {
+      "type": "richtext"
+    },
+    "digitalinfrastructure_title": {
+      "type": "string"
+    },
+    "digitalinfrastructure_paragraph": {
+      "type": "richtext"
+    },
+    "emergencysystem_title": {
+      "type": "string"
+    },
+    "emergencysystem_paragraph": {
+      "type": "richtext"
+    },
+    "cybersecurity_title": {
+      "type": "string"
+    },
+    "cybersecurity_paragraph": {
+      "type": "richtext"
+    },
+    "pedestrian_title": {
+      "type": "string"
+    },
+    "pedestrian_paragraph": {
+      "type": "richtext"
+    },
+    "smartbuildings_title": {
+      "type": "string"
+    },
+    "smartbuildings_paragraph": {
+      "type": "richtext"
+    },
+    "commercialbuilding_title": {
+      "type": "string"
+    },
+    "commercialbuilding_paragraph": {
+      "type": "richtext"
+    },
+    "smartresidence_title": {
+      "type": "string"
+    },
+    "smartresidence_paragraph": {
+      "type": "richtext"
+    },
+    "retailrecreationalspaces_title": {
+      "type": "string"
+    },
+    "retailrecreationalspaces_paragraph": {
+      "type": "richtext"
+    },
+    "municipalbuildings_title": {
+      "type": "string"
+    },
+    "municipalbuildings_paragraph": {
+      "type": "richtext"
+    },
+    "parksgreenspaces_title": {
+      "type": "string"
+    },
+    "parksgreenspaces_paragraph": {
+      "type": "richtext"
+    },
+    "smartindustries_title": {
+      "type": "string"
+    },
+    "smartindustries_paragraph": {
+      "type": "richtext"
+    },
+    "citizenhealthwellbeing_title": {
+      "type": "string"
+    },
+    "citizenhealthwellbeing_paragraph": {
+      "type": "richtext"
+    },
+    "purewater_title": {
+      "type": "string"
+    },
+    "purewater_paragraph": {
+      "type": "richtext"
+    },
+    "mobilehealthcampsclinics_title": {
+      "type": "string"
+    },
+    "mobilehealthcampsclinics_paragraph": {
+      "type": "richtext"
+    },
+    "seniourcitizenprograms_title": {
+      "type": "string"
+    },
+    "seniourcitizenprograms_paragraph": {
+      "type": "richtext"
+    },
+    "noiseairquality_title": {
+      "type": "string"
+    },
+    "noiseairquality_paragraph": {
+      "type": "richtext"
+    },
+    "mobilityconnectivity_title": {
+      "type": "string"
+    },
+    "mobilityconnectivity_paragraph": {
+      "type": "richtext"
+    },
+    "electricvehiclecharging_title": {
+      "type": "string"
+    },
+    "electricvehiclecharging_paragraph": {
+      "type": "richtext"
+    },
+    "lastmileconnectivity_title": {
+      "type": "string"
+    },
+    "lastmileconnectivity_paragraph": {
+      "type": "richtext"
+    },
+    "publictransport_title": {
+      "type": "string"
+    },
+    "publictransport_paragraph": {
+      "type": "richtext"
+    },
+    "trafficcongestion_title": {
+      "type": "string"
+    },
+    "trafficcongestion_paragraph": {
+      "type": "richtext"
+    },
+    "energyenvironment_tilte": {
+      "type": "string"
+    },
+    "energyenvironment_paragraph": {
+      "type": "richtext"
+    },
+    "cleanenergy_title": {
+      "type": "string"
+    },
+    "cleanenergy_paragraph": {
+      "type": "richtext"
+    },
+    "wastemanagement_title": {
+      "type": "string"
+    },
+    "wastemanagement_paragraph": {
+      "type": "richtext"
+    },
+    "climateweather_title": {
+      "type": "string"
+    },
+    "climateweather_paragraph": {
+      "type": "richtext"
+    },
+    "sustainability_title": {
+      "type": "string"
+    },
+    "sustainability_paragraph": {
+      "type": "richtext"
+    },
+    "solarprogram_title": {
+      "type": "string"
+    },
+    "solarprogram_paragraph": {
+      "type": "richtext"
+    },
+    "jobs_title": {
+      "type": "string"
+    },
+    "jobs_paragraph": {
+      "type": "richtext"
+    },
+    "citylight_title": {
+      "type": "string"
+    },
+    "citylight_paragraph": {
+      "type": "richtext"
+    },
+    "partners_title": {
+      "type": "string"
+    },
+    "partners_paragraph": {
+      "type": "richtext"
+    }
+  }
+}

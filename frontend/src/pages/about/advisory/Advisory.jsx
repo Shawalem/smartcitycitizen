@@ -2,6 +2,7 @@ import React from "react";
 import "./advisory.scss";
 import { Helmet } from "react-helmet";
 import { MemberCard } from '../../../components'
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const Advisory = () => {
   return (

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teampages",
+  "info": {
+    "singularName": "teampage",
+    "pluralName": "teampages",
+    "displayName": "Careers",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "position": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

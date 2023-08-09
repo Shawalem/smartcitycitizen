@@ -1,48 +1,47 @@
-import "./cityLights.scss";
-import { SideBar,NewsCard } from '../../components'
-import { Helmet } from "react-helmet";
+import { SideBar, NewsCard } from "../../components";
+import { Helmet } from 'react-helmet';
+import './citylights.scss'
 // useFetch
 import useFetch from "../../hooks/useFetch";
 
+const Citylights = () => {
+  const { data: footercitylights } = useFetch("/footercitylights?populate=*");
 
-const CityLights = () => {
-
-  // get city lights 
-  const { data: citylights } = useFetch('/citylights?populate=*');
-  console.log(citylights);
-
-  // get city Webinar 
-  const { data: webinars } = useFetch('/webinars?populate=*');
-  console.log(webinars);
-
+  const { data: opinions } = useFetch('/opinions?populate=*');
+  
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+  
 
   return (
     <>
-      <Helmet>
-        <title>City Lights - Smart City Citizen</title>
-        <meta name="description" content="City Lights is a Q&A series where we ask city leaders and experts a series of questions across a range of topics.  If you would like to contribute and you work for a city authority then please contact our editor Luke Antoniou on lukea@smartcitiesworld.net" />
-      </Helmet>
+    <Helmet>
+        <title>Podcasts - Smart City Citizen</title>
+        <meta name="description " content="The latest podcasts on smart city projects and initiatives across the world." /> 
+    </Helmet>
       <section>
         <div className="container">
-          <div className="city_lights_wrapper">
+          <div className="podcast_wrapper">
+            <div className="heading">
+              <h1>{headerparagraphs?.[0]?.attributes.citylight_title}</h1>
+              <p>
+              {headerparagraphs?.[0]?.attributes.citylight_paragraph}
+              </p>
+            </div>
             <div className="latest_news">
               <div className="news_sec">
-                <h1>{headerparagraphs?.[0]?.attributes.citylight_title}</h1>
-                <p>{headerparagraphs?.[0]?.attributes.citylight_paragraph}</p>
                 <div className="newses">
-                  {citylights?.map((citylight) => (
-                    <NewsCard key={citylight} allnews={citylight} collection="citylights" />
+                {footercitylights?.map((footercitylight) => (
+                    <NewsCard key={footercitylight.id} allnews={footercitylight} collection="footercitylights" />
                   ))}
                 </div>
               </div>
               <SideBar />
             </div>
             <div className="webinar">
-              <h1>WEBINAR</h1>
+              <h1>Opinions</h1>
               <div className="webinar_wrapper">
-              {webinars?.map((webinar) => (
-                    <NewsCard key={webinar.id} allnews={webinar} collection="webinars" />
+              {opinions?.slice(0, 4).map((opinion) => (
+                    <NewsCard key={opinion.id} allnews={opinion} collection="opinions" />
                   ))}
               </div>
             </div>
@@ -50,7 +49,7 @@ const CityLights = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default CityLights;
+export default Citylights;

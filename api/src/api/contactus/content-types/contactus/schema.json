@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contactuses",
+  "info": {
+    "singularName": "contactus",
+    "pluralName": "contactuses",
+    "displayName": "Contact Us Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading_one": {
+      "type": "string"
+    },
+    "company_address": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "simple_para_one": {
+      "type": "richtext"
+    },
+    "heading_two": {
+      "type": "string"
+    },
+    "simple_para_two": {
+      "type": "richtext"
+    },
+    "heading_three": {
+      "type": "string"
+    },
+    "simple_para_three": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/users/register",
+      "handler": "user.register"
+    },
+    {
+      "method": "POST",
+      "path": "/auth/local",
+      "handler": "user.login",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

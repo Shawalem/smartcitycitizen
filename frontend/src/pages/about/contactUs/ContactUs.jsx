@@ -2,6 +2,8 @@ import React from "react";
 import "./contact.scss";
 import { Helmet } from "react-helmet";
 import useFetch from "../../../hooks/useFetch";
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+
 
 const ContactUs = () => {
 

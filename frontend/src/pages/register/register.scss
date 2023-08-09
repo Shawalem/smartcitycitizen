@@ -49,6 +49,25 @@
   }
 }
 
+/* Other styles... */
+
+/* Styles for toast notifications */
+.Toastify__toast {
+  font-family: 'Poppins', sans-serif; // Use your font-family variable
+  border-radius: 4px;
+}
+
+.Toastify__toast--success {
+  background-color: #4BB543; // Use your success color variable
+  color: white; // Use your white color variable
+  padding: 15px; // Adjust padding as needed
+  font-size: 1rem; // Adjust font size as needed
+  text-align: center; // Center the text
+  width: 300px; // Adjust width as needed
+}
+
+/* Other styles... */
+
 @media(max-width:992px){
   .register_wrapper{
     margin-top: 20px;

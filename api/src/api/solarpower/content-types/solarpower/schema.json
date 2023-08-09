@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solarpowers",
+  "info": {
+    "singularName": "solarpower",
+    "pluralName": "solarpowers",
+    "displayName": "Retail & Recreational spaces",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "para": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

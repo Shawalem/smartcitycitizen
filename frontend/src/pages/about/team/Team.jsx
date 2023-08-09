@@ -3,6 +3,8 @@ import { TeamCard } from "../../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../../hooks/useFetch";
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+
 
 const Team = () => {
   const { data: teampages } = useFetch("/teampages?populate=*");
@@ -15,7 +17,7 @@ const Team = () => {
       <section>
         <div className="container">
           <div className="team_wrapper">
-            <h1>The Team</h1>
+            <h1>careers</h1>
             <div className="the_team">
               {teampages?.map((teampage) => (
                 <TeamCard key={teampage.id} team={teampage} collection={teampages} />

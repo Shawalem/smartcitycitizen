@@ -5,6 +5,7 @@ import { SideBar } from "../../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../../hooks/useFetch";
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const AboutUs = () => {
   const { data: aboutpages } = useFetch("/aboutpages?populate=*");
@@ -22,56 +23,56 @@ const AboutUs = () => {
             <div className="about">
               <div className="about_heading">
                 <h1>Our Mission</h1>
-                <p>{aboutpages?.[0].attributes?.ourmission}</p>
+                <ReactMarkdown>{aboutpages?.[0].attributes?.ourmission}</ReactMarkdown>
               </div>
               <div className="about_desc">
                 <div className="value">
                   <h5>Our Values</h5>
-                  <p>{aboutpages?.[0].attributes?.our_values}</p>
+                  <ReactMarkdown>{aboutpages?.[0].attributes?.our_values}</ReactMarkdown>
                   <div>
                     <h5>COLLABORATIVE</h5>
                     <hr />
-                    <p>{aboutpages?.[0].attributes?.collaborative}</p>
+                    <ReactMarkdown>{aboutpages?.[0].attributes?.collaborative}</ReactMarkdown>
                   </div>
                   <div>
                     <h5>SUSTAINABLE</h5>
                     <hr />
-                    <p>{aboutpages?.[0].attributes?.sustainable}</p>
+                    <ReactMarkdown>{aboutpages?.[0].attributes?.sustainable}</ReactMarkdown>
                   </div>
                   <div>
                     <h5>TRANSPARENT </h5>
                     <hr />
-                    <p>{aboutpages?.[0].attributes?.transparent}</p>
+                    <ReactMarkdown>{aboutpages?.[0].attributes?.transparent}</ReactMarkdown>
                   </div>
                   <div>
                     <h5>INCLUSIVE</h5>
                     <hr />
-                    <p>
+                    <ReactMarkdown>
                       {aboutpages?.[0].attributes?.inclusive}
-                    </p>
+                    </ReactMarkdown>
                   </div>
                   <div>
                     <h5>INNOVATIVE</h5>
                     <hr />
-                    <p>
+                    <ReactMarkdown>
                       {aboutpages?.[0].attributes?.innovative}
-                    </p>
+                    </ReactMarkdown>
                   </div>
                   <div>
                     <h5>SHARING</h5>
                     <hr />
-                    <p>
+                    <ReactMarkdown>
                     {aboutpages?.[0].attributes?.sharing}
 
-                    </p>
+                    </ReactMarkdown>
                   </div>
                   <div>
                     <h5>PASSIONATE</h5>
                     <hr />
-                    <p>
+                    <ReactMarkdown>
                     {aboutpages?.[0].attributes?.passionate}
 
-                    </p>
+                    </ReactMarkdown>
                   </div>
                 </div>
               </div>

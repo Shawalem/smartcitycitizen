@@ -3,15 +3,15 @@ import { NewsCard, SideBar } from "../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+
 
 const CityProfile = () => {
   // get city resources
   const { data: cityresources } = useFetch("/cityresources?populate=*");
-  console.log(cityresources);
 
   // get browse smart citys 
-  const { data: smartcities } = useFetch("/smartcities?populate=*");
-  console.log(smartcities)
+  const { data: opinions } = useFetch("/opinions?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate")
 
@@ -26,13 +26,12 @@ const CityProfile = () => {
           <div className="city_profile_wrapper">
             <div className="heading">
               <h1>{headerparagraphs?.[0]?.attributes.cityprofile_title}</h1>
-              <p>
+              <ReactMarkdown>
                 {headerparagraphs?.[0]?.attributes.cityprofile_paragraph}
-              </p>
+              </ReactMarkdown>
             </div>
             <div className="latest_news">
               <div className="news_sec">
-                <h1>CITY RESOURCES</h1>
                 <div className="newses">
                   {
                     cityresources?.map((cityresource)=>(
@@ -41,11 +40,11 @@ const CityProfile = () => {
                   }
                 </div>
               <div className="browse_city">
-                <h1>BROWSE SMART CITIES</h1>
+                <h1>Opinions</h1>
                 <div className="all_city">
                 {
-                    smartcities?.map((smartcity)=>(
-                      <NewsCard key={smartcity.id} allnews={smartcity} collection="smartcities" />
+                    opinions?.slice(0, 3).map((opinion)=>(
+                      <NewsCard key={opinion.id} allnews={opinion} collection="opinions" />
                     ))
                   }
                 </div>

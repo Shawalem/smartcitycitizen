@@ -3,6 +3,7 @@ import "./trend.scss";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../../hooks/useFetch";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 
 const Trend = () => {
@@ -29,7 +30,7 @@ const Trend = () => {
           <div className="trend_wrapper">
             <div className="heading">
               <h1>{headerparagraphs?.[0]?.attributes.trendreport_title}</h1>
-              <p>{headerparagraphs?.[0]?.attributes.trendreport_paragraph}</p>
+              <ReactMarkdown>{headerparagraphs?.[0]?.attributes.trendreport_paragraph}</ReactMarkdown>
             </div>
             <div className="latest_news">
               <div className="news_sec">

@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import the toastify CSS
 import "./register.scss";
 import useFetch from "../../hooks/useFetch";
 
@@ -15,11 +17,17 @@ const Register = () => {
         method: "post",
         data: data
       });
-      alert('Registration successful!');
+  
+      // Display a success message using react-toastify
+      toast.success('Registration successful!', {
+        position: toast.POSITION.TOP_CENTER, // Adjust position if needed
+        autoClose: 3000 // Adjust duration in milliseconds
+      });
     } catch (error) {
       console.log('Error during registration', error);
     }
   };
+  
 
 
   return (

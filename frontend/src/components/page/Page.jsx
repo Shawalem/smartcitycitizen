@@ -3,12 +3,26 @@ import NewsCard from "../newsCard/NewsCard";
 import SideBar from "../sideBar/SideBar";
 // useFetch
 import useFetch from "../../hooks/useFetch";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Page = ({
+  cleanenergies,
+  climateandweathers,
+  wastemanagements,
+  cybersecurities,
+  trafficcongestions,
+  publictransports,
+  noiseairqualities,
+  electricvehicleandchargings,
+  parksandgreenspaces,
+  smartbuildings,
+  pedestrians,
+  donates,
+  volunteers,
   pageHeading,
+  digitalinfrastructures,
   pagePara,
-
-  specials,
+  smartindustries,
   aiandmachines,
   analytics,
   marketmonets,
@@ -29,14 +43,11 @@ const Page = ({
   commercialbuildings,
   culturalspaces,
   municipalbuildings,
+  sustainabilities,
+  solarprograms,
 }) => {
-  // get city profiles
-  const { data: cityprofiles } = useFetch("/cityprofiles?populate=*");
-  console.log(cityprofiles);
 
-  // get Webinar
-  const { data: webinars } = useFetch("/webinars?populate=*");
-  console.log(webinars);
+  const { data: opinions } = useFetch("/opinions?populate=*");
 
   return (
     <>
@@ -47,11 +58,74 @@ const Page = ({
               <div className="news_sec">
                 <div className="intro">
                   <h1>{pageHeading}</h1>
-                  <p>{pagePara}</p>
+                  <ReactMarkdown>{pagePara}</ReactMarkdown>
                 </div>
                 <div className="newses">
-                  {specials?.map((special) => (
-                    <NewsCard key={special.id} allnews={special} collection="specials" />
+                  {citizenengagements?.map((citizenengagement) => (
+                    <NewsCard key={citizenengagement.id} allnews={citizenengagement} collection="citizenengagements" />
+                  ))} 
+
+                  {wastemanagements?.map((wastemanagement) => (
+                    <NewsCard key={wastemanagement.id} allnews={wastemanagement} collection="wastemanagements" />
+                  ))}
+
+                  {solarprograms?.map((solarprogram) => (
+                    <NewsCard key={solarprogram.id} allnews={solarprogram} collection="solarprograms" />
+                  ))}
+                  
+                  {sustainabilities?.map((sustainability) => (
+                    <NewsCard key={sustainability.id} allnews={sustainability} collection="sustainabilities" />
+                  ))}
+
+                  {climateandweathers?.map((climateandweather) => (
+                    <NewsCard key={climateandweather.id} allnews={climateandweather} collection="climateandweathers" />
+                  ))}
+
+                  {cleanenergies?.map((cleanenergy) => (
+                    <NewsCard key={cleanenergy.id} allnews={cleanenergy} collection="cleanenergies" />
+                  ))}
+
+                  {trafficcongestions?.map((trafficcongestion) => (
+                    <NewsCard key={trafficcongestion.id} allnews={trafficcongestion} collection="trafficcongestions" />
+                  ))}
+
+                  {publictransports?.map((publictransport) => (
+                    <NewsCard key={publictransport.id} allnews={publictransport} collection="publictransports" />
+                  ))}
+
+                  {electricvehicleandchargings?.map((electricvehicleandcharging) => (
+                    <NewsCard key={electricvehicleandcharging.id} allnews={electricvehicleandcharging} collection="electricvehicleandchargings" />
+                  ))}
+
+                  {noiseairqualities?.map((noiseairquality) => (
+                    <NewsCard key={noiseairquality.id} allnews={noiseairquality} collection="noiseairqualities" />
+                  ))}
+
+                  {smartindustries?.map((smartindustrie) => (
+                    <NewsCard key={smartindustrie.id} allnews={smartindustrie} collection="smartindustries" />
+                  ))}
+                  {smartbuildings?.map((smartbuilding) => (
+                    <NewsCard key={smartbuilding.id} allnews={smartbuilding} collection="smartbuildings" />
+                  ))}
+                  {pedestrians?.map((pedestrian) => (
+                    <NewsCard key={pedestrian.id} allnews={pedestrian} collection="pedestrians" />
+                  ))}
+
+                  {parksandgreenspaces?.map((parksandgreenspace) => (
+                    <NewsCard key={parksandgreenspace.id} allnews={parksandgreenspace} collection="parksandgreenspaces" />
+                  ))}
+                  {donates?.map((donate) => (
+                    <NewsCard key={donate.id} allnews={donate} collection="donates" />
+                  ))}
+                  {cybersecurities?.map((cybersecurity) => (
+                    <NewsCard key={cybersecurity.id} allnews={cybersecurity} collection="cybersecurities" />
+                  ))}
+                  {digitalinfrastructures?.map((digitalinfrastructure) => (
+                    <NewsCard key={digitalinfrastructure.id} allnews={digitalinfrastructure} collection="digitalinfrastructures" />
+                  ))}
+
+                  {volunteers?.map((volunteer) => (
+                    <NewsCard key={volunteer.id} allnews={volunteer} collection="volunteers" />
                   ))}
                   {aiandmachines?.map((aiandmachine) => (
                     <NewsCard key={aiandmachine.id} allnews={aiandmachine} collection="aiandmachines" />
@@ -90,8 +164,8 @@ const Page = ({
                       collection="citizensecurities"
                     />
                   ))}
-                  {energyenvironments?.map((energyenvironment) => (
-                    <NewsCard key={energyenvironment.id} allnews={energyenvironment} collection="energyenvironments" />
+                  {energyenvironments?.map((citizenengagement) => (
+                    <NewsCard key={citizenengagement.id} allnews={citizenengagement} collection="energyenvironments" />
                   ))}
                   {airqualities?.map((airqualitie) => (
                     <NewsCard key={airqualitie.id} allnews={airqualitie} collection="airqualities" />
@@ -134,20 +208,11 @@ const Page = ({
               </div>
               <SideBar />
             </div>
-            {/* city profile */}
-            <div className="city_profile">
-              <h1>CITY PROFILES</h1>
-              <div className="profile_wrapper">
-                {cityprofiles?.map((cityprofile) => (
-                  <NewsCard key={cityprofile.id} allnews={cityprofile} collection="cityprofiles" />
-                ))}
-              </div>
-            </div>
             <div className="webinars">
-              <h1>WEBINARS</h1>
+              <h1>Opinions</h1>
               <div className="webinars_wrap">
-                {webinars?.map((webinar) => (
-                  <NewsCard key={webinar.id} allnews={webinar} collection="webinars" />
+                {opinions?.map((opinion) => (
+                  <NewsCard key={opinion.id} allnews={opinion} collection="opinion" />
                 ))}
               </div>
             </div>

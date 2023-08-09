@@ -3,14 +3,13 @@ import { SideBar, NewsCard } from "../../components";
 import "./specialReport.scss";
 // useFetch
 import useFetch from "../../hooks/useFetch";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const SpecialReport = () => {
   // get special reports 
   const { data: specials } = useFetch("/specials?populate=*");
-  console.log(specials);
 
-  const { data: webinars } = useFetch("/webinars?populate=*");
-  console.log(webinars)
+  const { data: opinions } = useFetch("/opinions?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
   
@@ -29,10 +28,10 @@ const SpecialReport = () => {
           <div className="Special_report_wrapper">
             <div className="latest_news">
               <div className="news_sec">
-                <h1>{headerparagraphs?.[0]?.attributes.specialreport_title}</h1>
-                <p>
-                {headerparagraphs?.[0]?.attributes.specialreport_paragraph}
-                </p>
+                <h1>{headerparagraphs?.[0]?.attributes.reports_title}</h1>
+                <ReactMarkdown>
+                {headerparagraphs?.[0]?.attributes.reports_paragraph}
+                </ReactMarkdown>
                 <div className="newses">
                   {specials?.map((special) => (
                     <NewsCard key={special.id} allnews={special} collection="specials" />
@@ -42,10 +41,10 @@ const SpecialReport = () => {
               <SideBar />
             </div>
             <div className="webinar">
-              <h1>WEBINAR</h1>
+              <h1>Opinions</h1>
               <div className="webinar_wrapper">
-                {webinars?.map((webinar) => (
-                  <NewsCard key={webinar.id} allnews={webinar} collection="webinars" />
+                {opinions?.map((opinion) => (
+                  <NewsCard key={opinion.id} allnews={opinion} collection="opinions" />
                 ))}
               </div>
             </div>

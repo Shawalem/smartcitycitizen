@@ -10,7 +10,7 @@ const News = () => {
   const { data: allnewses } = useFetch("/allnewses?populate=*");
 
   // get webinar 
-  const { data: webinars } = useFetch("/webinars?populate=*");
+  const { data: opinions } = useFetch("/opinions?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
@@ -35,10 +35,10 @@ const News = () => {
               <SideBar />
             </div>
             <div className="webinar">
-              <h1>WEBINAR</h1>
+              <h1>Opinions</h1>
               <div className="webinar_wrapper">
-              {webinars?.map((webinar) => (
-                    <NewsCard key={webinar} allnews={webinar} collection="webinars" />
+              {opinions?.slice(0, 4).map((opinion) => (
+                    <NewsCard key={opinion} allnews={opinion} collection="opinions" />
                   ))}
               </div>
             </div>

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "smartindustries",
+  "info": {
+    "singularName": "smartindustrie",
+    "pluralName": "smartindustries",
+    "displayName": "Smart Industries"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "para": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

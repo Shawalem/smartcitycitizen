@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aboutpages",
+  "info": {
+    "singularName": "aboutpage",
+    "pluralName": "aboutpages",
+    "displayName": "About Us Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ourmission": {
+      "type": "richtext"
+    },
+    "our_values": {
+      "type": "richtext"
+    },
+    "collaborative": {
+      "type": "richtext"
+    },
+    "sustainable": {
+      "type": "richtext"
+    },
+    "transparent": {
+      "type": "richtext"
+    },
+    "inclusive": {
+      "type": "richtext"
+    },
+    "innovative": {
+      "type": "richtext"
+    },
+    "sharing": {
+      "type": "richtext"
+    },
+    "passionate": {
+      "type": "richtext"
+    }
+  }
+}

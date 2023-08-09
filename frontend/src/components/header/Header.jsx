@@ -30,8 +30,8 @@ const Header = () => {
       ref:'/about-us'
     },
     {
-      name:"The Team",
-      ref:'/the-team'
+      name:"Careers",
+      ref:'/careers'
     },
     {
       name:"Contact us",

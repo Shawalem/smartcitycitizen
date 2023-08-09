@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiUser } from "react-icons/bi";
 import "./bar.scss";
 import { Link } from "react-router-dom";
 import NavImg from "../../assets/logo.png";
 
 const SideBar = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [city, setCity] = useState("");
+  const [email, setEmail] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  
+  const usedEmails = []; // You can populate this array with existing emails
+
+  const handleSignUp = () => {
+    if (firstName && lastName && city && email) {
+      if (usedEmails.includes(email)) {
+        setErrorMessage("Email is already in use.");
+        setSuccessMessage("");
+      } else {
+        setSuccessMessage("You have successfully signed up!");
+        setErrorMessage("");
+        usedEmails.push(email);
+        setFirstName("");
+        setLastName("");
+        setCity("");
+        setEmail("");
+      }
+    } else {
+      setSuccessMessage("");
+      setErrorMessage("Please fill in all fields.");
+    }
+  };
+
   return (
     <div className="sideBar">
       <div className="tab-1">
@@ -48,12 +77,38 @@ const SideBar = () => {
           interviews, Special Reports and Guest Opinions.
         </p>
         <div>
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
-          <input type="text" placeholder="city" />
-          <input type="text" placeholder="Email" />
-          <button>SIGN ME UP</button>
+          <input
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="City"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button onClick={handleSignUp}>SIGN ME UP</button>
         </div>
+        {successMessage && (
+          <div className="success-message">{successMessage}</div>
+        )}
+        {errorMessage && (
+          <div className="error-message">{errorMessage}</div>
+        )}
       </div>
     </div>
   );

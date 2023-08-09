@@ -3,6 +3,7 @@ import { SideBar,NewsCard } from '../../../components'
 import './editorsBlog.scss'
 // useFetch
 import useFetch from '../../../hooks/useFetch'
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 
 
 const EditorsBlog = () => {
@@ -27,7 +28,7 @@ const EditorsBlog = () => {
             <div className="latest_news">
               <div className="news_sec">
                 <h1>{headerparagraphs?.[0]?.attributes.editorblog_title}</h1>
-                <p>{headerparagraphs?.[0]?.attributes.editorblog_paragraph}</p>
+                <ReactMarkdown>{headerparagraphs?.[0]?.attributes.editorblog_paragraph}</ReactMarkdown>
                 <div className="newses">
                   {editorblogs?.map((editorblog) => (
                     <NewsCard key={editorblog.id} allnews={editorblog} collection="editorblogs" />

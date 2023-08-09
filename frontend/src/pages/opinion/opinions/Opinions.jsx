@@ -2,6 +2,7 @@ import "./opinions.scss";
 import { SideBar, NewsCard } from "../../../components";
 import { Helmet } from "react-helmet";
 import useFetch from "../../../hooks/useFetch";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Opinions = () => {
 
@@ -10,8 +11,8 @@ const Opinions = () => {
   console.log(opinions);
 
   // get city Webinar 
-  const { data: webinars } = useFetch('/webinars?populate=*');
-  console.log(webinars);
+  const { data: events } = useFetch("/events?populate=*");
+  console.log(events);
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
@@ -29,9 +30,9 @@ const Opinions = () => {
           <div className="Opinions_wrapper">
             <div className="heading">
               <h1>{headerparagraphs?.[0]?.attributes.opinions_title}</h1>
-              <p>
+              <ReactMarkdown>
                 {headerparagraphs?.[0]?.attributes.opinions_paragraph}
-              </p>
+              </ReactMarkdown>
             </div>
             <div className="latest_news">
               <div className="news_sec">
@@ -46,8 +47,8 @@ const Opinions = () => {
             <div className="webinar">
               <h1>WEBINAR</h1>
               <div className="webinar_wrapper">
-              {webinars?.map((webinar) => (
-                    <NewsCard key={webinar.id} allnews={webinar} collection="webinars" />
+              {events?.slice(0, 4).map((event) => (
+                    <NewsCard key={event.id} allnews={event} collection="events" />
                   ))}
               </div>
             </div>
