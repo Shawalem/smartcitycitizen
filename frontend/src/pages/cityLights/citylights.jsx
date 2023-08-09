@@ -4,7 +4,7 @@ import './citylights.scss'
 // useFetch
 import useFetch from "../../hooks/useFetch";
 
-const Footercitylight = () => {
+const Citylights = () => {
   const { data: footercitylights } = useFetch("/footercitylights?populate=*");
 
   const { data: opinions } = useFetch('/opinions?populate=*');
@@ -52,4 +52,4 @@ const Footercitylight = () => {
   )
 }
 
-export default Footercitylight;
+export default Citylights;

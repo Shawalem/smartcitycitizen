@@ -67,8 +67,8 @@ import Solarprogram from "./pages/energyandenvironment/solarprogram/solarprogram
 import Podcast from "./pages/podcast/Podcast";
 import Citizenengagement from "./pages/connectivityAndData/citizenengagement";
 import Jobs from "./pages/jobs/jobs";
+import Citylights from "./pages/citylights/citylights";
 import Partners from "./pages/partners/partners";
-import Footercitylight from './pages/citylights/citylight'
 
 const App = () => {
   return (
@@ -192,7 +192,7 @@ const App = () => {
           <Route path="/search" element={<SearchPage />} />
 
           <Route path="/jobs" element={<Jobs />} />
-          <Route path="/city-lights" element={<Footercitylight />} />
+          <Route path="/city-lights" element={<Citylights />} />
           <Route path="/parners" element={<Partners />} />
         </Routes>
         <ToastContainer />
