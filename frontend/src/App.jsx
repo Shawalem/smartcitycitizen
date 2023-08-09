@@ -68,7 +68,7 @@ import Podcast from "./pages/podcast/Podcast";
 import Citizenengagement from "./pages/connectivityAndData/citizenengagement";
 import Jobs from "./pages/jobs/jobs";
 import Partners from "./pages/partners/partners";
-import Footercitylight from './pages/citylights/citylights'
+import Footercitylight from './pages/citylights/citylight'
 
 const App = () => {
   return (
