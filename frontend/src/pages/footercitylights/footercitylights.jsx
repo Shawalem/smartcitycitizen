@@ -1,10 +1,11 @@
 import { SideBar, NewsCard } from "../../components";
 import { Helmet } from 'react-helmet';
-import './citylights.scss'
+import './jobs.scss'
 // useFetch
 import useFetch from "../../hooks/useFetch";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
-const Citylights = () => {
+const Footercitylights = () => {
   const { data: footercitylights } = useFetch("/footercitylights?populate=*");
 
   const { data: opinions } = useFetch('/opinions?populate=*');
@@ -23,9 +24,9 @@ const Citylights = () => {
           <div className="podcast_wrapper">
             <div className="heading">
               <h1>{headerparagraphs?.[0]?.attributes.citylight_title}</h1>
-              <p>
+              <ReactMarkdown>
               {headerparagraphs?.[0]?.attributes.citylight_paragraph}
-              </p>
+              </ReactMarkdown>
             </div>
             <div className="latest_news">
               <div className="news_sec">
@@ -52,4 +53,4 @@ const Citylights = () => {
   )
 }
 
-export default Citylights;
+export default Footercitylights

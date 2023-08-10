@@ -69,7 +69,8 @@ import Citizenengagement from "./pages/connectivityAndData/citizenengagement";
 import Jobs from "./pages/jobs/jobs";
 
 import Partners from "./pages/partners/partners";
-import Citylights from "./pages/citylights/citylights";
+import Footercitylights from "./pages/footercitylights/footercitylights";
+// import Citylights from "./pages/citylights/citylights";
 
 const App = () => {
   return (
@@ -187,7 +188,7 @@ const App = () => {
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/solar-program" element={<Solarprogram />} />
 
-          <Route path="/city-lights" element={<Citylights />} />
+          <Route path="/city-lights" element={<Footercitylights />} />
           {/* news details */}
           <Route path="/details/:collection/:id" element={<NewsDetails />} />
           {/* search  */}
