@@ -1,6 +1,6 @@
 import { SideBar, NewsCard } from "../../components";
 import { Helmet } from 'react-helmet';
-import './jobs.scss'
+import './footercitylights.scss'
 // useFetch
 import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
