@@ -4,6 +4,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import the toastify CSS
 import "./register.scss";
 import useFetch from "../../hooks/useFetch";
+import { useForm, reset } from "react-hook-form";
+
 
 const Register = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
@@ -17,6 +19,8 @@ const Register = () => {
         method: "post",
         data: data
       });
+
+      reset()
   
       // Display a success message using react-toastify
       toast.success('Registration successful!', {
