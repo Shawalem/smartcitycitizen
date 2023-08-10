@@ -19,8 +19,9 @@ const Register = () => {
         method: "post",
         data: data
       });
-
-      reset()
+  
+      // Reset the form fields
+      reset(); 
   
       // Display a success message using react-toastify
       toast.success('Registration successful!', {
@@ -31,6 +32,7 @@ const Register = () => {
       console.log('Error during registration', error);
     }
   };
+  
   
 
 
