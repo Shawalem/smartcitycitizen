@@ -42,15 +42,19 @@ const Header = () => {
     <div className="container">
       <div className="header_wrapper">
         <div className="social">
-          <div>
+          {/* <div>
             <FaFacebookF />
-          </div>
-          <div>
-            <FaTwitter />
-          </div>
-          <div>
-            <FaLinkedinIn />
-          </div>
+          </div> */}
+          <a href="https://twitter.com/Smartcityctizen">
+            <div>
+              <FaTwitter />
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/smartcitycitizen/">
+            <div>
+              <FaLinkedinIn />
+            </div>
+          </a>
         </div>
         <form onClick={handleSubmit}>
           <div className="search">
