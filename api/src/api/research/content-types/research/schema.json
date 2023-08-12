@@ -30,7 +30,7 @@
       ]
     },
     "description": {
-      "type": "text"
+      "type": "richtext"
     }
   }
 }
