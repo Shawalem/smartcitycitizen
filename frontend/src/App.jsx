@@ -1,4 +1,4 @@
-import { Header } from "./components";
+import { Ad, Header } from "./components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/navBar/Navbar";
@@ -77,6 +77,7 @@ const App = () => {
     <>
       <header>
         <Header />
+        <Ad/>
         <Navbar />
       </header>
       <main>

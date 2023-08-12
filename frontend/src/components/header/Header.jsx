@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import "./header.scss";
 import { Link, useNavigate } from "react-router-dom";
@@ -42,9 +42,6 @@ const Header = () => {
     <div className="container">
       <div className="header_wrapper">
         <div className="social">
-          {/* <div>
-            <FaFacebookF />
-          </div> */}
           <a href="https://twitter.com/Smartcityctizen">
             <div>
               <FaTwitter />

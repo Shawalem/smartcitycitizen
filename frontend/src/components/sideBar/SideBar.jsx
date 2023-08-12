@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BiUser } from "react-icons/bi";
 import "./bar.scss";
 import { Link } from "react-router-dom";
@@ -39,24 +39,29 @@ const SideBar = () => {
       <div className="tab-1">
         <img src={NavImg} alt="poster" />
       </div>
-      <div className="tab-4">
+      <div className="tab-2">
+        <a href="/">
+        <img src="./images/ad.gif" alt="ad" />
+        </a>
+      </div>
+      <div className="tab-3">
         <h4>BECAME A MEMBER</h4>
         <div>
           <BiUser />
           <p>
-            Build your own Industry <br /> Resource Library
+            Engage Citizens <br /> Ask for opinions / Conduct Surveys
           </p>
         </div>
         <div>
           <BiUser />
           <p>
-            Gain access to all <br /> SmartCitiesWorld content
+            Manage all your <br /> Citizen Engagement Projects
           </p>
         </div>
         <div>
           <BiUser />
           <p>
-            Make the most of Industry <br /> Webinar Events
+            Access & Analyse Results <br /> of Citizens Engagement
           </p>
         </div>
         <div className="btn">
@@ -68,13 +73,12 @@ const SideBar = () => {
           </Link>
         </div>
       </div>
-      <div className="tab-5">
-        <h4>SMARTCITIESWORLD NEWSLETTERS (DAILY/WEEKLY)</h4>
+      <div className="tab-4">
+        <h4> TAKE PART IN CITIZEN ENGAGEMENT PROJECTS </h4>
         <hr />
         <p>
-          Our editorial newsletter pulls together our latest news items into one
-          email, direct to your inbox. We also feature our latest city
-          interviews, Special Reports and Guest Opinions.
+          Our Citizen Engagment Team invites Citizens Opinion / Particiaption in Surveys through
+          email, direct to your inbox. We also email about Smart City Projects. Special Events / Gatherings in your city.
         </p>
         <div>
           <input

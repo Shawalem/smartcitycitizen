@@ -3,7 +3,7 @@ import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import NavImg from "../../assets/logo.png";
 
 const Navbar = () => {

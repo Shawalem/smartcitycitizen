@@ -4,9 +4,9 @@ import './memberCard.scss'
 const MemberCard = () => {
   return (
     <div className='member_card'>
-        <h3>Paul Wilson</h3>
+        <h3>Shaw Alem</h3>
         <img src="./images/advisory_member.png" alt="member" />
-        <p>Advisory Board Chair</p>
+        <p>Citizens Engagement Advisor</p>
         <h4>SmartCityCitizen</h4>
     </div>
   )

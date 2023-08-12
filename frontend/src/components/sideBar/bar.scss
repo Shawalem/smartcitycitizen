@@ -10,8 +10,12 @@
       object-fit: cover;
     }
   }
-
-  .tab-4 {
+  .tab-2{
+    img{
+      width: 100%;
+    }
+  }
+  .tab-3 {
     background-color: $blue;
     color: white;
     padding: 1rem;
@@ -73,7 +77,7 @@
     }
   }
 
-  .tab-5 {
+  .tab-4 {
     text-align: center;
     margin: 20px 0;
     background-color: $blue;

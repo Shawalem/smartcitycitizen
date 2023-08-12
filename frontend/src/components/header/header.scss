@@ -56,6 +56,16 @@
   }
 }
 
+.ad_sec{
+  margin: 20px 0;
+  height: 100px;
+  text-align: center;
+  img{
+    width: 730px;
+    height: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .header_wrapper {
     padding: 1rem 2rem;
