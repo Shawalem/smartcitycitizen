@@ -13,7 +13,122 @@ const NewsDetails = () => {
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
 
+  const { data: parksandgreenspaces } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: wastemanagements } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: volunteers } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+
+  const { data: trafficcongestions } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: sustainabilities } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: solarprograms } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: smartindustries } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: smartbuildings } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+
+  const { data: publictransports } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+
+  const { data: pedestrians } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: partners } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+
+  const { data: inthenewses } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: noiseairqualities } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+
+  const { data: jobses } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
   const { data: editors } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: footercitylights } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: electricvehicleandchargings } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: events } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: donates } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+
+  const { data: digitalinfrastructures } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: cybersecurities } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: companies } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: citylights } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: climateandweathers } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: cleanenergies } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+
+  const { data: citizensecurities } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: blogs } = useFetch(
+    `/${collection}?populate=*&filters[id][$eq]=${id}`
+  );
+
+  const { data: articles } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
 
@@ -142,6 +257,33 @@ const NewsDetails = () => {
 
   // all data variable from backend
   const latestwebsData = latestwebs?.[0]?.attributes;
+  const articlesData = articles?.[0]?.attributes;
+  const wastemanagementsData = wastemanagements?.[0]?.attributes;
+  const volunteersData = volunteers?.[0]?.attributes;
+  const trafficcongestionsData = trafficcongestions?.[0]?.attributes;
+  const sustainabilitiesData = sustainabilities?.[0]?.attributes;
+  const solarprogramsData = solarprograms?.[0]?.attributes;
+  const smartindustriesData = smartindustries?.[0]?.attributes;
+  const smartbuildingsData = smartbuildings?.[0]?.attributes;
+  const publictransportsData = publictransports?.[0]?.attributes;
+  const pedestriansData = pedestrians?.[0]?.attributes;
+  const partnersData = partners?.[0]?.attributes;
+  const parksandgreenspacesData = parksandgreenspaces?.[0]?.attributes;
+  const noiseairqualitiesData = noiseairqualities?.[0]?.attributes;
+  const jobsesData = jobses?.[0]?.attributes;
+  const inthenewsesData = inthenewses?.[0]?.attributes;
+  const footercitylightsData = footercitylights?.[0]?.attributes;
+  const eventsData = events?.[0]?.attributes;
+  const electricvehicleandchargingsData = electricvehicleandchargings?.[0]?.attributes;
+  const donatesData = donates?.[0]?.attributes;
+  const digitalinfrastructuresData = digitalinfrastructures?.[0]?.attributes;
+  const cybersecuritiesData = cybersecurities?.[0]?.attributes;
+  const companiesData = companies?.[0]?.attributes;
+  const climateandweathersData = climateandweathers?.[0]?.attributes;
+  const cleanenergiesData = cleanenergies?.[0]?.attributes;
+  const citylightsData = citylights?.[0]?.attributes;
+  const citizensecuritiesData = citizensecurities?.[0]?.attributes;
+  const blogsData = blogs?.[0]?.attributes;
   const specialsData = specials?.[0]?.attributes;
   const editorsData = editors?.[0]?.attributes;
   const cityprofilesData = cityprofiles?.[0]?.attributes;
@@ -177,6 +319,33 @@ const NewsDetails = () => {
   // Extract the necessary details from the fetched data
   const title =
     latestwebsData?.title ||
+    articlesData?.title ||
+    wastemanagementsData?.title ||
+    volunteersData?.title ||
+    trafficcongestionsData?.title ||
+    sustainabilitiesData?.title ||
+    solarprogramsData?.title ||
+    smartindustriesData?.title ||
+    smartbuildingsData?.title ||
+    publictransportsData?.title ||
+    pedestriansData?.title ||
+    partnersData?.title ||
+    parksandgreenspacesData?.title ||
+    noiseairqualitiesData?.title ||
+    jobsesData?.title ||
+    inthenewsesData?.title ||
+    eventsData?.title ||
+    footercitylightsData?.title ||
+    electricvehicleandchargingsData?.title ||
+    donatesData?.title ||
+    digitalinfrastructuresData?.title ||
+    companiesData?.title ||
+    cybersecuritiesData?.title ||
+    climateandweathersData?.title ||
+    cleanenergiesData?.title ||
+    citylightsData?.title ||
+    citizensecuritiesData?.title ||
+    blogsData?.title ||
     specialsData?.title ||
     editorsData?.title ||
     cityprofilesData?.title ||
@@ -212,6 +381,33 @@ const NewsDetails = () => {
   // extrat data author from backend 
   const author =
     latestwebsData?.author ||
+    articlesData?.author ||
+    wastemanagementsData?.author ||
+    volunteersData?.author ||
+    trafficcongestionsData?.author ||
+    sustainabilitiesData?.author ||
+    solarprogramsData?.author ||
+    smartindustriesData?.author ||
+    smartbuildingsData?.author ||
+    publictransportsData?.author ||
+    pedestriansData?.author ||
+    partnersData?.author ||
+    parksandgreenspacesData?.author ||
+    noiseairqualitiesData?.author ||
+    jobsesData?.author ||
+    inthenewsesData?.author ||
+    footercitylightsData?.author ||
+    eventsData?.author ||
+    electricvehicleandchargingsData?.author ||
+    donatesData?.author ||
+    digitalinfrastructuresData?.author ||
+    cybersecuritiesData?.author ||
+    companiesData?.author ||
+    climateandweathersData?.author ||
+    cleanenergiesData?.author ||
+    citylightsData?.author ||
+    citizensecuritiesData?.author ||
+    blogsData?.author ||
     specialsData?.author ||
     editorsData?.author ||
     cityprofilesData?.author ||
@@ -248,6 +444,33 @@ const NewsDetails = () => {
   const date =
     latestwebsData?.date ||
     specialsData?.date ||
+    wastemanagementsData?.date ||
+    volunteersData?.date ||
+    trafficcongestionsData?.date ||
+    sustainabilitiesData?.date ||
+    solarprogramsData?.date ||
+    smartindustriesData?.date ||
+    smartbuildingsData?.date ||
+    publictransportsData?.date ||
+    pedestriansData?.date ||
+    partnersData?.date ||
+    parksandgreenspacesData?.date ||
+    noiseairqualitiesData?.date ||
+    jobsesData?.date ||
+    inthenewsesData?.date ||
+    footercitylightsData?.date ||
+    eventsData?.date ||
+    electricvehicleandchargingsData?.date ||
+    donatesData?.date ||
+    digitalinfrastructuresData?.date ||
+    cybersecuritiesData?.date ||
+    companiesData?.date ||
+    climateandweathersData?.date ||
+    citylightsData?.date ||
+    cleanenergiesData?.date ||
+    citizensecuritiesData?.date ||
+    blogsData?.date ||
+    articlesData?.date ||
     editorsData?.date ||
     cityprofilesData?.date ||
     researchesData?.date ||
@@ -283,6 +506,33 @@ const NewsDetails = () => {
   const img =
     latestwebsData?.img?.data?.attributes?.url ||
     specialsData?.img?.data?.attributes?.url ||
+    wastemanagementsData?.img?.data?.attributes?.url ||
+    volunteersData?.img?.data?.attributes?.url ||
+    trafficcongestionsData?.img?.data?.attributes?.url ||
+    sustainabilitiesData?.img?.data?.attributes?.url ||
+    solarprogramsData?.img?.data?.attributes?.url ||
+    smartindustriesData?.img?.data?.attributes?.url ||
+    smartbuildingsData?.img?.data?.attributes?.url ||
+    publictransportsData?.img?.data?.attributes?.url ||
+    pedestriansData?.img?.data?.attributes?.url ||
+    partnersData?.img?.data?.attributes?.url ||
+    parksandgreenspacesData?.img?.data?.attributes?.url ||
+    noiseairqualitiesData?.img?.data?.attributes?.url ||
+    jobsesData?.img?.data?.attributes?.url ||
+    inthenewsesData?.img?.data?.attributes?.url ||
+    footercitylightsData?.img?.data?.attributes?.url ||
+    eventsData?.img?.data?.attributes?.url ||
+    electricvehicleandchargingsData?.img?.data?.attributes?.url ||
+    donatesData?.img?.data?.attributes?.url ||
+    digitalinfrastructuresData?.img?.data?.attributes?.url ||
+    cybersecuritiesData?.img?.data?.attributes?.url ||
+    companiesData?.img?.data?.attributes?.url ||
+    climateandweathersData?.img?.data?.attributes?.url ||
+    cleanenergiesData?.img?.data?.attributes?.url ||
+    citylightsData?.img?.data?.attributes?.url ||
+    citizensecuritiesData?.img?.data?.attributes?.url ||
+    blogsData?.img?.data?.attributes?.url ||
+    articlesData?.img?.data?.attributes?.url ||
     editorsData?.img?.data?.attributes?.url ||
     cityprofilesData?.img?.data?.attributes?.url ||
     researchesData?.img?.data?.attributes?.url ||
@@ -317,7 +567,34 @@ const NewsDetails = () => {
     // extrat data date from backend 
     const description =
     latestwebsData?.description ||
+    citylightsData?.description ||
+    wastemanagementsData?.description ||
+    volunteersData?.description ||
+    trafficcongestionsData?.description ||
+    sustainabilitiesData?.description ||
+    solarprogramsData?.description ||
+    smartindustriesData?.description ||
+    smartbuildingsData?.description ||
+    publictransportsData?.description ||
+    pedestriansData?.description ||
+    partnersData?.description ||
+    parksandgreenspacesData?.description ||
+    noiseairqualitiesData?.description ||
+    jobsesData?.description ||
+    inthenewsesData?.description ||
+    eventsData?.description ||
+    footercitylightsData?.description ||
+    electricvehicleandchargingsData?.description ||
+    donatesData?.description ||
+    digitalinfrastructuresData?.description ||
+    cybersecuritiesData?.description ||
+    companiesData?.description ||
+    climateandweathersData?.description ||
     specialsData?.description ||
+    cleanenergiesData?.description ||
+    citizensecuritiesData?.description ||
+    blogsData?.description ||
+    articlesData?.description ||
     editorsData?.description ||
     cityprofilesData?.description ||
     researchesData?.description ||
