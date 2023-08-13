@@ -39,11 +39,7 @@ const SideBar = () => {
       <div className="tab-1">
         <img src={NavImg} alt="poster" />
       </div>
-      <div className="tab-2">
-        <a href="/">
-        <img src="./images/ad.gif" alt="ad" />
-        </a>
-      </div>
+      
       <div className="tab-3">
         <h4>BECAME A MEMBER</h4>
         <div>
@@ -72,6 +68,11 @@ const SideBar = () => {
             <button>Login</button>
           </Link>
         </div>
+      </div>
+      <div className="tab-2">
+        <a href="/">
+        <img src="./images/ad.gif" alt="ad" />
+        </a>
       </div>
       <div className="tab-4">
         <h4> TAKE PART IN CITIZEN ENGAGEMENT PROJECTS </h4>
