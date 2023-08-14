@@ -180,6 +180,9 @@ const NewsDetails = () => {
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
 
+                {/* WORK ON TOMOROW */}
+
+
   const { data: trendreports } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );

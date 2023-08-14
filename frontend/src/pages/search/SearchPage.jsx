@@ -12,118 +12,252 @@ const SearchPage = () => {
   console.log(searchTerm);
   // get all products based on search term
   // get latest news
-  const { data: allnewses } = useFetch(
-    `/allnewses?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-  // get editors pick
-  const { data: editors } = useFetch(
-    `/editors?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  // get latest webinar pick
-  const { data: latestwebs } = useFetch(
-    `/latestwebs?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  // get special reports
-  const { data: specials } = useFetch(
-    `/specials?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  // get city profiles
-  const { data: cityprofiles } = useFetch(
-    `/cityprofiles?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  // get search
-  const { data: researches } = useFetch(
-    `/researches?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  // get Webinar
-  const { data: webinars } = useFetch(
-    `/webinars?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: aiandmachines } = useFetch(
-    `/aiandmachines?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: analytics } = useFetch(
-    `/analytics?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: marketmonets } = useFetch(
-    `/marketmonets?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: privacysecurities } = useFetch(
-    `/privacysecurities?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: governancecitizens } = useFetch(
-    `/governancecitizens?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: citizenengagements } = useFetch(
-    `/citizenengagements?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: citizensecurities } = useFetch(
-    `/citizensecurities?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: energyenvironments } = useFetch(
-    `/energyenvironments?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: airqualities } = useFetch(
-    `/airqualities?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: batteriesrenewables } = useFetch(
-    `/batteriesrenewables?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: solarpowers } = useFetch(
-    `/solarpowers?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: windpowers } = useFetch(
-    `/windpowers?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: mobilities } = useFetch(
-    `/mobilities?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: airtravels } = useFetch(
-    `/airtravels?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: electricvehicles } = useFetch(
-    `/electricvehicles?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: railtravels } = useFetch(
-    `/railtravels?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: urbanspaces } = useFetch(
-    `/urbanspaces?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: commercialbuildings } = useFetch(
-    `/commercialbuildings?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: culturalspaces } = useFetch(
-    `/culturalspaces?populate=*&filters[title][$contains]=${searchTerm}`
-  );
-
-  const { data: municipalbuildings } = useFetch(
-    `/municipalbuildings?populate=*&filters[title][$contains]=${searchTerm}`
-  );
+    // import from backend
+    const { data: allnewses } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: parksandgreenspaces } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: wastemanagements } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: volunteers } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+  
+    const { data: trafficcongestions } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: sustainabilities } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: solarprograms } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: smartindustries } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: smartbuildings } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+  
+    const { data: publictransports } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+  
+    const { data: pedestrians } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: partners } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+  
+    const { data: inthenewses } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: noiseairqualities } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+  
+    const { data: jobses } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: editors } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: footercitylights } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: electricvehicleandchargings } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: events } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: donates } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+  
+    const { data: digitalinfrastructures } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: cybersecurities } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: companies } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: citylights } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: climateandweathers } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: cleanenergies } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+  
+    const { data: citizensecurities } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: blogs } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: articles } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: cityprofiles } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: researches } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: webinars } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: opinions } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: editorblogs } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: cityresources } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: smartcities } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: whitepapers } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: prodcasts } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: aiandmachines } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: analytics } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: marketmonets } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: trendreports } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: privacysecurities } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: governancecitizens } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: citizenengagements } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: energyenvironments } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: airqualities } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: batteriesrenewables } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: solarpowers } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: windpowers } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: mobilities } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: airtravels } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: electricvehicles } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: railtravels } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: urbanspaces } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: commercialbuildings } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: culturalspaces } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: municipalbuildings } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+  
+    const { data: latestwebs } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
+    const { data: specials } = useFetch(
+      `/${collection}?populate=*&filters[id][$eq]=${id}`
+    );
 
   return (
     <>
@@ -148,6 +282,118 @@ const SearchPage = () => {
                   />
                 ))}
 
+                {parksandgreenspaces?.map((parksandgreenspace) => (
+                  <NewsCard
+                    key={parksandgreenspace.id}
+                    allnews={parksandgreenspace}
+                    collection="parksandgreenspaces"
+                  />
+                ))}
+
+                {wastemanagements?.map((wastemanagement) => (
+                  <NewsCard
+                    key={wastemanagement.id}
+                    allnews={wastemanagement}
+                    collection="wastemanagements"
+                  />
+                ))}
+
+                {volunteers?.map((volunteer) => (
+                  <NewsCard
+                    key={volunteer.id}
+                    allnews={volunteers}
+                    collection="volunteers"
+                  />
+                ))}
+
+                {trafficcongestions?.map((trafficcongestion) => (
+                  <NewsCard
+                    key={trafficcongestion.id}
+                    allnews={trafficcongestion}
+                    collection="trafficcongestions"
+                  />
+                ))}
+
+                {sustainabilities?.map((sustainability) => (
+                  <NewsCard
+                    key={sustainability.id}
+                    allnews={sustainability}
+                    collection="sustainabilities"
+                  />
+                ))}
+
+                {solarprograms?.map((solarprogram) => (
+                  <NewsCard
+                    key={solarprogram.id}
+                    allnews={solarprogram}
+                    collection="solarprograms"
+                  />
+                ))}
+
+                {smartindustries?.map((smartindustry) => (
+                  <NewsCard
+                    key={smartindustry.id}
+                    allnews={smartindustry}
+                    collection="smartindustries"
+                  />
+                ))}
+
+                {smartbuildings?.map((smartbuilding) => (
+                  <NewsCard
+                    key={smartbuilding.id}
+                    allnews={smartbuilding}
+                    collection="smartbuildings"
+                  />
+                ))}
+
+                {publictransports?.map((publictransport) => (
+                  <NewsCard
+                    key={publictransport.id}
+                    allnews={publictransport}
+                    collection="publictransports"
+                  />
+                ))}
+
+                {pedestrians?.map((pedestrian) => (
+                  <NewsCard
+                    key={pedestrian.id}
+                    allnews={pedestrian}
+                    collection="pedestrians"
+                  />
+                ))}
+
+                {partners?.map((partner) => (
+                  <NewsCard
+                    key={partner.id}
+                    allnews={partner}
+                    collection="partners"
+                  />
+                ))}
+
+                {inthenewses?.map((inthenews) => (
+                  <NewsCard
+                    key={inthenews.id}
+                    allnews={inthenews}
+                    collection="inthenewses"
+                  />
+                ))}
+
+                {noiseairqualities?.map((noiseairquality) => (
+                  <NewsCard
+                    key={noiseairquality.id}
+                    allnews={noiseairquality}
+                    collection="noiseairqualities"
+                  />
+                ))}
+
+                {jobses?.map((jobs) => (
+                  <NewsCard
+                    key={jobs.id}
+                    allnews={jobs}
+                    collection="jobses"
+                  />
+                ))}
+
                 {editors?.map((editor) => (
                   <NewsCard
                     key={editor.id}
@@ -156,19 +402,107 @@ const SearchPage = () => {
                   />
                 ))}
 
-                {latestwebs?.map((latestweb) => (
+                {footercitylights?.map((footercitylight) => (
                   <NewsCard
-                    key={latestweb.id}
-                    allnews={latestweb}
-                    collection="latestwebs"
+                    key={footercitylight.id}
+                    allnews={footercitylight}
+                    collection="footercitylights"
                   />
                 ))}
 
-                {specials?.map((special) => (
+                {electricvehicleandchargings?.map((electricvehicleandcharging) => (
                   <NewsCard
-                    key={special.id}
-                    allnews={special}
-                    collection="specials"
+                    key={electricvehicleandcharging.id}
+                    allnews={electricvehicleandcharging}
+                    collection="electricvehicleandchargings"
+                  />
+                ))}
+
+                {events?.map((event) => (
+                  <NewsCard
+                    key={event.id}
+                    allnews={event}
+                    collection="events"
+                  />
+                ))}
+
+                {donates?.map((donate) => (
+                  <NewsCard
+                    key={donate.id}
+                    allnews={donate}
+                    collection="donates"
+                  />
+                ))}
+
+                {digitalinfrastructures?.map((digitalinfrastructure) => (
+                  <NewsCard
+                    key={digitalinfrastructure.id}
+                    allnews={digitalinfrastructure}
+                    collection="digitalinfrastructures"
+                  />
+                ))}
+
+                {cybersecurities?.map((cybersecuritie) => (
+                  <NewsCard
+                    key={cybersecuritie.id}
+                    allnews={cybersecuritie}
+                    collection="cybersecurities"
+                  />
+                ))}
+
+                {companies?.map((companie) => (
+                  <NewsCard
+                    key={companie.id}
+                    allnews={companie}
+                    collection="companies"
+                  />
+                ))}
+
+                {citylights?.map((citylight) => (
+                  <NewsCard
+                    key={citylight.id}
+                    allnews={citylight}
+                    collection="citylights"
+                  />
+                ))}
+
+                {climateandweathers?.map((climateandweather) => (
+                  <NewsCard
+                    key={climateandweather.id}
+                    allnews={climateandweather}
+                    collection="climateandweathers"
+                  />
+                ))}
+
+                {cleanenergies?.map((cleanenergie) => (
+                  <NewsCard
+                    key={cleanenergie.id}
+                    allnews={cleanenergie}
+                    collection="cleanenergies"
+                  />
+                ))}
+
+                {citizensecurities?.map((citizensecuritie) => (
+                  <NewsCard
+                    key={citizensecuritie.id}
+                    allnews={citizensecuritie}
+                    collection="citizensecurities"
+                  />
+                ))}
+
+                {blogs?.map((blog) => (
+                  <NewsCard
+                    key={blog.id}
+                    allnews={blog}
+                    collection="blogs"
+                  />
+                ))}
+
+                {articles?.map((article) => (
+                  <NewsCard
+                    key={article.id}
+                    allnews={article}
+                    collection="articles"
                   />
                 ))}
 
@@ -196,6 +530,54 @@ const SearchPage = () => {
                   />
                 ))}
 
+                {opinions?.map((opinion) => (
+                  <NewsCard
+                    key={opinion.id}
+                    allnews={opinion}
+                    collection="opinions"
+                  />
+                ))}
+
+                {editorblogs?.map((editorblog) => (
+                  <NewsCard
+                    key={editorblog.id}
+                    allnews={editorblog}
+                    collection="editorblogs"
+                  />
+                ))}
+
+                {cityresources?.map((cityresource) => (
+                  <NewsCard
+                    key={cityresource.id}
+                    allnews={cityresource}
+                    collection="cityresources"
+                  />
+                ))}
+
+                {smartcities?.map((smartcity) => (
+                  <NewsCard
+                    key={smartcity.id}
+                    allnews={smartcity}
+                    collection="smartcities"
+                  />
+                ))}
+
+                {whitepapers?.map((whitepaper) => (
+                  <NewsCard
+                    key={whitepaper.id}
+                    allnews={whitepaper}
+                    collection="whitepapers"
+                  />
+                ))}
+
+                {prodcasts?.map((prodcast) => (
+                  <NewsCard
+                    key={prodcast.id}
+                    allnews={prodcast}
+                    collection="prodcasts"
+                  />
+                ))}
+
                 {aiandmachines?.map((aiandmachine) => (
                   <NewsCard
                     key={aiandmachine.id}
@@ -220,6 +602,15 @@ const SearchPage = () => {
                   />
                 ))}
 
+                {/* WORK ON TOMOROW */}
+                {trendreports?.map((trendreport) => (
+                  <NewsCard
+                    key={trendreport.id}
+                    allnews={trendreport}
+                    collection="trendreports"
+                  />
+                ))}
+                
                 {privacysecurities?.map((privacysecurity) => (
                   <NewsCard
                     key={privacysecurity.id}
@@ -227,7 +618,7 @@ const SearchPage = () => {
                     collection="privacysecurities"
                   />
                 ))}
-
+                
                 {governancecitizens?.map((governancecitizen) => (
                   <NewsCard
                     key={governancecitizen.id}
@@ -235,7 +626,7 @@ const SearchPage = () => {
                     collection="governancecitizens"
                   />
                 ))}
-
+                
                 {citizenengagements?.map((citizenengagement) => (
                   <NewsCard
                     key={citizenengagement.id}
@@ -243,15 +634,7 @@ const SearchPage = () => {
                     collection="citizenengagements"
                   />
                 ))}
-
-                {citizensecurities?.map((citizensecuritie) => (
-                  <NewsCard
-                    key={citizensecuritie.id}
-                    allnews={citizensecuritie}
-                    collection="citizensecurities"
-                  />
-                ))}
-
+                
                 {energyenvironments?.map((energyenvironment) => (
                   <NewsCard
                     key={energyenvironment.id}
@@ -259,15 +642,15 @@ const SearchPage = () => {
                     collection="energyenvironments"
                   />
                 ))}
-
-                {airqualities?.map((airqualitie) => (
+                
+                {airqualities?.map((airquality) => (
                   <NewsCard
-                    key={airqualitie.id}
-                    allnews={airqualitie}
+                    key={airquality.id}
+                    allnews={airquality}
                     collection="airqualities"
                   />
                 ))}
-
+                
                 {batteriesrenewables?.map((batteriesrenewable) => (
                   <NewsCard
                     key={batteriesrenewable.id}
@@ -275,7 +658,7 @@ const SearchPage = () => {
                     collection="batteriesrenewables"
                   />
                 ))}
-
+                
                 {solarpowers?.map((solarpower) => (
                   <NewsCard
                     key={solarpower.id}
@@ -283,7 +666,7 @@ const SearchPage = () => {
                     collection="solarpowers"
                   />
                 ))}
-
+                
                 {windpowers?.map((windpower) => (
                   <NewsCard
                     key={windpower.id}
@@ -291,7 +674,7 @@ const SearchPage = () => {
                     collection="windpowers"
                   />
                 ))}
-
+                
                 {mobilities?.map((mobility) => (
                   <NewsCard
                     key={mobility.id}
@@ -299,7 +682,7 @@ const SearchPage = () => {
                     collection="mobilities"
                   />
                 ))}
-
+                
                 {airtravels?.map((airtravel) => (
                   <NewsCard
                     key={airtravel.id}
@@ -307,7 +690,7 @@ const SearchPage = () => {
                     collection="airtravels"
                   />
                 ))}
-
+                
                 {electricvehicles?.map((electricvehicle) => (
                   <NewsCard
                     key={electricvehicle.id}
@@ -355,6 +738,23 @@ const SearchPage = () => {
                     collection="municipalbuildings"
                   />
                 ))}
+
+                {latestwebs?.map((latestweb) => (
+                  <NewsCard
+                    key={latestweb.id}
+                    allnews={latestweb}
+                    collection="latestwebs"
+                  />
+                ))}
+
+                {specials?.map((special) => (
+                  <NewsCard
+                    key={special.id}
+                    allnews={special}
+                    collection="specials"
+                  />
+                ))}
+
               </div>
             </div>
           </div>
