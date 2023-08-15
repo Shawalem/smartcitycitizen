@@ -42,6 +42,7 @@ const Smartproject = () => {
               </div>
               <SideBar />
             </div>
+            
             <div className="webinar">
               <h1>City Profile</h1>
               <div className="webinar_wrapper">
