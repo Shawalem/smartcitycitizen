@@ -14,7 +14,6 @@ const TeamCard = ({ team }) => {
     <div className="memberCard">
       <h3>{team.attributes.position}</h3>
       <div className="member_info">
-        <img src={`${teamImg}`} alt="member" />
         <div>
           <h4>{team.attributes.heading}</h4>
           <p>
