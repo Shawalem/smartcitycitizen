@@ -13,6 +13,8 @@ const CityProfile = () => {
   // get browse smart citys 
   const { data: citylights } = useFetch('/citylights?populate=*');
   const { data: articles } = useFetch('/articles?populate=*');
+  const { data: companies } = useFetch('/companies?populate=*');
+  const { data: inthenewses } = useFetch('/inthenewses?populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate")
 
@@ -61,6 +63,29 @@ const CityProfile = () => {
                 }
                 </div>
               </div>
+
+              <div className="browse_city">
+                <h1>Companies</h1>
+                <div className="all_city">
+                {
+                    companies?.slice(0, 3).map((companie)=>(
+                      <NewsCard key={companie.id} allnews={companie} collection="companies" />
+                    ))
+                }
+                </div>
+              </div>
+
+              <div className="browse_city">
+                <h1>In The News</h1>
+                <div className="all_city">
+                {
+                    inthenewses?.slice(0, 3).map((inthenews)=>(
+                      <NewsCard key={inthenews.id} allnews={inthenews} collection="inthenewses" />
+                    ))
+                }
+                </div>
+              </div>
+              
               </div>
               <SideBar />
             </div>
