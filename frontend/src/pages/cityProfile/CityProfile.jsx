@@ -11,7 +11,8 @@ const CityProfile = () => {
   const { data: cityresources } = useFetch("/cityresources?populate=*");
 
   // get browse smart citys 
-  const { data: opinions } = useFetch("/opinions?populate=*");
+  const { data: citylights } = useFetch('/citylights?populate=*');
+  const { data: articles } = useFetch('/articles?populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate")
 
@@ -40,13 +41,24 @@ const CityProfile = () => {
                   }
                 </div>
               <div className="browse_city">
-                <h1>Opinions</h1>
+                <h1>Smart City Projects</h1>
                 <div className="all_city">
                 {
-                    opinions?.slice(0, 3).map((opinion)=>(
-                      <NewsCard key={opinion.id} allnews={opinion} collection="opinions" />
+                    citylights?.slice(0, 3).map((citylight)=>(
+                      <NewsCard key={citylight.id} allnews={citylight} collection="citylights" />
                     ))
-                  }
+                }
+                </div>
+              </div>
+
+              <div className="browse_city">
+                <h1>Articles</h1>
+                <div className="all_city">
+                {
+                    articles?.slice(0, 3).map((article)=>(
+                      <NewsCard key={article.id} allnews={article} collection="articles" />
+                    ))
+                }
                 </div>
               </div>
               </div>
