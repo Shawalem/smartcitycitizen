@@ -11,10 +11,13 @@ const Inthenews = () => {
 
   // get city lights 
   const { data: inthenewses } = useFetch('/inthenewses?populate=*');
-  console.log(inthenewses);
 
   // get city Webinar 
-  const { data: opinions } = useFetch('/opinions?populate=*');
+  const { data: companies } = useFetch('/companies?populate=*');
+  const { data: articles } = useFetch('/articles?populate=*');
+  const { data: cityresources } = useFetch("/cityresources?populate=*");
+  const { data: citylights } = useFetch('/citylights?populate=*');
+
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
@@ -40,11 +43,38 @@ const Inthenews = () => {
               <SideBar />
             </div>
             <div className="webinar">
-              <h1>Opinions</h1>
+              <h1>City Profile</h1>
               <div className="webinar_wrapper">
-              {opinions?.slice(0, 4).map((opinion) => (
-                    <NewsCard key={opinion.id} allnews={opinion} collection="opinions" />
+              {cityresources?.slice(0, 4).map((cityresource) => (
+                    <NewsCard key={cityresource.id} allnews={cityresource} collection="cityresources" />
                   ))}
+              </div>
+            </div>
+
+            <div className="webinar">
+              <h1>Smart City Projects</h1>
+              <div className="webinar_wrapper">
+              {citylights?.slice(0, 4).map((citylight) => (
+                    <NewsCard key={citylight.id} allnews={citylight} collection="citylights" />
+              ))}
+              </div>
+            </div>
+
+            <div className="webinar">
+              <h1>Articles</h1>
+              <div className="webinar_wrapper">
+              {articles?.slice(0, 4).map((article) => (
+                    <NewsCard key={article.id} allnews={article} collection="articles" />
+              ))}
+              </div>
+            </div>
+
+            <div className="webinar">
+              <h1>Companies</h1>
+              <div className="webinar_wrapper">
+              {companies?.slice(0, 4).map((companie) => (
+                    <NewsCard key={companie.id} allnews={companie} collection="companies" />
+              ))}
               </div>
             </div>
           </div>

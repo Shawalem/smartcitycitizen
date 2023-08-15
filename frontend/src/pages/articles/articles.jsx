@@ -14,7 +14,10 @@ const Articles = () => {
   console.log(articles);
 
   // get city Webinar 
-  const { data: opinions } = useFetch('/opinions?populate=*');
+  const { data: cityresources } = useFetch("/cityresources?populate=*");
+  const { data: citylights } = useFetch('/citylights?populate=*');
+  const { data: companies } = useFetch('/companies?populate=*');
+  const { data: inthenewses } = useFetch('/inthenewses?populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
@@ -40,11 +43,38 @@ const Articles = () => {
               <SideBar />
             </div>
             <div className="webinar">
-              <h1>Opinions</h1>
+              <h1>City Profile</h1>
               <div className="webinar_wrapper">
-              {opinions?.slice(0, 4).map((opinion) => (
-                    <NewsCard key={opinion.id} allnews={opinion} collection="opinions" />
+              {cityresources?.slice(0, 4).map((cityresource) => (
+                    <NewsCard key={cityresource.id} allnews={cityresource} collection="cityresources" />
                   ))}
+              </div>
+            </div>
+
+            <div className="webinar">
+              <h1>Smart City Projects</h1>
+              <div className="webinar_wrapper">
+              {citylights?.slice(0, 4).map((citylight) => (
+                    <NewsCard key={citylight.id} allnews={citylight} collection="citylights" />
+                  ))}
+              </div>
+            </div>
+
+            <div className="webinar">
+              <h1>Companies</h1>
+              <div className="webinar_wrapper">
+              {companies?.slice(0, 4).map((companie) => (
+                    <NewsCard key={companie.id} allnews={companie} collection="companies" />
+                  ))}
+              </div>
+            </div>
+
+            <div className="webinar">
+              <h1>In The News</h1>
+              <div className="webinar_wrapper">
+              {inthenewses?.slice(0, 4).map((inthenews) => (
+                    <NewsCard key={inthenews.id} allnews={inthenews} collection="inthenewses" />
+              ))}
               </div>
             </div>
           </div>

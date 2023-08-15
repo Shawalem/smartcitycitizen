@@ -11,8 +11,8 @@ const CityProfile = () => {
   const { data: cityresources } = useFetch("/cityresources?populate=*");
 
   // get browse smart citys 
-  const { data: citylights } = useFetch('/citylights?populate=*');
   const { data: articles } = useFetch('/articles?populate=*');
+  const { data: citylights } = useFetch('/citylights?populate=*');
   const { data: companies } = useFetch('/companies?populate=*');
   const { data: inthenewses } = useFetch('/inthenewses?populate=*');
 
