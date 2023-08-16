@@ -4,8 +4,10 @@ import useFetch from "../../hooks/useFetch";
 
 const Citizenengagement = () => {
   // get special reports
-  const { data: citizenengagements } = useFetch("/citizenengagements?populate=*");
-  console.log(citizenengagements);
+  const { data: citizenengagements } = useFetch(
+    "/citizenengagements?populate=*"
+  );
+  const { data: opinions } = useFetch("/opinions?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
@@ -23,6 +25,14 @@ const Citizenengagement = () => {
         pagePara={headerparagraphs?.[0]?.attributes.citizenengagement_paragraph}
         citizenengagements={citizenengagements}
       />
+      <div className="webinars">
+        <h1>Opinions</h1>
+        <div className="webinars_wrap">
+          {opinions?.map((opinion) => (
+            <NewsCard key={opinion.id} allnews={opinion} collection="opinion" />
+          ))}
+        </div>
+      </div>
     </>
   );
 };
