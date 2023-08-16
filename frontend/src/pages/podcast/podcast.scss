@@ -3,12 +3,6 @@
 .podcast_wrapper {
   margin-top: 100px;
   padding: 2rem;
-  .heading {
-    h1 {
-      @include heading;
-      margin-bottom: 20px;
-    }
-  }
 
   
   .latest_news {

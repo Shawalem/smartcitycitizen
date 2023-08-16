@@ -28,14 +28,13 @@ const Opinions = () => {
       <section>
         <div className="container">
           <div className="Opinions_wrapper">
-            <div className="heading">
+            
+            <div className="latest_news">
+              <div className="news_sec">
               <h1>{headerparagraphs?.[0]?.attributes.opinions_title}</h1>
               <ReactMarkdown>
                 {headerparagraphs?.[0]?.attributes.opinions_paragraph}
               </ReactMarkdown>
-            </div>
-            <div className="latest_news">
-              <div className="news_sec">
                 <div className="newses">
                   {opinions?.map((opinion) => (
                     <NewsCard key={opinion.id} allnews={opinion} collection="opinions" />
