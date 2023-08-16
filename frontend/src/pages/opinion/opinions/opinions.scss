@@ -3,18 +3,12 @@
 .Opinions_wrapper {
   margin-top: 100px;
   padding: 2rem;
-  .heading {
-    h1 {
-      @include heading;
-      margin-bottom: 50px;
-    }
-  }
   .latest_news {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     .news_sec {
-      grid-column: 1/3;
+      grid-column: 1 / 3;
       .newses {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
