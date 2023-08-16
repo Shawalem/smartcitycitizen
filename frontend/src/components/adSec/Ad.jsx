@@ -3,7 +3,7 @@ import useFetch from '../../hooks/useFetch'
 
 const Ad = ({adpanels}) => {
 
-  if (!allnews) {
+  if (!adpanels) {
     return null; // or you can return a placeholder component or message
   }
 
