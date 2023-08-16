@@ -3,7 +3,7 @@ import useFetch from '../../hooks/useFetch'
 
 const Ad = ({adpanels}) => {
 
-  const adImg = adpanels.attributes?.img?.data?.attributes.url; 
+  const adImg = adpanels?.attributes?.img?.data?.attributes?.url;
   
   return (
     <div className='container'>
