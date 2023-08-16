@@ -2,7 +2,6 @@ import './ad.scss'
 import useFetch from '../../hooks/useFetch'
 
 const Ad = ({adpanels}) => {
-  const { data: adpanels } = useFetch("/adpanels?populate=*");
 
   const adImg = adpanels.attributes?.img?.data?.attributes.url; 
   
