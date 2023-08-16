@@ -1,10 +1,15 @@
 import './ad.scss'
+import useFetch from '../../hooks/useFetch'
 
-const Ad = () => {
+const Ad = ({adpanels}) => {
+  const { data: adpanels } = useFetch("/adpanels?populate=*");
+
+  const adImg = adpanels.attributes?.img?.data?.attributes.url; 
+  
   return (
     <div className='container'>
         <div className="ad">
-            <img src="./images/headerAd.gif" alt="ad" />
+            <img src={adImg} alt="ad" />
         </div>
     </div>
   )
