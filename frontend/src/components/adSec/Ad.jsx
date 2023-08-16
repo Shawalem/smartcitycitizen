@@ -9,7 +9,7 @@ const Ad = ({adpanels}) => {
   return (
     <div className='container'>
         <div className="ad">
-            <img src={adImg} alt="ad" />
+            <img src={`${adImg}`} alt="ad" />
         </div>
     </div>
   )
