@@ -1,13 +1,15 @@
 import './ad.scss'
 import useFetch from '../../hooks/useFetch'
 
-const Ad = ({adpanels}) => {
+const Ad = () => {
+
+  const { data: adpanels } = useFetch("/adpanels?populate=*")
 
   if (!adpanels) {
     return null; // or you can return a placeholder component or message
   }
 
-  const adImg = adpanels.attributes?.img?.data?.attributes.url;
+  const adImg = adpanels?.img?.data?.attributes?.url;
   console.log(adImg)
   
   return (
