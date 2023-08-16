@@ -3,7 +3,11 @@ import useFetch from '../../hooks/useFetch'
 
 const Ad = ({adpanels}) => {
 
-  const adImg = adpanels?.attributes?.img?.data?.attributes?.url;
+  if (!allnews) {
+    return null; // or you can return a placeholder component or message
+  }
+
+  const adImg = adpanels.attributes?.img?.data?.attributes?.url;
   console.log(adImg)
   
   return (
