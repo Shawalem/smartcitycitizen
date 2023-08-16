@@ -15,7 +15,7 @@ const Ad = () => {
   return (
     <div className='container'>
         <div className="ad">
-          <img src={`${adImg}`} alt="ad" />
+          <img src={`https://backend-app-lft6m.ondigitalocean.app${adImg}`} alt="ad" />
         </div>
     </div>
   )
