@@ -25,14 +25,7 @@ const Citizenengagement = () => {
         pagePara={headerparagraphs?.[0]?.attributes.citizenengagement_paragraph}
         citizenengagements={citizenengagements}
       />
-      <div className="webinars">
-        <h1>Opinions</h1>
-        <div className="webinars_wrap">
-          {opinions?.map((opinion) => (
-            <NewsCard key={opinion.id} allnews={opinion} collection="opinion" />
-          ))}
-        </div>
-      </div>
+      
     </>
   );
 };
