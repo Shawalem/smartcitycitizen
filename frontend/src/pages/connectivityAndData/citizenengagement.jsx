@@ -4,10 +4,8 @@ import useFetch from "../../hooks/useFetch";
 
 const Citizenengagement = () => {
   // get special reports
-  const { data: citizenengagements } = useFetch(
-    "/citizenengagements?populate=*"
-  );
-  const { data: opinions } = useFetch("/opinions?populate=*");
+  const { data: citizenengagements } = useFetch("/citizenengagements?populate=*");
+  console.log(citizenengagements);
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
@@ -25,7 +23,6 @@ const Citizenengagement = () => {
         pagePara={headerparagraphs?.[0]?.attributes.citizenengagement_paragraph}
         citizenengagements={citizenengagements}
       />
-      
     </>
   );
 };
