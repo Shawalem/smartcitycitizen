@@ -54,7 +54,7 @@ const Home = () => {
                     <NewsCard key={allnewse.id} allnews={allnewse} collection="allnewses"/>
                   ))}
                 </div>
-                <Link to="/news">
+                <Link className="morebtn" to="/news">
                     <button>Read More</button>
                 </Link>
                 <div className="editor_pick">
