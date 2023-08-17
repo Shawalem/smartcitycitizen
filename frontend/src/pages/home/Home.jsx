@@ -53,9 +53,6 @@ const Home = () => {
                   {allnewses?.slice(0, 4).map((allnewse) => (
                     <NewsCard key={allnewse.id} allnews={allnewse} collection="allnewses"/>
                   ))}
-                  <Link to="/news">
-                    <button>Read More</button>
-                  </Link>
                 </div>
                 <Link to="/news">
                     <button>Read More</button>
