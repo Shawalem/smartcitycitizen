@@ -71,7 +71,7 @@ const SideBar = () => {
       </div>
       <div className="tab-2">
         <a href="/">
-        <img src="./images/ad.gif" alt="ad" />
+        <img src={`./images/ad.gif`} alt="ad" />
         </a>
       </div>
       <div className="tab-4">

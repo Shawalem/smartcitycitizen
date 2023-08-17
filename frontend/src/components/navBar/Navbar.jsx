@@ -72,7 +72,7 @@ const Navbar = () => {
           <div className="nav2">
             <div className="link">
               <div className="realLink" onClick={handleLink}>
-                <Link to="/city-profile">Smart Cities</Link>
+                <Link to="/smart-city">Smart Cities</Link>
                 <RiArrowDownSLine />
               </div>
               <div className="subLink" ref={targetLink}>
