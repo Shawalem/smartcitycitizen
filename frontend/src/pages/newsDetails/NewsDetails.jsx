@@ -3,6 +3,7 @@ import { NewsCard, SideBar } from "../../components";
 import "./details.scss";
 import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import galary from '../../assets/galary.jpg'
 
 const NewsDetails = () => {
   const { id, collection } = useParams();
@@ -655,6 +656,53 @@ const NewsDetails = () => {
                 </div>
               </div>
               <SideBar />
+            </div>
+            <div className="galary">
+              <h1>Gallery</h1>
+              <div className="img_wrapper">
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              <div className="galary_img">
+                <img src={galary} alt="" />
+              </div>
+              </div>
             </div>
           </div>
         </div>

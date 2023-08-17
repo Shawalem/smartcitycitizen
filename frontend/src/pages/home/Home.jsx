@@ -3,9 +3,8 @@ import { NewsCard, SideBar } from "../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Link } from "react-router-dom";
-
 
 const Home = () => {
   // get latest news
@@ -28,9 +27,9 @@ const Home = () => {
   // get Webinar
   const { data: opinions } = useFetch("/opinions?populate=*");
 
-  // Heading and paragraph 
+  // Heading and paragraph
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
-  console.log(headerparagraphs)
+  console.log(headerparagraphs);
 
   return (
     <>
@@ -51,22 +50,32 @@ const Home = () => {
                 <h1>Latest</h1>
                 <div className="newses">
                   {allnewses?.slice(0, 4).map((allnewse) => (
-                    <NewsCard key={allnewse.id} allnews={allnewse} collection="allnewses"/>
+                    <NewsCard
+                      key={allnewse.id}
+                      allnews={allnewse}
+                      collection="allnewses"
+                    />
                   ))}
                 </div>
-                <Link className="morebtn" to="/news">
+                <div className="moreBtn">
+                  <Link to="/news">
                     <button>Read More</button>
-                </Link>
-                <div className="editor_pick">
+                  </Link>
+                </div>
+                <div className="blog">
                   <h1>BLOGS</h1>
                   {blogs?.slice(0, 1).map((blog) => (
                     <NewsCard key={blog.id} allnews={blog} collection="blogs" />
                   ))}
                 </div>
-                <div className="webinar">
+                <div className="Suggestions">
                   <h1>Suggestions</h1>
                   {privacysecurities?.slice(0, 1).map((privacysecurity) => (
-                    <NewsCard key={privacysecurity.id} allnews={privacysecurity} collection="privacysecurities"  />
+                    <NewsCard
+                      key={privacysecurity.id}
+                      allnews={privacysecurity}
+                      collection="privacysecurities"
+                    />
                   ))}
                 </div>
               </div>
@@ -77,36 +86,67 @@ const Home = () => {
               <h1>REPORTS</h1>
               <div className="report_wrapper">
                 {specials?.map((special) => (
-                  <NewsCard key={special.id} allnews={special} collection="specials" />
+                  <NewsCard
+                    key={special.id}
+                    allnews={special}
+                    collection="specials"
+                  />
                 ))}
               </div>
+              <div className="moreBtn">
+                  <Link to="/news">
+                    <button>Read More</button>
+                  </Link>
+                </div>
             </div>
             {/* city profile */}
             <div className="city_profile">
               <h1>CITY PROFILES</h1>
               <div className="profile_wrapper">
                 {cityresources?.slice(0, 4).map((cityresource) => (
-                  <NewsCard key={cityresource.id} allnews={cityresource} collection="cityresources" />
+                  <NewsCard
+                    key={cityresource.id}
+                    allnews={cityresource}
+                    collection="cityresources"
+                  />
                 ))}
               </div>
+              <div className="moreBtn">
+                  <Link to="/news">
+                    <button>Read More</button>
+                  </Link>
+                </div>
             </div>
             {/* smart Industries */}
             <div className="home_research">
               <h1>Smart Industries</h1>
               <div className="home_research_wrapper">
                 {smartindustries?.slice(0, 3).map((smartindustrie) => (
-                  <NewsCard key={smartindustrie.id} allnews={smartindustrie} collection="smartindustries" />
+                  <NewsCard
+                    key={smartindustrie.id}
+                    allnews={smartindustrie}
+                    collection="smartindustries"
+                  />
                 ))}
               </div>
             </div>
             {/* Opinions */}
-            <div className="home_webinars">
+            <div className="home_opinion">
               <h1>Opinions</h1>
-              <div className="home_webinars_wrapper">
-                {opinions?.slice(0, 4).map((opinion) => (
-                  <NewsCard key={opinion.id} allnews={opinion} collection="opinions" />
+              <div className="home_opinion_wrapper">
+                {opinions?.slice(0, 3).map((opinion) => (
+                  <NewsCard
+                    key={opinion.id}
+                    allnews={opinion}
+                    collection="opinions"
+                  />
                 ))}
               </div>
+              <div className="moreBtn">
+                  <Link to="/news">
+                    <button>Read More</button>
+                  </Link>
+                </div>
             </div>
           </div>
         </div>

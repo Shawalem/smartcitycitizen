@@ -34,8 +34,22 @@
   font-size: 1.5rem;
 }
 
+@mixin BTN {
+  padding: 1rem 2rem;
+  background-color: #0a6ebd;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
 //variable
 $primary-color: #e49b3e;
 $secondary-color: #dddddd;
-$blue:#0A6EBD;
+$blue: #0a6ebd;
 $black: #262626;

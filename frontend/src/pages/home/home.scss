@@ -4,7 +4,7 @@
 }
 
 .home_wrapper {
-  padding:2rem;
+  padding: 2rem;
   margin-top: 100px;
   .latest_news {
     display: grid;
@@ -18,6 +18,13 @@
         }
         p {
           margin: 20px 0;
+        }
+      }
+      .moreBtn {
+        text-align: center;
+        margin-top: 30px;
+        button {
+          @include BTN;
         }
       }
       .newses {
@@ -44,31 +51,8 @@
         }
       }
     }
-
-    .morebtn {
-      margin: auto;
-      text-align: center;
-    }
-
-    button {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      padding-right: 30px;
-      padding-left: 30px;
-      background-color: #0a6ebd;
-      font-size: 16px;
-      border: none;
-      border-radius: 50px;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: black;
-      color: white;
-    }
-    .editor_pick,
-    .webinar {
+    .blog,
+    .Suggestions {
       margin: 60px 0;
       h1 {
         @include subHeading;
@@ -121,6 +105,23 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 20px;
+      .news {
+        .news_img {
+          height: 168px;
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .moreBtn {
+      text-align: center;
+      margin-top: 30px;
+      button {
+        @include BTN;
+      }
     }
   }
   .city_profile {
@@ -133,6 +134,23 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 40px;
+      .news {
+        .news_img {
+          height: 168px;
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .moreBtn {
+      text-align: center;
+      margin-top: 30px;
+      button {
+        @include BTN;
+      }
     }
   }
   .home_research {
@@ -148,21 +166,36 @@
     }
   }
 
-  .home_webinars {
+  .home_opinion {
     margin: 60px 0;
     h1 {
       font-weight: 400;
       margin-bottom: 40px;
     }
-    .home_webinars_wrapper {
+    .home_opinion_wrapper {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 20px;
-
-      img {
-        border-radius: 50%;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 40px;
+      .news {
+        padding: 1rem;
+        .news_img {
+          height: 350px;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
       }
-
+    }
+    .moreBtn {
+      text-align: center;
+      margin-top: 30px;
+      button {
+        @include BTN;
+      }
     }
   }
 }
@@ -206,7 +239,7 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
-  
+
     .home_webinars {
       .home_webinars_wrapper {
         grid-template-columns: repeat(2, 1fr);
@@ -253,7 +286,7 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
-  
+
     .home_webinars {
       .home_webinars_wrapper {
         grid-template-columns: repeat(2, 1fr);
@@ -300,7 +333,7 @@
         grid-template-columns: repeat(1, 1fr);
       }
     }
-  
+
     .home_webinars {
       .home_webinars_wrapper {
         grid-template-columns: repeat(1, 1fr);
