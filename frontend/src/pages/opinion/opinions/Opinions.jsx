@@ -44,7 +44,7 @@ const Opinions = () => {
               <SideBar />
             </div>
             <div className="webinar">
-              <h1>WEBINAR</h1>
+              <h1>Events</h1>
               <div className="webinar_wrapper">
               {events?.slice(0, 4).map((event) => (
                     <NewsCard key={event.id} allnews={event} collection="events" />

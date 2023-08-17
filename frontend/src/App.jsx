@@ -70,6 +70,7 @@ import Jobs from "./pages/jobs/jobs";
 
 import Partners from "./pages/partners/partners";
 import Footercitylights from "./pages/footercitylights/footercitylights";
+import Smartcities from "./pages/smartcities/smartcities";
 // import Citylights from "./pages/citylights/citylights";
 
 const App = () => {
@@ -97,6 +98,7 @@ const App = () => {
 
           {/* city */}
           <Route path="/city-profile" element={<CityProfile />} />
+          <Route path="/smart-city" element={<Smartcities />} />
           <Route path="/smart-city-projects" element={<Smartproject />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/companies" element={<Companies />} />
