@@ -49,7 +49,7 @@ const Home = () => {
                 </div>
                 <h1>Latest</h1>
                 <div className="newses">
-                  {allnewses?.map((allnewse) => (
+                  {allnewses?.slice(0, 4).map((allnewse) => (
                     <NewsCard key={allnewse.id} allnews={allnewse} collection="allnewses"/>
                   ))}
                 </div>
