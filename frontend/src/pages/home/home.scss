@@ -26,18 +26,6 @@
         grid-gap: 20px;
         margin-top: 40px;
 
-        button {
-          padding-top: 20px;
-          padding-bottom: 20px;
-          padding-right: 30px;
-          padding-left: 30px;
-          background-color: #0a6ebd;
-          font-size: 16px;
-          border: none;
-          border-radius: 50px;
-          color: white;
-        }
-
         .news {
           &:first-child {
             grid-column: 1 / 4;
@@ -55,6 +43,24 @@
           }
         }
       }
+    }
+
+    button {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-right: 30px;
+      padding-left: 30px;
+      background-color: #0a6ebd;
+      font-size: 16px;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: black;
+      color: white;
     }
     .editor_pick,
     .webinar {

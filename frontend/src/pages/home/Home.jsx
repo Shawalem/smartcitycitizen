@@ -54,9 +54,12 @@ const Home = () => {
                     <NewsCard key={allnewse.id} allnews={allnewse} collection="allnewses"/>
                   ))}
                   <Link to="/news">
-                    <button>click me</button>
+                    <button>Read More</button>
                   </Link>
                 </div>
+                <Link to="/news">
+                    <button>Read More</button>
+                </Link>
                 <div className="editor_pick">
                   <h1>BLOGS</h1>
                   {blogs?.slice(0, 1).map((blog) => (
