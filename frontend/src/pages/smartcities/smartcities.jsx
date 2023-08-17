@@ -28,9 +28,9 @@ const Smartcities = () => {
         <div className="container">
           <div className="city_profile_wrapper">
             <div className="heading">
-              <h1>{headerparagraphs?.[0]?.attributes.cityprofile_title}</h1>
+              <h1>{headerparagraphs?.[0]?.attributes.smartcities_title}</h1>
               <ReactMarkdown>
-                {headerparagraphs?.[0]?.attributes.cityprofile_paragraph}
+                {headerparagraphs?.[0]?.attributes.smartcities_paragraph}
               </ReactMarkdown>
             </div>
             <div className="latest_news">

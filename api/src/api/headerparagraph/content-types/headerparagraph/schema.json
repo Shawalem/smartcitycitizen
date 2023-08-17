@@ -18,6 +18,12 @@
     "home_paragraph": {
       "type": "richtext"
     },
+    "smartcities_title": {
+      "type": "string"
+    },
+    "smartcities_paragraph": {
+      "type": "richtext"
+    },
     "news_title": {
       "type": "string"
     },
