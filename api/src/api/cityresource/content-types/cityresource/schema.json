@@ -15,9 +15,6 @@
     "title": {
       "type": "string"
     },
-    "author": {
-      "type": "string"
-    },
     "img": {
       "type": "media",
       "multiple": false,
