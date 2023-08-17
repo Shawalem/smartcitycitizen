@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -52,7 +53,9 @@ const Home = () => {
                   {allnewses?.slice(0, 4).map((allnewse) => (
                     <NewsCard key={allnewse.id} allnews={allnewse} collection="allnewses"/>
                   ))}
-                  <button>click me</button>
+                  <Link to="/news">
+                    <button>click me</button>
+                  </Link>
                 </div>
                 <div className="editor_pick">
                   <h1>BLOGS</h1>
