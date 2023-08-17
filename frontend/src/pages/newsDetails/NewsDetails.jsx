@@ -1,13 +1,25 @@
 import { useParams } from "react-router-dom";
-import { NewsCard, SideBar } from "../../components";
+import { SideBar } from "../../components";
 import "./details.scss";
 import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import galary from '../../assets/galary.jpg'
+import galary_img from "../../assets/galary.jpg";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const NewsDetails = () => {
   const { id, collection } = useParams();
-  console.log(id);
+  const [galary, setGalary] = useState(false);
+  useEffect(() => {
+    const w = window.location.host + "/details/cityresources";
+    const d = window.location.href;
+
+    if (d.includes(w)) {
+      setGalary(true);
+    } else {
+      setGalary(false);
+    }
+  }, []);
 
   // import from backend
   const { data: allnewses } = useFetch(
@@ -25,7 +37,6 @@ const NewsDetails = () => {
   const { data: volunteers } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
-
 
   const { data: trafficcongestions } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
@@ -47,11 +58,9 @@ const NewsDetails = () => {
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
 
-
   const { data: publictransports } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
-
 
   const { data: pedestrians } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
@@ -61,7 +70,6 @@ const NewsDetails = () => {
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
 
-
   const { data: inthenewses } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
@@ -69,7 +77,6 @@ const NewsDetails = () => {
   const { data: noiseairqualities } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
-
 
   const { data: jobses } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
@@ -95,7 +102,6 @@ const NewsDetails = () => {
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
 
-
   const { data: digitalinfrastructures } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
@@ -119,7 +125,6 @@ const NewsDetails = () => {
   const { data: cleanenergies } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
-
 
   const { data: citizensecurities } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
@@ -181,8 +186,9 @@ const NewsDetails = () => {
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
 
-                {/* WORK ON TOMOROW */}
-
+  {
+    /* WORK ON TOMOROW */
+  }
 
   const { data: trendreports } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
@@ -278,7 +284,8 @@ const NewsDetails = () => {
   const inthenewsesData = inthenewses?.[0]?.attributes;
   const footercitylightsData = footercitylights?.[0]?.attributes;
   const eventsData = events?.[0]?.attributes;
-  const electricvehicleandchargingsData = electricvehicleandchargings?.[0]?.attributes;
+  const electricvehicleandchargingsData =
+    electricvehicleandchargings?.[0]?.attributes;
   const donatesData = donates?.[0]?.attributes;
   const digitalinfrastructuresData = digitalinfrastructures?.[0]?.attributes;
   const cybersecuritiesData = cybersecurities?.[0]?.attributes;
@@ -368,7 +375,7 @@ const NewsDetails = () => {
     privacysecuritiesData?.title ||
     governancecitizensData?.title ||
     citizenengagementsData?.title ||
-    energyenvironmentsData?.title||
+    energyenvironmentsData?.title ||
     airqualitiesData?.title ||
     batteriesrenewablesData?.title ||
     solarpowersData?.title ||
@@ -382,7 +389,7 @@ const NewsDetails = () => {
     culturalspacesData?.title ||
     municipalbuildingsData?.title;
 
-  // extrat data author from backend 
+  // extrat data author from backend
   const author =
     latestwebsData?.author ||
     articlesData?.author ||
@@ -430,7 +437,7 @@ const NewsDetails = () => {
     privacysecuritiesData?.author ||
     governancecitizensData?.author ||
     citizenengagementsData?.author ||
-    energyenvironmentsData?.author||
+    energyenvironmentsData?.author ||
     airqualitiesData?.author ||
     batteriesrenewablesData?.author ||
     solarpowersData?.author ||
@@ -444,7 +451,7 @@ const NewsDetails = () => {
     culturalspacesData?.author ||
     municipalbuildingsData?.author;
 
-    // extrat data date from backend 
+  // extrat data date from backend
   const date =
     latestwebsData?.date ||
     specialsData?.date ||
@@ -492,7 +499,7 @@ const NewsDetails = () => {
     privacysecuritiesData?.date ||
     governancecitizensData?.date ||
     citizenengagementsData?.date ||
-    energyenvironmentsData?.date||
+    energyenvironmentsData?.date ||
     airqualitiesData?.date ||
     batteriesrenewablesData?.date ||
     solarpowersData?.date ||
@@ -506,7 +513,7 @@ const NewsDetails = () => {
     culturalspacesData?.date ||
     municipalbuildingsData?.date;
 
-  // extrat data image from backend 
+  // extrat data image from backend
   const img =
     latestwebsData?.img?.data?.attributes?.url ||
     specialsData?.img?.data?.attributes?.url ||
@@ -554,7 +561,7 @@ const NewsDetails = () => {
     privacysecuritiesData?.img?.data?.attributes?.url ||
     governancecitizensData?.img?.data?.attributes?.url ||
     citizenengagementsData?.img?.data?.attributes?.url ||
-    energyenvironmentsData?.img?.data?.attributes?.url||
+    energyenvironmentsData?.img?.data?.attributes?.url ||
     airqualitiesData?.img?.data?.attributes?.url ||
     batteriesrenewablesData?.img?.data?.attributes?.url ||
     solarpowersData?.img?.data?.attributes?.url ||
@@ -568,8 +575,8 @@ const NewsDetails = () => {
     culturalspacesData?.img?.data?.attributes?.url ||
     municipalbuildingsData?.img?.data?.attributes?.url;
 
-    // extrat data date from backend 
-    const description =
+  // extrat data date from backend
+  const description =
     latestwebsData?.description ||
     citylightsData?.description ||
     wastemanagementsData?.description ||
@@ -616,7 +623,7 @@ const NewsDetails = () => {
     privacysecuritiesData?.description ||
     governancecitizensData?.description ||
     citizenengagementsData?.description ||
-    energyenvironmentsData?.description||
+    energyenvironmentsData?.description ||
     airqualitiesData?.description ||
     batteriesrenewablesData?.description ||
     solarpowersData?.description ||
@@ -629,7 +636,6 @@ const NewsDetails = () => {
     commercialbuildingsData?.description ||
     culturalspacesData?.description ||
     municipalbuildingsData?.description;
-
   return (
     <>
       <section>
@@ -648,62 +654,62 @@ const NewsDetails = () => {
                       <img src={`${img}`} alt="news" />
                     </div>
                     <div className="newsDescription">
-                      <ReactMarkdown>
-                        {description}
-                      </ReactMarkdown>
+                      <ReactMarkdown>{description}</ReactMarkdown>
                     </div>
                   </div>
                 </div>
               </div>
               <SideBar />
             </div>
-            <div className="galary">
-              <h1>Gallery</h1>
-              <div className="img_wrapper">
-              <div className="galary_img">
-                <img src={galary} alt="" />
+            {galary && (
+              <div className="galary">
+                <h1>Gallery</h1>
+                <div className="img_wrapper">
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                  <div className="galary_img">
+                    <img src={galary_img} alt="" />
+                  </div>
+                </div>
               </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              <div className="galary_img">
-                <img src={galary} alt="" />
-              </div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
