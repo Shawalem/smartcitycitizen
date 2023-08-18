@@ -1,5 +1,5 @@
 import "./home.scss";
-import { NewsCard, SideBar } from "../../components";
+import { Loader, NewsCard, SideBar } from "../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   // get latest news
-  const { data: allnewses } = useFetch("/allnewses?populate=*");
+  const { data: allnewses, isLoading } = useFetch("/allnewses?populate=*");
 
   // get blogs
   const { data: blogs } = useFetch("/blogs?populate=*");
@@ -29,7 +29,10 @@ const Home = () => {
 
   // Heading and paragraph
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
-  console.log(headerparagraphs);
+
+  if (isLoading) {
+    return <Loader/>
+  }
 
   return (
     <>
@@ -94,10 +97,10 @@ const Home = () => {
                 ))}
               </div>
               <div className="moreBtn">
-                  <Link to="/news">
-                    <button>Read More</button>
-                  </Link>
-                </div>
+                <Link to="/news">
+                  <button>Read More</button>
+                </Link>
+              </div>
             </div>
             {/* city profile */}
             <div className="city_profile">
@@ -112,10 +115,10 @@ const Home = () => {
                 ))}
               </div>
               <div className="moreBtn">
-                  <Link to="/news">
-                    <button>Read More</button>
-                  </Link>
-                </div>
+                <Link to="/news">
+                  <button>Read More</button>
+                </Link>
+              </div>
             </div>
             {/* smart Industries */}
             <div className="home_research">
@@ -143,10 +146,10 @@ const Home = () => {
                 ))}
               </div>
               <div className="moreBtn">
-                  <Link to="/news">
-                    <button>Read More</button>
-                  </Link>
-                </div>
+                <Link to="/news">
+                  <button>Read More</button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

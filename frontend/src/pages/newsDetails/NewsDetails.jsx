@@ -9,17 +9,17 @@ import { useState } from "react";
 
 const NewsDetails = () => {
   const { id, collection } = useParams();
-  const [galary, setGalary] = useState(false);
-  useEffect(() => {
-    const w = window.location.host + "/details/cityresources";
-    const d = window.location.href;
+  // const [galary, setGalary] = useState(false);
+  // useEffect(() => {
+  //   const w = window.location.host + "/details/cityresources";
+  //   const d = window.location.href;
 
-    if (d.includes(w)) {
-      setGalary(true);
-    } else {
-      setGalary(false);
-    }
-  }, []);
+  //   if (d.includes(w)) {
+  //     setGalary(true);
+  //   } else {
+  //     setGalary(false);
+  //   }
+  // }, []);
 
   // import from backend
   const { data: allnewses } = useFetch(
@@ -661,7 +661,7 @@ const NewsDetails = () => {
               </div>
               <SideBar />
             </div>
-            {galary && (
+            {/* {galary && (
               <div className="galary">
                 <h1>Gallery</h1>
                 <div className="img_wrapper">
@@ -677,39 +677,9 @@ const NewsDetails = () => {
                   <div className="galary_img">
                     <img src={galary_img} alt="" />
                   </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
                 </div>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </section>

@@ -51,7 +51,6 @@ const Page = ({
 
   return (
     <>
-      <section>
         <div className="container">
           <div className="page_wrapper">
             <div className="latest_news">
@@ -218,7 +217,6 @@ const Page = ({
             </div>
           </div>
         </div>
-      </section>
     </>
   );
 };
