@@ -11,10 +11,10 @@ const CityProfile = () => {
   const { data: cityresources } = useFetch("/cityresources?populate=*");
 
   // get browse smart citys 
-  const { data: articles } = useFetch('/articles?populate=*');
-  const { data: citylights } = useFetch('/citylights?populate=*');
-  const { data: companies } = useFetch('/companies?populate=*');
-  const { data: inthenewses } = useFetch('/inthenewses?populate=*');
+  // const { data: articles } = useFetch('/articles?populate=*');
+  // const { data: citylights } = useFetch('/citylights?populate=*');
+  // const { data: companies } = useFetch('/companies?populate=*');
+  // const { data: inthenewses } = useFetch('/inthenewses?populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate")
 
@@ -42,7 +42,7 @@ const CityProfile = () => {
                     ))
                   }
                 </div>
-              <div className="browse_city">
+              {/* <div className="browse_city">
                 <h1>Smart City Projects</h1>
                 <div className="all_city">
                 {
@@ -51,9 +51,9 @@ const CityProfile = () => {
                     ))
                 }
                 </div>
-              </div>
+              </div> */}
 
-              <div className="browse_city">
+              {/* <div className="browse_city">
                 <h1>Articles</h1>
                 <div className="all_city">
                 {
@@ -62,9 +62,9 @@ const CityProfile = () => {
                     ))
                 }
                 </div>
-              </div>
+              </div> */}
 
-              <div className="browse_city">
+              {/* <div className="browse_city">
                 <h1>Companies</h1>
                 <div className="all_city">
                 {
@@ -73,9 +73,9 @@ const CityProfile = () => {
                     ))
                 }
                 </div>
-              </div>
+              </div> */}
 
-              <div className="browse_city">
+              {/* <div className="browse_city">
                 <h1>In The News</h1>
                 <div className="all_city">
                 {
@@ -84,7 +84,7 @@ const CityProfile = () => {
                     ))
                 }
                 </div>
-              </div>
+              </div> */}
               
               </div>
               <SideBar />
