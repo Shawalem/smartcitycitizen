@@ -1,13 +1,16 @@
-import { Page } from '../../../components'
+import { Loader, Page } from '../../../components'
 import { Helmet } from 'react-helmet'
 // useFetch
 import useFetch from '../../../hooks/useFetch'
 const DgitalInfrastructure = () => {
   
-  const { data: digitalinfrastructures } = useFetch("/digitalinfrastructures?populate=*");
+  const { data: digitalinfrastructures, isLoading } = useFetch("/digitalinfrastructures?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
+  if (isLoading) {
+    return <Loader/>
+  }
 
   return (
     <>

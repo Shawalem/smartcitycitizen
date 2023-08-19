@@ -1,16 +1,19 @@
-import { Page } from "../../components";
+import { Loader, Page } from "../../components";
 import { Helmet } from "react-helmet";
 import useFetch from "../../hooks/useFetch";
 import "./city_en.scss"
 
 const Citizenengagement = () => {
   // get special reports
-  const { data: citizenengagements } = useFetch(
+  const { data: citizenengagements, isLoading } = useFetch(
     "/citizenengagements?populate=*"
   );
-  console.log(citizenengagements);
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <>

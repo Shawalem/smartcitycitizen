@@ -1,4 +1,4 @@
-import { SideBar, NewsCard } from "../../components";
+import { SideBar, NewsCard, Loader } from "../../components";
 import { Helmet } from 'react-helmet';
 import './footercitylights.scss'
 // useFetch
@@ -6,11 +6,15 @@ import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Footercitylights = () => {
-  const { data: footercitylights } = useFetch("/footercitylights?populate=*");
+  const { data: footercitylights, isLoading } = useFetch("/footercitylights?populate=*");
 
   const { data: opinions } = useFetch('/opinions?populate=*');
   
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+
+  if (isLoading) {
+    return <Loader/>
+  }
   
 
   return (

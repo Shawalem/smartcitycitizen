@@ -1,12 +1,16 @@
-import { Page } from '../../../components'
+import { Loader, Page } from '../../../components'
 import { Helmet } from 'react-helmet'
 // useFetch
 import useFetch from '../../../hooks/useFetch';
 
 
 const Lastmileconnectivity = () => {
-  const { data: culturalspaces } = useFetch('/culturalspaces?populate=*');
+  const { data: culturalspaces, isLoading } = useFetch('/culturalspaces?populate=*');
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
+
+  if (isLoading) {
+    return <Loader/>
+  }
 
   return (
     <>

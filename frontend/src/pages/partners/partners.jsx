@@ -1,17 +1,21 @@
 import "./partners.scss";
-import { NewsCard, SideBar } from "../../components";
+import { Loader, NewsCard, SideBar } from "../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
 
 const Partners = () => {
   // get city resources
-  const { data: partners } = useFetch("/partners?populate=*");
+  const { data: partners, isLoading } = useFetch("/partners?populate=*");
 
   // get browse smart citys 
   const { data: opinions } = useFetch("/opinions?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate")
+
+  if (isLoading) {
+    return <Loader/>
+  }
 
   return (
     <>

@@ -1,5 +1,5 @@
 import "./smartproject.scss";
-import { SideBar,NewsCard } from '../../components'
+import { SideBar,NewsCard, Loader } from '../../components'
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
@@ -10,7 +10,7 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 const Smartproject = () => {
 
   // get city lights 
-  const { data: citylights } = useFetch('/citylights?populate=*');
+  const { data: citylights, isLoading } = useFetch('/citylights?populate=*');
   console.log(citylights);
 
   // get city Webinar 
@@ -20,6 +20,10 @@ const Smartproject = () => {
   const { data: inthenewses } = useFetch('/inthenewses?populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <>

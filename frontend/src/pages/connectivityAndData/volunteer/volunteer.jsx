@@ -1,4 +1,4 @@
-import { Page} from '../../../components'
+import { Loader, Page} from '../../../components'
 import { Helmet } from 'react-helmet'
 // useFetch
 import useFetch from '../../../hooks/useFetch';
@@ -6,11 +6,13 @@ import useFetch from '../../../hooks/useFetch';
 
 const Volunteer = () => {
 
-  const { data: volunteers } = useFetch("/volunteers?populate=*");
-    console.log(volunteers);
-
+  const { data: volunteers, isLoading } = useFetch("/volunteers?populate=*");
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
   
+  if (isLoading) {
+    return <Loader/>
+  }
+
   return (
     <>
     <Helmet>

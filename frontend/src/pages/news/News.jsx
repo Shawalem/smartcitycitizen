@@ -7,7 +7,7 @@ import useFetch from "../../hooks/useFetch";
 
 const News = () => {
   // get latest news 
-  const { data: allnewses } = useFetch("/allnewses?populate=*");
+  const { data: allnewses, isLoading } = useFetch("/allnewses?populate=*");
 
   // get webinar 
   const { data: opinions } = useFetch("/opinions?populate=*");

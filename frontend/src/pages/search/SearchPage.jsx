@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { Helmet } from "react-helmet";
 import "./searchPage.scss";
-import { NewsCard } from "../../components";
+import { Loader, NewsCard } from "../../components";
 
 const SearchPage = () => {
   const location = useLocation();
@@ -13,7 +13,7 @@ const SearchPage = () => {
   // get all products based on search term
   // get latest news
     // import from backend
-    const { data: allnewses } = useFetch(
+    const { data: allnewses, isLoading } = useFetch(
       `/${collection}?populate=*&filters[id][$eq]=${id}`
     );
   
@@ -258,6 +258,10 @@ const SearchPage = () => {
     const { data: specials } = useFetch(
       `/${collection}?populate=*&filters[id][$eq]=${id}`
     );
+
+    if (isLoading) {
+      return <Loader/>
+    }
 
   return (
     <>

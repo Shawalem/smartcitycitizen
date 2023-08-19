@@ -1,13 +1,16 @@
-import { Page } from "../../components";
+import { Loader, Page } from "../../components";
 import { Helmet } from "react-helmet";
 import useFetch from "../../hooks/useFetch";
 
 const Safetysecurity = () => {
 
   
-  const { data: governancecitizens } = useFetch("/governancecitizens?populate=*");
+  const { data: governancecitizens, isLoading } = useFetch("/governancecitizens?populate=*");
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
+  if (isLoading) {
+    return <Loader/>
+  }
 
   return (
     <>

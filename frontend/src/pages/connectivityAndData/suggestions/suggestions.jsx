@@ -1,13 +1,17 @@
-import { Page } from '../../../components'
+import { Loader, Page } from '../../../components'
 import { Helmet } from 'react-helmet'
 // useFetch
 import useFetch from '../../../hooks/useFetch';
 
 const Suggestions = () => {
 
-  const { data: privacysecurities } = useFetch("/privacysecurities?populate=*");
+  const { data: privacysecurities, isLoading } = useFetch("/privacysecurities?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+
+  if (isLoading) {
+    return <Loader/>
+  }
 
   return (
     <>

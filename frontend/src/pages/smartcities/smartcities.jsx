@@ -1,5 +1,5 @@
 import "./smartcities.scss";
-import { NewsCard, SideBar } from "../../components";
+import { Loader, NewsCard, SideBar } from "../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
@@ -8,7 +8,7 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const Smartcities = () => {
   // get city resources
-  const { data: smartcities } = useFetch("/smartcities?populate=*");
+  const { data: smartcities, isLoading } = useFetch("/smartcities?populate=*");
 
   // get browse smart citys 
   const { data: articles } = useFetch('/articles?populate=*');
@@ -17,6 +17,10 @@ const Smartcities = () => {
   const { data: inthenewses } = useFetch('/inthenewses?populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate")
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <>

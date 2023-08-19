@@ -1,13 +1,17 @@
-import { Page } from '../../../components'
+import { Loader, Page } from '../../../components'
 import { Helmet } from 'react-helmet'
 // useFetch
 import useFetch from '../../../hooks/useFetch';
 
 const Electricvehiclecharging = () => {
 
-  const { data: electricvehicleandchargings } = useFetch('/electricvehicleandchargings?populate=*');
+  const { data: electricvehicleandchargings, isLoading } = useFetch('/electricvehicleandchargings?populate=*');
 
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
+
+  if (isLoading) {
+    return <Loader/>
+  }
   return (
     <>
     <Helmet>

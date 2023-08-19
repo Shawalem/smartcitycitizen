@@ -1,4 +1,4 @@
-import { Page} from '../../../components'
+import { Loader, Page} from '../../../components'
 import { Helmet } from 'react-helmet'
 // useFetch
 import useFetch from '../../../hooks/useFetch';
@@ -6,10 +6,13 @@ import useFetch from '../../../hooks/useFetch';
 
 const Survey = () => {
 
-  const { data: marketmonets } = useFetch("/marketmonets?populate=*");
-    console.log(marketmonets);
+  const { data: marketmonets, isLoading } = useFetch("/marketmonets?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+
+  if (isLoading) {
+    return <Loader />
+  }
   
   return (
     <>

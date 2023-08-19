@@ -1,5 +1,5 @@
 import "./articles.scss";
-import { SideBar,NewsCard } from '../../components'
+import { SideBar,NewsCard, Loader } from '../../components'
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
@@ -10,7 +10,7 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 const Articles = () => {
 
   // get city lights 
-  const { data: articles } = useFetch('/articles?populate=*');
+  const { data: articles, isLoading } = useFetch('/articles?populate=*');
   console.log(articles);
 
   // get city Webinar 
@@ -20,6 +20,10 @@ const Articles = () => {
   const { data: inthenewses } = useFetch('/inthenewses?populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <>

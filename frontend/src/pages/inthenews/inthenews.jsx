@@ -1,5 +1,5 @@
 import "./inthenews.scss";
-import { SideBar,NewsCard } from '../../components'
+import { SideBar,NewsCard, Loader } from '../../components'
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
@@ -10,7 +10,7 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 const Inthenews = () => {
 
   // get city lights 
-  const { data: inthenewses } = useFetch('/inthenewses?populate=*');
+  const { data: inthenewses, isLoading } = useFetch('/inthenewses?populate=*');
 
   // get city Webinar 
   const { data: companies } = useFetch('/companies?populate=*');
@@ -20,6 +20,10 @@ const Inthenews = () => {
 
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <>

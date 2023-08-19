@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { SideBar, NewsCard } from "../../components";
+import { SideBar, NewsCard, Loader } from "../../components";
 import "./blogs.scss";
 // useFetch
 import useFetch from "../../hooks/useFetch";
@@ -7,13 +7,16 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Blogs = () => {
   // get special reports 
-  const { data: blogs } = useFetch("/blogs?populate=*");
+  const { data: blogs, isLoading } = useFetch("/blogs?populate=*");
   console.log(blogs);
 
   const { data: opinions } = useFetch("/opinions?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
   
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <>

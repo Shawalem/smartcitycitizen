@@ -56,7 +56,7 @@
 // export default Podcast
 
 import "./podcast.scss";
-import { SideBar, NewsCard } from "../../components";
+import { SideBar, NewsCard, Loader } from "../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
@@ -64,13 +64,17 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Podcast = () => {
   // get opinions
-  const { data: opinions } = useFetch("/opinions?populate=*");
+  const { data: opinions, isLoading } = useFetch("/opinions?populate=*");
   console.log(opinions);
 
   // get city Webinar
   const { data: prodcasts } = useFetch("/prodcasts?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <>

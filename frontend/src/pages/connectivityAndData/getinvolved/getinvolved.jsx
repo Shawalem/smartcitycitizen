@@ -1,12 +1,16 @@
 import { Helmet } from "react-helmet";
-import { Page } from "../../../components";
+import { Loader, Page } from "../../../components";
 import useFetch from "../../../hooks/useFetch";
 
 
 const Getinvolved = () => {
-  const { data: aiandmachines } = useFetch('/aiandmachines?populate=*');
+  const { data: aiandmachines, isLoading } = useFetch('/aiandmachines?populate=*');
   
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+
+  if (isLoading) {
+    return <Loader />
+  }
   return (
     <>
       <Helmet>
