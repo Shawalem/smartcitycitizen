@@ -97,7 +97,7 @@ const Home = () => {
                 ))}
               </div>
               <div className="moreBtn">
-                <Link to="/news">
+                <Link to="/reports">
                   <button>Read More</button>
                 </Link>
               </div>
@@ -115,7 +115,7 @@ const Home = () => {
                 ))}
               </div>
               <div className="moreBtn">
-                <Link to="/news">
+                <Link to="/city-profile">
                   <button>Read More</button>
                 </Link>
               </div>
@@ -146,7 +146,7 @@ const Home = () => {
                 ))}
               </div>
               <div className="moreBtn">
-                <Link to="/news">
+                <Link to="/opinions">
                   <button>Read More</button>
                 </Link>
               </div>
