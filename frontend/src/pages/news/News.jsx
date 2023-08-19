@@ -1,5 +1,5 @@
 import "./news.scss";
-import { NewsCard, SideBar } from "../../components";
+import { Loader, NewsCard, SideBar } from "../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
@@ -13,6 +13,10 @@ const News = () => {
   const { data: opinions } = useFetch("/opinions?populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <>
