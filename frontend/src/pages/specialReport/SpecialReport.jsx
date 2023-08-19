@@ -33,9 +33,11 @@ const SpecialReport = () => {
             <div className="latest_news">
               <div className="news_sec">
                 <h1>{headerparagraphs?.[0]?.attributes.reports_title}</h1>
-                <ReactMarkdown>
-                {headerparagraphs?.[0]?.attributes.reports_paragraph}
-                </ReactMarkdown>
+                <div className="news_paragraph">
+                  <ReactMarkdown>
+                  {headerparagraphs?.[0]?.attributes.reports_paragraph}
+                  </ReactMarkdown>
+                </div>
                 <div className="newses">
                   {specials?.map((special) => (
                     <NewsCard key={special.id} allnews={special} collection="specials" />

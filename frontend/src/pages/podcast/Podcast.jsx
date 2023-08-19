@@ -91,9 +91,11 @@ const Podcast = () => {
             <div className="latest_news">
               <div className="news_sec">
                 <h1>{headerparagraphs?.[0]?.attributes.podcasts_title}</h1>
-                <ReactMarkdown>
-                  {headerparagraphs?.[0]?.attributes.podcasts_paragraph}
-                </ReactMarkdown>
+                <div className="news_paragraph">
+                  <ReactMarkdown>
+                    {headerparagraphs?.[0]?.attributes.podcasts_paragraph}
+                  </ReactMarkdown>
+                </div>
                 <div className="newses">
                   {prodcasts?.map((prodcast) => (
                     <NewsCard

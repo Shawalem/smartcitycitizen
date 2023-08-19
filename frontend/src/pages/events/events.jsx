@@ -34,9 +34,11 @@ const Events = () => {
             <div className="latest_news">
               <div className="news_sec">
                 <h1>{headerparagraphs?.[0]?.attributes.events_title}</h1>
-                <ReactMarkdown>
-                {headerparagraphs?.[0]?.attributes.events_paragraph}
-                </ReactMarkdown>
+                <div className="news_paragraph">
+                  <ReactMarkdown>
+                  {headerparagraphs?.[0]?.attributes.events_paragraph}
+                  </ReactMarkdown>
+                </div>
                 <div className="newses">
                   {events?.map((event) => (
                     <NewsCard key={event.id} allnews={event} collection="events" />

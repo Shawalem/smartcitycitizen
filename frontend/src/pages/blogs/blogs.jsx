@@ -33,9 +33,11 @@ const Blogs = () => {
             <div className="latest_news">
               <div className="news_sec">
                 <h1>{headerparagraphs?.[0]?.attributes.blogs_title}</h1>
-                <ReactMarkdown>
-                {headerparagraphs?.[0]?.attributes.blogs_paragraph}
-                </ReactMarkdown>
+                <div className="news_paragraph">
+                  <ReactMarkdown>
+                  {headerparagraphs?.[0]?.attributes.blogs_paragraph}
+                  </ReactMarkdown>
+                </div>
                 <div className="newses">
                   {blogs?.map((blog) => (
                     <NewsCard key={blog.id} allnews={blog} collection="blogs" />

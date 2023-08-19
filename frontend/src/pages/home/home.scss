@@ -13,6 +13,8 @@
     .news_sec {
       grid-column: 1/3;
       .intro {
+        height: 350px;
+        overflow-y: scroll;
         h1 {
           @include heading;
         }
