@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="footer_nav">
             <div>
               <a href="/about-us">About Us</a>
-              <a href="/advertise-withus">Advertise with us</a>
+              <a href="/advertiseWithUs">Advertise with us</a>
               <a href="/contact-us">Contact us</a>
               <a href="/smart-city-projects">Smart City Project Reports</a>
             </div>
