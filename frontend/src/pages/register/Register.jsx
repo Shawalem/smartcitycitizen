@@ -48,17 +48,14 @@ const Register = () => {
             <div className="registration_para">
               <h1>Registration</h1>
               <p>
-                It takes just 30 seconds to register for SmartCitiesWorld, which
-                brings together news, resources and information for people who
-                want to share ideas to solve urban challenges.....Plus it's
-                free!
+               Register as Smart City Citizen  or as our Corporate Memeber to access
+                all resources and information of SmartCityCitizen.com and to share ideas to solve Smart City Development challenges.....it's
+                free for Smart City Citizens!
               </p>
               <p>
-                By registering you will be able view unlimited news items,
-                download white papers, podcasts and city profiles along with
-                registering for our weekly newsletter which delivers relevant
-                news direct to your inbox based on your interests and profile.
-                We will also send invitations to our events and webinars.
+                By registering you will be able participate in Citizen Engagement projects / surveys in addition to access to news items,
+                podcasts and city profiles along with registering to newsletters to your email based on your interests and profile.
+                We will also send invitations to citizen engagement events / surveys in your city.
               </p>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -248,17 +245,15 @@ const Register = () => {
 
               <div className="form_input check">
                 <span>
-                  By completing this form, you will receive SmartCitiesWorld
+                  By completing this form, you will receive Invitation for smartcity Citizen Engagement events/ surveys/ opinion polls in addition to 
                   regular newsletter, as well as updates regarding our research,
                   events, webinars and more. You can update your preferences any
                   time from the bottom of any email you receive from
-                  SmartCitiesWorld. Your information will be handled in
-                  accordance with the GDPR 2018, and the PECR. We are committed
-                  to respecting and protecting your privacy. SmartCitiesWorld
-                  Ltd. is a B2B publishing organisation, and will always
+                  SmartCityCitizen.com.  We are committed
+                  to respecting and protecting your privacy. SmartCitycitize is a B2B publishing organisation, and will always
                   communicate with its users accordingly. If you have any
                   queries you can contact one of our team at
-                  scw-dp@smartcitiesworld.net. Yes, I agree with the privacy
+                  hello@smartcitycitizens.com. Yes, I agree with the privacy
                   policy and terms and conditions.
                 </span>
                 <input
