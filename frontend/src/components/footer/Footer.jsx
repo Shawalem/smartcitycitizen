@@ -27,12 +27,12 @@ const Footer = () => {
           <div className="footer_nav">
             <div>
               <a href="/about-us">About Us</a>
-              <a href="/advertiseWithUs">Advertise with us</a>
+              <a href="/partner-withus">Advertise with us</a>
               <a href="/contact-us">Contact us</a>
               <a href="/smart-city-projects">Smart City Project Reports</a>
             </div>
             <div>
-              <a href="/jobs">Jobs</a>
+              <a href="/careers">Jobs</a>
               <a href="/parners">Partners</a>
               <a href="/citizen-engagement">Citizen Engagement</a>
               <a href="/contact-us">Support</a>
