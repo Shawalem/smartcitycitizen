@@ -20,11 +20,13 @@ const Mobilehealthcamps = () => {
           content="The latest news on electric vehicles in smart city projects across the world."
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.mobilehealthcampsclinics_title}
         pagePara={headerparagraphs?.[0]?.attributes.mobilehealthcampsclinics_paragraph}
         electricvehicles={electricvehicles}
       />
+      </section>
     </>
   )
 }

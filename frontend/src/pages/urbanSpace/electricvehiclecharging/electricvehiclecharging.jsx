@@ -21,11 +21,13 @@ const Electricvehiclecharging = () => {
           content="The latest news on air travel challenges and solutions for smart city projects across the world."
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.electricvehiclecharging_title}
         pagePara={headerparagraphs?.[0]?.attributes.electricvehiclecharging_paragraph}
         electricvehicleandchargings={electricvehicleandchargings}
       />
+      </section>
     </>
   )
 }

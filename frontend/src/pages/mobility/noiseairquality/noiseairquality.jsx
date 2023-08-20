@@ -21,11 +21,13 @@ const Noiseairquality = () => {
           content="The latest news in rail travel on smart city projects and initiatives across the world."
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.noiseairquality_title}
         pagePara={headerparagraphs?.[0]?.attributes.noiseairquality_paragraph}
         noiseairqualities={noiseairqualities}
       />
+      </section>
     </>
   )
 }

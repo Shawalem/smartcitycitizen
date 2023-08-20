@@ -21,13 +21,16 @@ const Safetysecurity = () => {
           content="Citizens are at the heart of every city and leaders need to focus on the likes of security"
         />
       </Helmet>
-      <Page
-        pageHeading={headerparagraphs?.[0]?.attributes.safetysecurity_title}
-        pagePara={
-          headerparagraphs?.[0]?.attributes.safetysecurity_paragraph
-        }
-        governancecitizens={governancecitizens}
-      />
+
+      <section className="city_en">
+        <Page
+          pageHeading={headerparagraphs?.[0]?.attributes.safetysecurity_title}
+          pagePara={
+            headerparagraphs?.[0]?.attributes.safetysecurity_paragraph
+          }
+          governancecitizens={governancecitizens}
+        />
+      </section>
     </>
   );
 };

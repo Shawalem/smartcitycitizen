@@ -24,11 +24,13 @@ const Retailrecreationalspaces = () => {
           content="The latest news in solar power on smart city projects and initiatives across the world."
         />
       </Helmet>
-      <Page
-        pageHeading={headerparagraphs?.[0]?.attributes.retailrecreationalspaces_title}
-        pagePara={headerparagraphs?.[0]?.attributes.retailrecreationalspaces_paragraph}
-        solarpowers={solarpowers}
-      />
+      <section className="city_en">
+        <Page
+          pageHeading={headerparagraphs?.[0]?.attributes.retailrecreationalspaces_title}
+          pagePara={headerparagraphs?.[0]?.attributes.retailrecreationalspaces_paragraph}
+          solarpowers={solarpowers}
+        />
+      </section>
     </>
   )
 }

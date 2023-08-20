@@ -21,11 +21,13 @@ const Citizenhealthwellbeing  = () => {
           content="Latest news on electric vehicles, micro mobility and connected and autonomous vehicles. Smart cities also need to focus on the likes of air, rail, road and sea travel to reduce congestion and enable efficient logistic network"
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.citizenhealthwellbeing_title}
         pagePara={headerparagraphs?.[0]?.attributes.citizenhealthwellbeing_paragraph}
         mobilities={mobilities}
       />
+      </section>
     </>
   );
 };

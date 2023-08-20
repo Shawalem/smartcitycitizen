@@ -19,6 +19,7 @@ const Purewater = () => {
           content="The latest news on air travel challenges and solutions for smart city projects across the world."
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.purewater_title}
         pagePara={
@@ -26,6 +27,7 @@ const Purewater = () => {
         }
         airtravels={airtravels}
       />
+      </section>
     </>
   )
 }

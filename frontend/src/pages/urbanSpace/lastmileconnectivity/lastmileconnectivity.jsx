@@ -21,11 +21,13 @@ const Lastmileconnectivity = () => {
           content="The latest news on cultural space in smart city projects across the world."
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.lastmileconnectivity_title}
         pagePara={headerparagraphs?.[0]?.attributes.lastmileconnectivity_paragraph}
         culturalspaces={culturalspaces}
       />
+      </section>
     </>
   )
 }

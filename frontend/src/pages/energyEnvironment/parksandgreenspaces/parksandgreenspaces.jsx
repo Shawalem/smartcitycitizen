@@ -23,11 +23,13 @@ const Parksandgreenspaces = () => {
           content="Batteries and renewable"
         />
       </Helmet>
-      <Page
-        pageHeading={headerparagraphs?.[0]?.attributes.parksgreenspaces_title}
-        pagePara={headerparagraphs?.[0]?.attributes.parksgreenspaces_paragraph}
-        parksandgreenspaces={parksandgreenspaces}
-      />
+      <section className="city_en">
+        <Page
+          pageHeading={headerparagraphs?.[0]?.attributes.parksgreenspaces_title}
+          pagePara={headerparagraphs?.[0]?.attributes.parksgreenspaces_paragraph}
+          parksandgreenspaces={parksandgreenspaces}
+        />
+      </section>
     </>
   )
 }

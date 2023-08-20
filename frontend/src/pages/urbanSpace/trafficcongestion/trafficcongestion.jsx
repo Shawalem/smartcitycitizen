@@ -22,11 +22,13 @@ const Trafficcongestion = () => {
           content="The latest news on municipal buildings in smart city projects across the world."
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.trafficcongestion_title}
         pagePara={headerparagraphs?.[0]?.attributes.trafficcongestion_paragraph}
         trafficcongestions={trafficcongestions}
       />
+      </section>
     </>
   )
 }

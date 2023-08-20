@@ -20,11 +20,13 @@ const Sustainability = () => {
           content="The latest news in wind power on smart city projects and initiatives across the world."
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.sustainability_title}
         pagePara={headerparagraphs?.[0]?.attributes.sustainability_paragraph}
         sustainabilities={sustainabilities}
       />
+      </section>
     </>
   )
 }

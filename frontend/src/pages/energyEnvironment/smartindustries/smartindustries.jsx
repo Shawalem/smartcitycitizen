@@ -23,11 +23,13 @@ const Smartindustries = () => {
           content="Batteries and renewable"
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.smartindustries_title}
         pagePara={headerparagraphs?.[0]?.attributes.smartindustries_paragraph}
         smartindustries={smartindustries}
       />
+      </section>
     </>
   )
 }

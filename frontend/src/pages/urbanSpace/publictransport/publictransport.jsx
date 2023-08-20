@@ -22,11 +22,13 @@ const Publictransport = () => {
           content="The latest news on municipal buildings in smart city projects across the world."
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.publictransport_title}
         pagePara={headerparagraphs?.[0]?.attributes.publictransport_paragraph}
         publictransports={publictransports}
       />
+      </section>
     </>
   )
 }

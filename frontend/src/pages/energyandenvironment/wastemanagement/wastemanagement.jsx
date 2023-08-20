@@ -22,11 +22,13 @@ const Wastemanagement = () => {
           content="Batteries and renewable"
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.wastemanagement_title}
         pagePara={headerparagraphs?.[0]?.attributes.wastemanagement_paragraph}
         wastemanagements={wastemanagements}
       />
+      </section>
     </>
   )
 }

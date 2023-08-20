@@ -23,11 +23,13 @@ const Solarprogram = () => {
           content="Batteries and renewable"
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.solarprogram_title}
         pagePara={headerparagraphs?.[0]?.attributes.solarprogram_paragraph}
         solarprograms={solarprograms}
       />
+      </section>
     </>
   )
 }

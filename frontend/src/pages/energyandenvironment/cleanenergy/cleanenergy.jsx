@@ -22,11 +22,13 @@ const Cleanenergy = () => {
           content="The latest news on air quality challenges and solutions for smart city projects across the world."
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.cleanenergy_title}
         pagePara={headerparagraphs?.[0]?.attributes.cleanenergy_paragraph}
         cleanenergies={cleanenergies}
       />
+      </section>
     </>
   )
 }

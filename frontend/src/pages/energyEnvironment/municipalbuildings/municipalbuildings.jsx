@@ -21,11 +21,13 @@ const Municipalbuildings = () => {
           content="The latest news in wind power on smart city projects and initiatives across the world."
         />
       </Helmet>
-      <Page
-        pageHeading={headerparagraphs?.[0]?.attributes.municipalbuildings_title}
-        pagePara={headerparagraphs?.[0]?.attributes.municipalbuildings_paragraph}
-        windpowers={windpowers}
-      />
+      <section className="city_en">
+        <Page
+          pageHeading={headerparagraphs?.[0]?.attributes.municipalbuildings_title}
+          pagePara={headerparagraphs?.[0]?.attributes.municipalbuildings_paragraph}
+          windpowers={windpowers}
+        />
+      </section>
     </>
   )
 }

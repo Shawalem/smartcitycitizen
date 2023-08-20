@@ -21,11 +21,13 @@ const Seniorcitizenprograms = () => {
           content="The latest news in rail travel on smart city projects and initiatives across the world."
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.seniourcitizenprograms_title}
         pagePara={headerparagraphs?.[0]?.attributes.seniourcitizenprograms_paragraph}
         railtravels={railtravels}
       />
+      </section>
     </>
   )
 }

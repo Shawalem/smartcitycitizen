@@ -23,11 +23,13 @@ const Smartresidence = () => {
           content="Batteries and renewable"
         />
       </Helmet>
-      <Page
-        pageHeading={headerparagraphs?.[0]?.attributes.smartresidence_title}
-        pagePara={headerparagraphs?.[0]?.attributes.smartresidence_paragraph}
-        batteriesrenewables={batteriesrenewables}
-      />
+      <section className="city_en">
+        <Page
+          pageHeading={headerparagraphs?.[0]?.attributes.smartresidence_title}
+          pagePara={headerparagraphs?.[0]?.attributes.smartresidence_paragraph}
+          batteriesrenewables={batteriesrenewables}
+        />
+      </section>
     </>
   )
 }

@@ -12,7 +12,6 @@ const Opinions = () => {
 
   // get city Webinar 
   const { data: events } = useFetch("/events?populate=*");
-  console.log(events);
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 

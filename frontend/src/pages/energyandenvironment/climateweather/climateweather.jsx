@@ -23,11 +23,13 @@ const Climateweather = () => {
           content="Batteries and renewable"
         />
       </Helmet>
+      <section className="city_en">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.climateweather_title}
         pagePara={headerparagraphs?.[0]?.attributes.climateweather_paragraph}
         climateandweathers={climateandweathers}
       />
+      </section>
     </>
   )
 }
