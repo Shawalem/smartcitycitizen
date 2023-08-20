@@ -9,15 +9,20 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const CityProfile = () => {
 
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const itemsPerPage = 9;
+  // const [currentPage, setCurrentPage] = useState(1); // Add currentPage state
+  // const itemsPerPage = 10; // Number of items per page
 
-  // const { data: cityresources, isLoading } = useFetch(`/cityresources?_start=${(currentPage - 1) * itemsPerPage}&_limit=${itemsPerPage}&populate=*`);
-  // const totalPage = Math.ceil(cityresources?._count / itemsPerPage);
+  // const { data: cityresources, isLoading } = useFetch(
+  //   `/cityresources?_start=${(currentPage - 1) * itemsPerPage}&_limit=${itemsPerPage}&populate=*`
+  // );
+  // const { data: headerparagraphs } = useFetch("/headerparagraphs?populate");
+
+  // const totalPages = Math.ceil(cityresources?._count / itemsPerPage);
 
   // const handlePageChange = (page) => {
   //   setCurrentPage(page);
-  // }
+  // };
+
 
 
   const { data: cityresources, isLoading } = useFetch("/cityresources?populate=*");
@@ -54,9 +59,17 @@ const CityProfile = () => {
                   }
                 </div>
                 
-                {/* Pagination  */}
+                {/* Pagination */}
                 {/* <div className="pagination">
-                  {}
+                  {Array.from({ length: totalPages }, (_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handlePageChange(index + 1)}
+                      className={currentPage === index + 1 ? "active" : ""}
+                    >
+                      {index + 1}
+                    </button>
+                  ))}
                 </div> */}
               
               </div>
