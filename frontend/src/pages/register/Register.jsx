@@ -110,15 +110,15 @@ const Register = () => {
 
               
               <div className="form_input">
-                <span>Industry Sector</span>
+                <span>Your Role As</span>
                 <select
                   type="text"
                   {...register("industry", { required: true })}
                 >
                   <option value="" defaultValue=""></option>
-                  <option value="Educational/Non Profit">
-                    Educational/Non Profit
-                  </option>
+                  <option value="SmartCity Citizen">SmartCity Citizen</option>
+                  <option value="Society">Society</option>
+                  <option value="Educational/Non Profit">Educational/Non Profit</option>
                   <option value="Private Sector">Private Sector</option>
                   <option value="Public Sector">Public Sector</option>
                 </select>
@@ -190,14 +190,14 @@ const Register = () => {
                   {...register("involved", { required: true })}
                 >
                   <option value="" defaultValue=""></option>
-                  <option value="University">
-                    University
+                  <option value="SmartCity Authority">
+                    Smartcity Authority
                   </option>
-                  <option value="Research Institute">Research Institute</option>
+                  <option value="University / Institute">Research Institute</option>
                   <option value="Non-Profit">Non-Profit</option>
-                  <option value="Traning">Traning</option>
-                  <option value="School">School</option>
-                  <option value="Charity">Charity</option>
+                  <option value="Government">Government</option>
+                  <option value="corporate Company">Corporate Company</option>
+                  <option value="Urban Palnning">Urban Palnning</option>
                 </select>
                 {errors.involved && <p>involved is Required</p>}
               </div>
@@ -209,14 +209,14 @@ const Register = () => {
                   {...register("jobFunction", { required: true })}
                 >
                   <option value="" defaultValue=""></option>
-                  <option value="Lecturer/Teacher/Trainer">
-                    Lecturer/Teacher/Trainer
+                  <option value="Professor/Teacher/Trainer">
+                    Professor/Teacher/Trainer
                   </option>
-                  <option value="Management">Management</option>
-                  <option value="Professor">Professor</option>
-                  <option value="Traning">Traning</option>
-                  <option value="Research">Research</option>
-                  <option value="Student">Student</option>
+                  <option value="Architect/ Town Planner">Architect / Town Planner</option>
+                  <option value="Engineer / Designer">Engineer / Designer</option>
+                  <option value="Society Member">Society Member</option>
+                  <option value="Enforcement Authority">Enforcement Authority</option>
+                  <option value="Volunteer">Student / Volunteer</option>
                   <option value="Other">Other</option>
                 </select>
                 {errors.jobFunction && <p>jobFunction is Required</p>}
@@ -235,9 +235,9 @@ const Register = () => {
                   <option value="C-Suite">C-Suite</option>
                   <option value="Professor">Professor</option>
                   <option value="Director">Director</option>
-                  <option value="Manager">Manager</option>
-                  <option value="Junior">Junior</option>
-                  <option value="Training/Student/Intern">Training/Student/Intern</option>
+                  <option value="Senior Manager ">Senior Manager</option>
+                  <option value="Staff / Executive">Staff / Executive</option>
+                  <option value="Trainee/Student/Intern">Trainee/Student/Intern</option>
                   <option value="Other role">Other role</option>
                 </select>
                 {errors.seniority && <p>seniority is Required</p>}
@@ -250,11 +250,11 @@ const Register = () => {
                   events, webinars and more. You can update your preferences any
                   time from the bottom of any email you receive from
                   SmartCityCitizen.com.  We are committed
-                  to respecting and protecting your privacy. SmartCitycitize is a B2B publishing organisation, and will always
+                  to respecting and protecting your privacy. SmartCitycitizen is a B2B & B2C publishing organisation, and will always
                   communicate with its users accordingly. If you have any
                   queries you can contact one of our team at
-                  hello@smartcitycitizens.com. Yes, I agree with the privacy
-                  policy and terms and conditions.
+                  hello@smartcitycitizens.com. 
+                  Yes, I agree with the privacy policy and terms and conditions.
                 </span>
                 <input
                   type="checkbox"
