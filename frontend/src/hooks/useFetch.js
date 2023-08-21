@@ -4,6 +4,7 @@ import axios from "axios";
 const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [count,setCount] = useState(0)
   const [error, setError] = useState(null);
 
   const request = axios.create({
@@ -19,6 +20,7 @@ const useFetch = (url) => {
       try {
         const res = await request.get(url);
         setData(res.data.data);
+        setCount(res.data.data.length)
       } catch (error) {
         setError(error);
       }
@@ -49,7 +51,7 @@ const useFetch = (url) => {
     setIsLoading(false);
   };
 
-  return { data, isLoading, error, registerUser, loginUser };
+  return { data, isLoading, error, registerUser, loginUser,count };
 };
 
 

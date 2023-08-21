@@ -3,43 +3,38 @@ import { Loader, NewsCard, SideBar } from "../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
-// import { useState } from "react";
-
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { useState } from "react";
 
 const CityProfile = () => {
-
-  // const [currentPage, setCurrentPage] = useState(1); // Add currentPage state
-  // const itemsPerPage = 10; // Number of items per page
-
-  // const { data: cityresources, isLoading } = useFetch(
-  //   `/cityresources?_start=${(currentPage - 1) * itemsPerPage}&_limit=${itemsPerPage}&populate=*`
-  // );
-  // const { data: headerparagraphs } = useFetch("/headerparagraphs?populate");
-
-  // const totalPages = Math.ceil(cityresources?._count / itemsPerPage);
-
-  // const handlePageChange = (page) => {
-  //   setCurrentPage(page);
-  // };
-
-
-
-  const { data: cityresources, isLoading } = useFetch("/cityresources?populate=*");
-  
-
+  const { data: cityresources, isLoading,count:profileCount } = useFetch("/cityresources?populate=*");
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate")
 
+  const [page,setPage] = useState(0)
+  const [size,setSize] = useState(9)
+  const pages = Math.ceil(profileCount / size)
+  console.log(pages);
+
+  // const { data: cityresources, isLoading } = useFetch(
+  //   `/cityresources?_start=${
+  //     (currentPage - 1) * itemsPerPage
+  //   }&_limit=${itemsPerPage}&populate=*`
+  // );
+
+
+
+
+
   if (isLoading) {
-    return <Loader />
+    return <Loader />;
   }
 
   return (
     <>
-    <Helmet>
-      <title>Smart City Citizen - City Profile</title>
-      <meta name="description" content="cities profile" />
-    </Helmet>
+      <Helmet>
+        <title>Smart City Citizen - City Profile</title>
+        <meta name="description" content="cities profile" />
+      </Helmet>
       <section>
         <div className="container">
           <div className="city_profile_wrapper">
@@ -52,26 +47,22 @@ const CityProfile = () => {
             <div className="latest_news">
               <div className="news_sec">
                 <div className="newses">
+                  {cityresources?.map((cityresource) => (
+                    <NewsCard
+                      key={cityresource.id}
+                      allnews={cityresource}
+                      collection="cityresources"
+                    />
+                  ))}
+                </div>
+                {/* Pagination */}
+                <div className="pagination">
                   {
-                    cityresources?.map((cityresource)=>(
-                      <NewsCard key={cityresource.id} allnews={cityresource} collection="cityresources" />
+                    [...Array(pages).keys()].map(number => (
+                      <button key={number}>{number + 1}</button>
                     ))
                   }
                 </div>
-                
-                {/* Pagination */}
-                {/* <div className="pagination">
-                  {Array.from({ length: totalPages }, (_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handlePageChange(index + 1)}
-                      className={currentPage === index + 1 ? "active" : ""}
-                    >
-                      {index + 1}
-                    </button>
-                  ))}
-                </div> */}
-              
               </div>
               <SideBar />
             </div>

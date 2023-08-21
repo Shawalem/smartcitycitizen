@@ -21,7 +21,7 @@ module.exports = createCoreController('api::cityresource.cityresource');
 //     const { _start, _limit } = ctx.query;
 //     const cityresources = await strapi.query('cityresource').find({
 //       _start: _start || 0,
-//       _limit: _limit || 10, // Default limit if not specified
+//       _limit: _limit || 9, // Default limit if not specified
 //     });
 
 //     const totalCount = await strapi.query('cityresource').count();
