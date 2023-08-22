@@ -18,17 +18,6 @@ const News = () => {
     return <Loader />
   }
 
-  // Helper function to sort data by creation date
-  const sortByCreationDate = (data) => {
-    return data.slice().sort((a, b) => {
-      const dateA = new Date(a.createdAt);
-      const dateB = new Date(b.createdAt);
-      return dateB - dateA; // Sort in descending order
-    });
-  };
-
-  const sortedLatestNews = allnewses ? sortByCreationDate([...allnewses]) : [];
-
   return (
     <>
       <Helmet>
@@ -42,7 +31,7 @@ const News = () => {
               <div className="news_sec">
                 <h1>{headerparagraphs?.[0]?.attributes.news_title}</h1>
                 <div className="newses">
-                  {sortedLatestNews?.map((allnewse) => (
+                  {allnewses?.map((allnewse) => (
                     <NewsCard key={allnewse.id} allnews={allnewse} collection="allnewses" />
                   ))}
                 </div>
