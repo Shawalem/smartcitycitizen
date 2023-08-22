@@ -4,28 +4,57 @@ import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const CityProfile = () => {
-  const { data: cityresources, isLoading,count:profileCount } = useFetch("/cityresources?populate=*");
-  const { data: headerparagraphs } = useFetch("/headerparagraphs?populate")
+  // const { data: cityresources, isLoading,count:profileCount } = useFetch("/cityresources?populate=*");
+  const { data: headerparagraphs } = useFetch("/headerparagraphs?populate");
 
-  const [page,setPage] = useState(0)
-  const [size,setSize] = useState(9)
-  const pages = Math.ceil(profileCount / size)
-  console.log(pages);
+  const [page, setPage] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [count, setCount] = useState(0);
+  const [profile, setProfile] = useState([]);
+  const size = 9;
+  const pages = Math.ceil(count / size);
 
-  // const { data: cityresources, isLoading } = useFetch(
-  //   `/cityresources?_start=${
-  //     (currentPage - 1) * itemsPerPage
-  //   }&_limit=${itemsPerPage}&populate=*`
-  // );
+  useEffect(() => {
+    // const { data: cityresources, count: profileCount } = useFetch(
+    //   `/cityresources?_start=${size * page}&_limit=${size}&populate=*`
+    // );
+    // axios.get(
+    //   `https://backend-app-lft6m.ondigitalocean.app/api/cityresources?_start=${
+    //     size * page
+    //   }&_limit=${size}&populate=*`,config
+    // ).then(res =>{
+    //   setProfile(res.data.data);
+    //   setCount(res.data.length);
+    //   setLoading(false);
+    // })
+    const config = {
+      headers: {
+        Authorization: "bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
+      },
+    };
+    const get = async () => {
+      try {
+        const res = await axios.get(
+          `https://backend-app-lft6m.ondigitalocean.app/api/cityresources?_start=${
+            size * page
+          }&_limit=${size}&populate=*`,
+          config
+        );
+        setProfile(res.data.data);
+        setCount(res.data.data.length);
+        setLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    get();
+  }, [page]);
 
-
-
-
-
-  if (isLoading) {
+  if (loading) {
     return <Loader />;
   }
 
@@ -47,7 +76,7 @@ const CityProfile = () => {
             <div className="latest_news">
               <div className="news_sec">
                 <div className="newses">
-                  {cityresources?.map((cityresource) => (
+                  {profile?.map((cityresource) => (
                     <NewsCard
                       key={cityresource.id}
                       allnews={cityresource}
@@ -57,11 +86,11 @@ const CityProfile = () => {
                 </div>
                 {/* Pagination */}
                 <div className="pagination">
-                  {
-                    [...Array(pages).keys()].map(number => (
-                      <button key={number}>{number + 1}</button>
-                    ))
-                  }
+                  {[...Array(pages).keys()].map((number) => (
+                    <button key={number} onClick={() => setPage(number)} className={number === page ? 'page_active' : ""}>
+                      {number + 1}
+                    </button>
+                  ))}
                 </div>
               </div>
               <SideBar />

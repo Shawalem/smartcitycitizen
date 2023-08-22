@@ -1,5 +1,9 @@
 @use "../../variable.scss" as *;
 
+.page_active{
+  background-color: blue;
+  padding: .4rem;
+}
 .city_profile_wrapper {
   padding: 2rem;
   margin-top: 100px;
