@@ -21,11 +21,13 @@ const useFetch = (url) => {
         const res = await request.get(url);
         setData(res.data.data);
         setCount(res.data.data.length)
+        
       } catch (error) {
         setError(error);
       }
       setIsLoading(false);
     };
+    
     fetchData();
   }, [url]);
 
