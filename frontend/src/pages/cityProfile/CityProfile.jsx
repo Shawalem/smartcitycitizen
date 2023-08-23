@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const CityProfile = () => {
-  
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate");
 
   const [page, setPage] = useState(0);
@@ -33,16 +32,12 @@ const CityProfile = () => {
           config
         );
 
-        // Extract data and count from the response
-        const responseData = res.data.data; // Assuming the array is directly in res.data.data
-        const responseCount = res.data.count;
-
         // Log the response and count
-        console.log("Response data:", responseData);
-        console.log("Count:", responseCount);
+        console.log("Response data:", res.data);
+        console.log("Count:", res.data.data.length);
 
-        setProfile(responseData);
-        setCount(responseCount);
+        setProfile(res.data.data);
+        setCount(res.data.data.length);
         setLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -54,7 +49,6 @@ const CityProfile = () => {
   if (loading) {
     return <Loader />;
   }
-
   return (
     <>
       <Helmet>
