@@ -16,7 +16,7 @@ const CityProfile = () => {
   const [count, setCount] = useState(0);
   const [profile, setProfile] = useState([]);
   const size = 9;
-  const [pages, setPages] = useState(0);
+  const pages = Math.ceil(count / size);
 
   useEffect(() => {
     const config = {
@@ -33,13 +33,16 @@ const CityProfile = () => {
           config
         );
 
-        // Log the response and count
-        console.log("Response data:", res.data);
-        console.log("Count:", res.data.data.length);
+        // Extract data and count from the response
+        const responseData = res.data.data; // Assuming the array is directly in res.data.data
+        const responseCount = res.data.count;
 
-        setProfile(res.data.data);
-        setCount(res.data.data.length);
-        setPages(Math.ceil(res.data.count / size)); // Calculate pages here
+        // Log the response and count
+        console.log("Response data:", responseData);
+        console.log("Count:", responseCount);
+
+        setProfile(responseData);
+        setCount(responseCount);
         setLoading(false);
       } catch (error) {
         console.log(error.message);
