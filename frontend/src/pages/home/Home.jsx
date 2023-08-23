@@ -34,7 +34,6 @@ const Home = () => {
     return <Loader/>
   }
 
-
   return (
     <>
       <Helmet>

@@ -9,26 +9,33 @@
 // module.exports = createCoreController('api::cityresource.cityresource');
 
 
-
-
-
 'use strict';
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = {
+module.exports = createCoreController('api::cityresource.cityresource', {
   async find(ctx) {
-    const { _start, _limit } = ctx.query;
-    const cityresources = await strapi.query('cityresource').find({
-      _start: _start || 0,
-      _limit: _limit || 9, // Default limit if not specified
-    });
+    let { _start, _limit } = ctx.query;
 
-    const totalCount = await strapi.query('cityresource').count();
+    if (!_start) _start = 0;
+    if (!_limit) _limit = 10;
+
+    // Convert query parameters to integers
+    const start = parseInt(_start);
+    const limit = parseInt(_limit);
+
+    // Fetch city resources with pagination
+    const cityresources = await strapi.query('cityresource').model
+      .find()
+      .skip(start)
+      .limit(limit);
+
+    // Count the total number of city resources
+    const count = await strapi.query('cityresource').count();
 
     return {
-      cityresources,
-      totalCount,
+      data: cityresources,
+      count,
     };
   },
-};
+});

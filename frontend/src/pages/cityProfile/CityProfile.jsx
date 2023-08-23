@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const CityProfile = () => {
-  // const { data: cityresources, isLoading,count:profileCount } = useFetch("/cityresources?populate=*");
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate");
 
   const [page, setPage] = useState(0);
@@ -19,18 +18,6 @@ const CityProfile = () => {
   const pages = Math.ceil(count / size);
 
   useEffect(() => {
-    // const { data: cityresources, count: profileCount } = useFetch(
-    //   `/cityresources?_start=${size * page}&_limit=${size}&populate=*`
-    // );
-    // axios.get(
-    //   `https://backend-app-lft6m.ondigitalocean.app/api/cityresources?_start=${
-    //     size * page
-    //   }&_limit=${size}&populate=*`,config
-    // ).then(res =>{
-    //   setProfile(res.data.data);
-    //   setCount(res.data.length);
-    //   setLoading(false);
-    // })
     const config = {
       headers: {
         Authorization: "bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
@@ -44,6 +31,11 @@ const CityProfile = () => {
           }&_limit=${size}&populate=*`,
           config
         );
+
+        // Log the response and count
+        console.log("Response data:", res.data);
+        console.log("Count:", res.data.data.length);
+
         setProfile(res.data.data);
         setCount(res.data.data.length);
         setLoading(false);
@@ -57,7 +49,6 @@ const CityProfile = () => {
   if (loading) {
     return <Loader />;
   }
-
   return (
     <>
       <Helmet>
@@ -87,10 +78,14 @@ const CityProfile = () => {
                 {/* Pagination */}
                 <div className="pagination">
                   {[...Array(pages).keys()].map((number) => (
-                    <button key={number} onClick={() => setPage(number)} className={number === page ? 'page_active' : ""}>
-                      {number + 1}
-                    </button>
-                  ))}
+                      <button
+                        key={number}
+                        onClick={() => setPage(number)}
+                        className={number === page ? 'page_active' : ""}
+                      >
+                        {number + 1}
+                      </button>
+                    ))}
                 </div>
               </div>
               <SideBar />
