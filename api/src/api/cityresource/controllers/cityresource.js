@@ -24,18 +24,23 @@ module.exports = createCoreController('api::cityresource.cityresource', {
     const start = parseInt(_start);
     const limit = parseInt(_limit);
 
-    // Fetch city resources with pagination
-    const cityresources = await strapi.query('cityresource').model
-      .find()
-      .skip(start)
-      .limit(limit);
+    try {
+      // Fetch city resources with pagination
+      const cityresources = await strapi.query('cityresource').model
+        .find()
+        .skip(start)
+        .limit(limit);
 
-    // Count the total number of city resources
-    const count = await strapi.query('cityresource').count();
+      // Count the total number of city resources
+      const count = await strapi.query('cityresource').count();
 
-    return {
-      data: cityresources,
-      count,
-    };
+      return {
+        data: cityresources,
+        count,
+      };
+    } catch (error) {
+      console.error('Error fetching city resources:', error);
+      throw error;
+    }
   },
 });
