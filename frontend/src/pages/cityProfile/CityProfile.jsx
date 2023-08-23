@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const CityProfile = () => {
+  
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate");
 
   const [page, setPage] = useState(0);
@@ -15,7 +16,7 @@ const CityProfile = () => {
   const [count, setCount] = useState(0);
   const [profile, setProfile] = useState([]);
   const size = 9;
-  const pages = Math.ceil(count / size);
+  const [pages, setPages] = useState(0);
 
   useEffect(() => {
     const config = {
@@ -38,6 +39,7 @@ const CityProfile = () => {
 
         setProfile(res.data.data);
         setCount(res.data.data.length);
+        setPages(Math.ceil(res.data.count / size)); // Calculate pages here
         setLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -49,6 +51,7 @@ const CityProfile = () => {
   if (loading) {
     return <Loader />;
   }
+
   return (
     <>
       <Helmet>
