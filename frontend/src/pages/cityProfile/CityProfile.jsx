@@ -9,11 +9,12 @@ import axios from "axios";
 
 const CityProfile = () => {
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate");
-
+  const {count:profileCount } = useFetch("/cityresources?populate");
+  
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(0);
-  const [profile, setProfile] = useState([]);
+  const [cityresources, setCityresources] = useState([]);
   const size = 9;
   const pages = Math.ceil(count / size);
 
@@ -26,25 +27,22 @@ const CityProfile = () => {
     const get = async () => {
       try {
         const res = await axios.get(
-          `https://backend-app-lft6m.ondigitalocean.app/api/cityresources?_start=${
-            size * page
-          }&_limit=${size}&populate=*`,
+          `https://backend-app-lft6m.ondigitalocean.app/api/cityresources?pagination[start]=${size * page}&pagination[limit]=${size}&populate=*`,
           config
         );
 
         // Log the response and count
-        console.log("Response data:", res.data);
-        console.log("Count:", res.data.data.length);
-
-        setProfile(res.data.data);
-        setCount(res.data.data.length);
+        console.log("Response data:", res.data.data)
+        console.log('page changed');
+        setCityresources(res.data.data);
+        setCount(profileCount)
         setLoading(false);
       } catch (error) {
         console.log(error.message);
       }
     };
     get();
-  }, [page]);
+  }, [page,profileCount]);
 
   if (loading) {
     return <Loader />;
@@ -67,7 +65,7 @@ const CityProfile = () => {
             <div className="latest_news">
               <div className="news_sec">
                 <div className="newses">
-                  {profile?.map((cityresource) => (
+                  {cityresources?.map((cityresource) => (
                     <NewsCard
                       key={cityresource.id}
                       allnews={cityresource}
