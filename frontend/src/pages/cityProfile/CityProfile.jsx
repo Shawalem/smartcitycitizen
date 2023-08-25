@@ -6,6 +6,9 @@ import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack'
+
 
 const CityProfile = () => {
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate");
@@ -32,8 +35,6 @@ const CityProfile = () => {
         );
 
         // Log the response and count
-        console.log("Response data:", res.data.data)
-        console.log('page changed');
         setCityresources(res.data.data);
         setCount(profileCount)
         setLoading(false);
@@ -75,15 +76,11 @@ const CityProfile = () => {
                 </div>
                 {/* Pagination */}
                 <div className="pagination">
-                  {[...Array(pages).keys()].map((number) => (
-                      <button
-                        key={number}
-                        onClick={() => setPage(number)}
-                        className={number === page ? 'page_active' : ""}
-                      >
-                        {number + 1}
-                      </button>
-                    ))}
+                    <Stack spacing={2}>
+                      <Pagination count={pages}
+                      onChange={(_,value) => setPage(value - 1)}
+                       />
+                    </Stack>
                 </div>
               </div>
               <SideBar />
