@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import useFetch from '../../../hooks/useFetch';
 
 const Seniorcitizenprograms = () => {
-  const { data: railtravels, isLoading } = useFetch('/railtravels?populate=*');
+  const { data: railtravels, isLoading } = useFetch('/railtravels?sort[0]=date:desc&populate=*');
   
   const {data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 

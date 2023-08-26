@@ -6,7 +6,7 @@ import './smartBuilding.scss';
 
 const Smartbuildings = () => {
 
-  const { data: smartbuildings, isLoading } = useFetch('/smartbuildings?populate=*');
+  const { data: smartbuildings, isLoading } = useFetch('/smartbuildings?sort[0]=date:desc&populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
   

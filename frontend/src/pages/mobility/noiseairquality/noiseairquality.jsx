@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import useFetch from '../../../hooks/useFetch';
 
 const Noiseairquality = () => {
-  const { data: noiseairqualities, isLoading } = useFetch('/noiseairqualities?populate=*');
+  const { data: noiseairqualities, isLoading } = useFetch('/noiseairqualities?sort[0]=date:desc&populate=*');
   
   const {data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 

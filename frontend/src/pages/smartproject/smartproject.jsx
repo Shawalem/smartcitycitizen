@@ -10,14 +10,14 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 const Smartproject = () => {
 
   // get city lights 
-  const { data: citylights, isLoading } = useFetch('/citylights?populate=*');
+  const { data: citylights, isLoading } = useFetch('/citylights?sort[0]=date:desc&populate=*');
   console.log(citylights);
 
   // get city Webinar 
-  const { data: cityresources } = useFetch("/cityresources?populate=*");
-  const { data: articles } = useFetch('/articles?populate=*');
-  const { data: companies } = useFetch('/companies?populate=*');
-  const { data: inthenewses } = useFetch('/inthenewses?populate=*');
+  const { data: cityresources } = useFetch("/cityresources?sort[0]=date:desc&populate=*");
+  const { data: articles } = useFetch('/articles?sort[0]=date:desc&populate=*');
+  const { data: companies } = useFetch('/companies?sort[0]=date:desc&populate=*');
+  const { data: inthenewses } = useFetch('/inthenewses?sort[0]=date:desc&populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 

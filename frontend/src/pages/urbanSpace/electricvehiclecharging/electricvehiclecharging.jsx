@@ -5,7 +5,7 @@ import useFetch from '../../../hooks/useFetch';
 
 const Electricvehiclecharging = () => {
 
-  const { data: electricvehicleandchargings, isLoading } = useFetch('/electricvehicleandchargings?populate=*');
+  const { data: electricvehicleandchargings, isLoading } = useFetch('/electricvehicleandchargings?sort[0]=date:desc&populate=*');
 
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 

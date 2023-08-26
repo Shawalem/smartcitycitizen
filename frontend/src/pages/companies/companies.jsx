@@ -10,15 +10,15 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 const Companies = () => {
 
   // get city lights 
-  const { data: companies, isLoading } = useFetch('/companies?populate=*');
+  const { data: companies, isLoading } = useFetch('/companies?sort[0]=date:desc&populate=*');
 
   // get city Webinar 
-  const { data: articles } = useFetch('/articles?populate=*');
-  const { data: inthenewses } = useFetch('/inthenewses?populate=*');
-  const { data: cityresources } = useFetch("/cityresources?populate=*");
-  const { data: citylights } = useFetch('/citylights?populate=*');
+  const { data: articles } = useFetch('/articles?sort[0]=date:desc&populate=*');
+  const { data: inthenewses } = useFetch('/inthenewses?sort[0]=date:desc&populate=*');
+  const { data: cityresources } = useFetch("/cityresources?sort[0]=date:desc&populate=*");
+  const { data: citylights } = useFetch('/citylights?sort[0]=date:desc&populate=*');
 
-  const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+  const { data: headerparagraphs } = useFetch("/headerparagraphs?sort[0]=date:desc&populate=*");
 
   if (isLoading) {
     return <Loader/>

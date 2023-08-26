@@ -6,7 +6,7 @@ import useFetch from '../../../hooks/useFetch';
 
 const Trafficcongestion = () => {
 
-  const { data: trafficcongestions, isLoading } = useFetch('/trafficcongestions?populate=*');
+  const { data: trafficcongestions, isLoading } = useFetch('/trafficcongestions?sort[0]=date:desc&populate=*');
 
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 

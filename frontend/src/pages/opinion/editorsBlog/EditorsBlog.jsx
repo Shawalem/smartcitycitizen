@@ -8,11 +8,11 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 
 const EditorsBlog = () => {
   // GET Editor's blogs 
-  const { data: editorblogs } = useFetch('/editorblogs?populate=*') 
+  const { data: editorblogs } = useFetch('/editorblogs?sort[0]=date:desc&populate=*') 
   console.log(editorblogs);
 
   // GET Webinars
-  const { data: webinars } = useFetch('/webinars?populate=*');
+  const { data: webinars } = useFetch('/webinars?sort[0]=date:desc&populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 

@@ -4,7 +4,7 @@ import useFetch from "../../../hooks/useFetch";
 
 
 const Getinvolved = () => {
-  const { data: aiandmachines, isLoading } = useFetch('/aiandmachines?populate=*');
+  const { data: aiandmachines, isLoading } = useFetch('/aiandmachines?sort[0]=date:desc&populate=*');
   
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 

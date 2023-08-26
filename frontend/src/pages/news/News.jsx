@@ -11,7 +11,7 @@ const News = () => {
   // get webinar 
   const { data: opinions } = useFetch("/opinions?populate=*");
 
-  const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
+  const { data: headerparagraphs } = useFetch("/headerparagraphs?sort[0]=date:desc&populate=*");
 
   if (isLoading) {
     return <Loader />

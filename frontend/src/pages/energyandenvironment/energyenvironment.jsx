@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 const Energyenvironment = () => {
 
-  const { data: energyenvironments, isLoading } = useFetch('/energyenvironments?populate=*');
+  const { data: energyenvironments, isLoading } = useFetch('/energyenvironments?sort[0]=date:desc&populate=*');
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
   

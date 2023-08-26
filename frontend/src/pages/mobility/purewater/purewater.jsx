@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import useFetch from '../../../hooks/useFetch';
 
 const Purewater = () => {
-  const { data: airtravels, isLoading } = useFetch('/airtravels?populate=*');
+  const { data: airtravels, isLoading } = useFetch('/airtravels?sort[0]=date:desc&populate=*');
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 
   if (isLoading) {

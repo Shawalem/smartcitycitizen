@@ -64,11 +64,11 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Podcast = () => {
   // get opinions
-  const { data: opinions, isLoading } = useFetch("/opinions?populate=*");
+  const { data: opinions, isLoading } = useFetch("/opinions?sort[0]=date:desc&populate=*");
   console.log(opinions);
 
   // get city Webinar
-  const { data: prodcasts } = useFetch("/prodcasts?populate=*");
+  const { data: prodcasts } = useFetch("/prodcasts?sort[0]=date:desc&populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 

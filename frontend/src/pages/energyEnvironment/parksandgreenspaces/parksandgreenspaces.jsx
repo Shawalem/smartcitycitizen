@@ -7,7 +7,7 @@ import useFetch from '../../../hooks/useFetch';
 const Parksandgreenspaces = () => {
 
   // batteriesrenewables
-  const { data: parksandgreenspaces, isLoading } = useFetch('/parksandgreenspaces?populate=*');
+  const { data: parksandgreenspaces, isLoading } = useFetch('/parksandgreenspaces?sort[0]=date:desc&populate=*');
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 
   if (isLoading) {

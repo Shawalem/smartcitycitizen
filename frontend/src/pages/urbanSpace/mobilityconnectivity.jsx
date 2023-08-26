@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 const Mobilityconnectivity = () => {
 
-  const {data: urbanspaces, isLoading} = useFetch('/urbanspaces?populate=*');
+  const {data: urbanspaces, isLoading} = useFetch('/urbanspaces?sort[0]=date:desc&populate=*');
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 
   if (isLoading) {

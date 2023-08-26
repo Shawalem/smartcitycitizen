@@ -6,9 +6,9 @@ import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Footercitylights = () => {
-  const { data: footercitylights, isLoading } = useFetch("/footercitylights?populate=*");
+  const { data: footercitylights, isLoading } = useFetch("/footercitylights?sort[0]=date:desc&populate=*");
 
-  const { data: opinions } = useFetch('/opinions?populate=*');
+  const { data: opinions } = useFetch('/opinions?sort[0]=date:desc&populate=*');
   
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 

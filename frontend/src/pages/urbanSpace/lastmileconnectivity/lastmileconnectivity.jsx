@@ -5,7 +5,7 @@ import useFetch from '../../../hooks/useFetch';
 
 
 const Lastmileconnectivity = () => {
-  const { data: culturalspaces, isLoading } = useFetch('/culturalspaces?populate=*');
+  const { data: culturalspaces, isLoading } = useFetch('/culturalspaces?sort[0]=date:desc&populate=*');
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 
   if (isLoading) {

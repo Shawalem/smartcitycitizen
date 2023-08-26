@@ -6,7 +6,7 @@ import useFetch from '../../../hooks/useFetch';
 
 const Webinars = () => {
 
-  const { data: webinars } = useFetch("/webinars?populate=*");
+  const { data: webinars } = useFetch("/webinars?sort[0]=date:desc&populate=*");
   console.log(webinars);
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");

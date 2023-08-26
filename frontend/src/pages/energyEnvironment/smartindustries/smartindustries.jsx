@@ -7,7 +7,7 @@ import useFetch from '../../../hooks/useFetch';
 const Smartindustries = () => {
 
   // batteriesrenewables
-  const { data: smartindustries, isLoading } = useFetch('/smartindustries?populate=*');
+  const { data: smartindustries, isLoading } = useFetch('/smartindustries?sort[0]=date:desc&populate=*');
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 
   if (isLoading) {

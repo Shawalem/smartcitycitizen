@@ -6,16 +6,16 @@ import useFetch from '../../hooks/useFetch';
 
 const Research = () => {
 
-  const { data: webinars } = useFetch("/webinars?populate=*");
+  const { data: webinars } = useFetch("/webinars?sort[0]=date:desc&populate=*");
   console.log(webinars);
 
-  const { data: whitepapers } = useFetch('/whitepapers?populate=*');
+  const { data: whitepapers } = useFetch('/whitepapers?sort[0]=date:desc&populate=*');
   console.log(whitepapers)
 
-  const { data: prodcasts } = useFetch("/prodcasts?populate=*");
+  const { data: prodcasts } = useFetch("/prodcasts?sort[0]=date:desc&populate=*");
   console.log(prodcasts);
 
-  const { data: trendreports } = useFetch('/trendreports?populate=*');
+  const { data: trendreports } = useFetch('/trendreports?sort[0]=date:desc&populate=*');
   console.log(trendreports);
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");

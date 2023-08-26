@@ -7,7 +7,7 @@ import useFetch from '../../../hooks/useFetch';
 const Smartresidence = () => {
 
   // batteriesrenewables
-  const { data: batteriesrenewables, isLoading } = useFetch('/batteriesrenewables?populate=*');
+  const { data: batteriesrenewables, isLoading } = useFetch('/batteriesrenewables?sort[0]=date:desc&populate=*');
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 
   if (isLoading) {

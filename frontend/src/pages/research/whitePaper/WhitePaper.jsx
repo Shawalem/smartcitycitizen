@@ -6,7 +6,7 @@ import useFetch from '../../../hooks/useFetch';
 
 const WhitePaper = () => {
 
-  const { data: whitepapers } = useFetch('/whitepapers?populate=*');
+  const { data: whitepapers } = useFetch('/whitepapers?sort[0]=date:desc&populate=*');
   console.log(whitepapers)
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");

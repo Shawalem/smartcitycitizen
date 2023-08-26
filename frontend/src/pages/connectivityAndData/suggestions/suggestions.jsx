@@ -5,7 +5,7 @@ import useFetch from '../../../hooks/useFetch';
 
 const Suggestions = () => {
 
-  const { data: privacysecurities, isLoading } = useFetch("/privacysecurities?populate=*");
+  const { data: privacysecurities, isLoading } = useFetch("/privacysecurities?sort[0]=date:desc&populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 

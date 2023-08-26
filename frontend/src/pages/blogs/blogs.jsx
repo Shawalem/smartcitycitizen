@@ -7,10 +7,10 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Blogs = () => {
   // get special reports 
-  const { data: blogs, isLoading } = useFetch("/blogs?populate=*");
+  const { data: blogs, isLoading } = useFetch("/blogs?sort[0]=date:desc&populate=*");
   console.log(blogs);
 
-  const { data: opinions } = useFetch("/opinions?populate=*");
+  const { data: opinions } = useFetch("/opinions?sort[0]=date:desc&populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
   

@@ -7,7 +7,7 @@ import useFetch from '../../../hooks/useFetch';
 const Climateweather = () => {
 
   // batteriesrenewables
-  const { data: climateandweathers, isLoading } = useFetch('/climateandweathers?populate=*');
+  const { data: climateandweathers, isLoading } = useFetch('/climateandweathers?sort[0]=date:desc&populate=*');
   const { data: headerparagraphs } = useFetch('/headerparagraphs?populate=*');
 
   if (isLoading) {

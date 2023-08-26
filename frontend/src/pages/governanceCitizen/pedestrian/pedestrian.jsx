@@ -5,7 +5,7 @@ import useFetch from '../../../hooks/useFetch';
 
 const Pedestrian = () => {
   
-  const { data: pedestrians, isLoading } = useFetch("/pedestrians?populate=*");
+  const { data: pedestrians, isLoading } = useFetch("/pedestrians?sort[0]=date:desc&populate=*");
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
   if (isLoading) {

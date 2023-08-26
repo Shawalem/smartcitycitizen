@@ -6,7 +6,7 @@ import useFetch from '../../../hooks/useFetch';
 
 const Commercialbuilding = () => {
   // get special reports
-  const { data: airqualities, isLoading } = useFetch("/airqualities?populate=*");
+  const { data: airqualities, isLoading } = useFetch("/airqualities?sort[0]=date:desc&populate=*");
   
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 

@@ -6,7 +6,7 @@ import useFetch from '../../../hooks/useFetch';
 
 const Donate = () => {
 
-  const { data: donates, isLoading } = useFetch("/donates?populate=*");
+  const { data: donates, isLoading } = useFetch("/donates?sort[0]=date:desc&populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
   

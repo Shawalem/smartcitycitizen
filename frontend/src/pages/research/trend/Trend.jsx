@@ -8,10 +8,10 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Trend = () => {
 
-  const { data: trendreports } = useFetch('/trendreports?populate=*');
+  const { data: trendreports } = useFetch('/trendreports?sort[0]=date:desc&populate=*');
   console.log(trendreports);
 
-  const { data: webinars } = useFetch('/webinars?populate=*');
+  const { data: webinars } = useFetch('/webinars?sort[0]=date:desc&populate=*');
   console.log(webinars);
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");

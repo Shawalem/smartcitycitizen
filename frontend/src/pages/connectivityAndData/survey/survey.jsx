@@ -6,7 +6,7 @@ import useFetch from '../../../hooks/useFetch';
 
 const Survey = () => {
 
-  const { data: marketmonets, isLoading } = useFetch("/marketmonets?populate=*");
+  const { data: marketmonets, isLoading } = useFetch("/marketmonets?sort[0]=date:desc&populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 

@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 const Safetysecurity = () => {
 
   
-  const { data: governancecitizens, isLoading } = useFetch("/governancecitizens?populate=*");
+  const { data: governancecitizens, isLoading } = useFetch("/governancecitizens?sort[0]=date:desc&populate=*");
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
   if (isLoading) {
