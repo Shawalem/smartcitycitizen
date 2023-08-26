@@ -2,6 +2,7 @@ import {Loader, Page} from "../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../hooks/useFetch";
+import './smartBuilding.scss';
 
 const Smartbuildings = () => {
 
@@ -22,12 +23,19 @@ const Smartbuildings = () => {
           content="Latest news on smart city projects tackling energy and climate change - one of the most pressing issue of our age. We cover air quality, smart grids, solar and wind & water power, renewable energy and working towards meeting sustainable development goals"
         />
       </Helmet>
-      <section className="city_en">
+      <section className="city_building">
         <Page
           pageHeading={headerparagraphs?.[0]?.attributes.smartbuildings_title}
           pagePara={headerparagraphs?.[0]?.attributes.smartbuildings_paragraph}
           smartbuildings={smartbuildings}
         />
+        <div className="container">
+          <div className="wrapper2">
+            <div className="commercial_building">
+              
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );

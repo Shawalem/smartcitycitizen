@@ -7,8 +7,7 @@ import useFetch from "../../hooks/useFetch";
 
 const News = () => {
   // get latest news 
-  const { data: allnewses, isLoading } = useFetch("/allnewses?populate=*");
-
+  const { data: allnewses, isLoading } = useFetch("/allnewses?sort[0]=date:desc&populate=*");
   // get webinar 
   const { data: opinions } = useFetch("/opinions?populate=*");
 
@@ -41,8 +40,8 @@ const News = () => {
             <div className="webinar">
               <h1>Opinions</h1>
               <div className="webinar_wrapper">
-              {opinions?.slice(0, 4).map((opinion) => (
-                    <NewsCard key={opinion} allnews={opinion} collection="opinions" />
+              {opinions?.slice(0, 4).map((opinion,_) => (
+                    <NewsCard key={_} allnews={opinion} collection="opinions" />
                   ))}
               </div>
             </div>
