@@ -1,0 +1,22 @@
+@use '../../variable.scss' as *;
+.wrapper2{
+    padding: 3rem 2rem;
+    .commercial_building,.smart_residence,.retail,.municipals,.park,.industries{
+        margin-bottom: 50px;
+        h1{
+            @include subHeading;
+        }
+        .newses{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 30px;
+        }
+        .BTN{
+            text-align: center;
+            margin-top: 40px;
+            button{
+                @include BTN;
+            }
+        }
+    }
+}
