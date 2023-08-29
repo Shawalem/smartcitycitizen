@@ -17,7 +17,7 @@ const Smartresidence = () => {
   return (
     <>
     <Helmet>
-        <title>Batteries And Renewable - Smart City Citizen</title>
+        <title>Smart Residence - Smart City Citizen</title>
         <meta
           name="description"
           content="Batteries and renewable"

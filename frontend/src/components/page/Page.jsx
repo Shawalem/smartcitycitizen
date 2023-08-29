@@ -55,10 +55,13 @@ const Page = ({
         <div className="page_wrapper">
           <div className="latest_news">
             <div className="news_sec">
+              
               <div className="intro">
                 <h1>{pageHeading}</h1>
                 <ReactMarkdown>{pagePara}</ReactMarkdown>
               </div>
+
+              
               <div className="newses">
                 {citizenengagements?.map((citizenengagement) => (
                   <NewsCard
