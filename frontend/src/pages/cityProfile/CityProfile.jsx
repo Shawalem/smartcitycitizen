@@ -30,7 +30,7 @@ const CityProfile = () => {
     const get = async () => {
       try {
         const res = await axios.get(
-          `https://backend-app-lft6m.ondigitalocean.app/api/cityresources?pagination[start]=${size * page}&pagination[limit]=${size}&populate=*`,
+          `https://backend-app-lft6m.ondigitalocean.app/api/cityresources?pagination[start]=${size * page}&pagination[limit]=${size}&sort[0]=title:asc&populate=*`,
           config
         );
 

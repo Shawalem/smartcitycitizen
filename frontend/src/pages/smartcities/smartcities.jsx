@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Smartcities = () => {
   // get city resources
   const { data: cityresources, isLoading } = useFetch(
-    "/cityresources?sort[0]=date:desc&populate=*"
+    "/cityresources?sort[0]=title:asc&populate=*"
   );
 
   // get browse smart citys
