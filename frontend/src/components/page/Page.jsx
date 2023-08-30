@@ -48,6 +48,7 @@ const Page = ({
 }) => {
   const { data: opinions } = useFetch("/opinions?populate=*");
   const buildingLink = window.location.host + "/smart-buildings";
+  const CommercialbuildingLink = window.location.host + "/commercial-building";
   const linkName = window.location.href;
   return (
     <>
@@ -348,20 +349,11 @@ const Page = ({
             </div>
             <SideBar />
           </div>
-          {linkName.includes(buildingLink) ? (
+          {linkName.includes(buildingLink, CommercialbuildingLink) ? (
             <></>
           ) : (
             <div className="webinars">
-              <h1>Opinions</h1>
-              <div className="webinars_wrap">
-                {opinions?.map((opinion) => (
-                  <NewsCard
-                    key={opinion.id}
-                    allnews={opinion}
-                    collection="opinion"
-                  />
-                ))}
-              </div>
+              {/* Nothing  */}
             </div>
           )}
         </div>
