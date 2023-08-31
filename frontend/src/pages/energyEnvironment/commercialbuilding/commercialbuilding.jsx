@@ -44,7 +44,7 @@ const Commercialbuilding = () => {
           content="The latest news on air quality challenges and solutions for smart city projects across the world."
         />
       </Helmet>
-      <section className="city_en">
+      <section className="commercial_building">
         <Page
           pageHeading={
             headerparagraphs?.[0]?.attributes.commercialbuilding_title

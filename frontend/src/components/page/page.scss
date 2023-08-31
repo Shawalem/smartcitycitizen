@@ -25,7 +25,9 @@
         .news {
           &:first-child {
             grid-column: 1 / 4;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             .news_desc {
               h4 {
                 font-size: 1.3rem;
