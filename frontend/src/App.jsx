@@ -19,6 +19,7 @@ import {
   Research,
   SpecialReport,
   Team,
+  TokenReward,
   Trend,
   Webinars,
   WhitePaper,
@@ -200,6 +201,7 @@ const App = () => {
 
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/parners" element={<Partners />} />
+          <Route path="/rewardtoken" element={ <TokenReward/> }  />
         </Routes>
         <ToastContainer />
       </main>

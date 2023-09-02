@@ -19,3 +19,4 @@ export {default as Trend} from './research/trend/Trend'
 
 
 export {default as NewsDetails} from './newsDetails/NewsDetails'
+export {default as TokenReward} from './tokenReward/TokenReward'

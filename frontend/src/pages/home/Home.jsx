@@ -8,22 +8,30 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   // get latest news
-  const { data: allnewses, isLoading } = useFetch("/allnewses?sort[0]=date:desc&populate=*");
+  const { data: allnewses, isLoading } = useFetch(
+    "/allnewses?sort[0]=date:desc&populate=*"
+  );
 
   // get blogs
   const { data: blogs } = useFetch("/blogs?sort[0]=date:desc&populate=*");
 
   // get privacysecurities
-  const { data: privacysecurities } = useFetch("/privacysecurities?sort[0]=date:desc&populate=*");
+  const { data: privacysecurities } = useFetch(
+    "/privacysecurities?sort[0]=date:desc&populate=*"
+  );
 
   // get special reports
   const { data: specials } = useFetch("/specials?sort[0]=date:desc&populate=*");
 
   // get city profiles
-  const { data: cityresources } = useFetch("/cityresources?sort[0]=date:desc&populate=*");
+  const { data: cityresources } = useFetch(
+    "/cityresources?sort[0]=date:desc&populate=*"
+  );
 
   // get search
-  const { data: smartindustries } = useFetch("/smartindustries?sort[0]=date:desc&populate=*");
+  const { data: smartindustries } = useFetch(
+    "/smartindustries?sort[0]=date:desc&populate=*"
+  );
   // get Webinar
   const { data: opinions } = useFetch("/opinions?sort[0]=date:desc&populate=*");
 
@@ -31,7 +39,7 @@ const Home = () => {
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
   if (isLoading) {
-    return <Loader/>
+    return <Loader />;
   }
 
   return (
