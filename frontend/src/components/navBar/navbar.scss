@@ -82,26 +82,25 @@
     .membership {
       a {
         color: white;
-        background-color: $blue;
-        padding: 0.6rem 1rem;
-        border-radius: 50px;
         transition: all 0.3s ease;
+        text-decoration: none;
         &:hover {
-          background-color: white;
           color: black;
         }
 
         button {
           color: white;
+          padding: 0.6rem 1rem;
           cursor: pointer;
-          background-color: rgba(255, 255, 255, 0);
+          background-color: $blue;
           border-radius: 50px;
           outline: none;
           border: none;
           transition: all 0.3s ease;
           &:hover {
-            background-color: rgba(255, 255, 255, 0);
+            background-color: white;
             color: black;
+            border-radius: 50px;
           }
         }
       }
@@ -383,6 +382,11 @@
 
 @media (max-width: 576px) {
   .navbar_wrapper {
+    .membership {
+      button {
+        display: none;
+      }
+    }
     .logo {
       width: 180px;
     }
