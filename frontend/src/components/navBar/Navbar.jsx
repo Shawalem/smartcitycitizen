@@ -30,7 +30,7 @@ const Navbar = () => {
           <Link to="/">
             <img src={NavImg} alt="logo" />
           </Link>
-        </div>
+        </div>  
         <nav ref={Nav}>
           <div className="cross" onClick={handleCross}>
             <RxCross2 />
@@ -170,7 +170,7 @@ const Navbar = () => {
         </nav>
         <div className="search_wrap">
           <div className="membership">
-            <Link to="/register">MEMBERSHIP</Link>
+            <Link to="/register"><button>EARN SMART CITY CITIZEN TOKENS</button></Link>
           </div>
           <div className="bar" onClick={handleBar}>
             <FaBars />

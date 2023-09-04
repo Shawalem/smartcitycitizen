@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/navBar/Navbar";
 import { Route, Routes } from "react-router-dom";
+import ReactGA from "react-ga4";
 import {
   AboutUs,
   Advertise,
@@ -76,6 +77,57 @@ import Smartcities from "./pages/smartcities/smartcities";
 
 
 const App = () => {
+
+  const TRACKING_ID = 'G-77C21C31E4';
+  ReactGA.initialize(TRACKING_ID);
+  ReactGA.send({ hitType: "pageview", page: "/", title: "Smart City Citizen" });
+  ReactGA.send({ hitType: "pageview", page: "/news", title: "News" });
+  ReactGA.send({ hitType: "pageview", page: "/reports", title: "Reports" });
+  ReactGA.send({ hitType: "pageview", page: "/opinions", title: "Opinions" });
+  ReactGA.send({ hitType: "pageview", page: "/events", title: "Events" });
+  ReactGA.send({ hitType: "pageview", page: "/blogs", title: "Blogs" });
+  ReactGA.send({ hitType: "pageview", page: "/podcasts", title: "Podcasts" });
+  ReactGA.send({ hitType: "pageview", page: "/smart-city", title: "Smart Cities" });
+  ReactGA.send({ hitType: "pageview", page: "/city-profile", title: "City Profile" });
+  ReactGA.send({ hitType: "pageview", page: "/smart-city-projects", title: "Smart City Projects" });
+  ReactGA.send({ hitType: "pageview", page: "/articles", title: "Articles" });
+  ReactGA.send({ hitType: "pageview", page: "/companies", title: "Companies" });
+  ReactGA.send({ hitType: "pageview", page: "/inthenews", title: "In the News" });
+  ReactGA.send({ hitType: "pageview", page: "/citizen-engagement", title: "Citizen Engagement" });
+  ReactGA.send({ hitType: "pageview", page: "/get-involved", title: "Get Involved" });
+  ReactGA.send({ hitType: "pageview", page: "/survey", title: "survey" });
+  ReactGA.send({ hitType: "pageview", page: "/suggestions", title: "Suggestions" });
+  ReactGA.send({ hitType: "pageview", page: "/donate", title: "Donate" });
+  ReactGA.send({ hitType: "pageview", page: "/volunteer", title: "Volunteer" });
+  ReactGA.send({ hitType: "pageview", page: "/safety-security", title: "Safety & Security" });
+  ReactGA.send({ hitType: "pageview", page: "/digital-Infrastructure", title: "Digital Infrastructure" });
+  ReactGA.send({ hitType: "pageview", page: "/emergency-system", title: "Emergency System" });
+  ReactGA.send({ hitType: "pageview", page: "/cybersecurity", title: "Cybersecurity" });
+  ReactGA.send({ hitType: "pageview", page: "/pedestrian", title: "Pedestrian" });
+  ReactGA.send({ hitType: "pageview", page: "/smart-buildings", title: "Smart Buildings" });
+  ReactGA.send({ hitType: "pageview", page: "/commercial-building", title: "Commercial Building" });
+  ReactGA.send({ hitType: "pageview", page: "/smart-residence", title: "Smart Residence" });
+  ReactGA.send({ hitType: "pageview", page: "/retail-recreational-spaces", title: "Retail & Recreational spaces" });
+  ReactGA.send({ hitType: "pageview", page: "/municipal-buildings", title: "Municipal Buildings" });
+  ReactGA.send({ hitType: "pageview", page: "/parks-greenspaces", title: "Parks and Greenspaces" });
+  ReactGA.send({ hitType: "pageview", page: "/smart-industries", title: "Smart Industries" });
+  ReactGA.send({ hitType: "pageview", page: "/citizen-health-wellbeing", title: "Citizen Health & Wellbeing" });
+  ReactGA.send({ hitType: "pageview", page: "/pure-water", title: "Pure Water" });
+  ReactGA.send({ hitType: "pageview", page: "/mobile-health-camps-clinics", title: "Mobile Health Camps & Clinics" });
+  ReactGA.send({ hitType: "pageview", page: "/senior-citizen-programs", title: "Senior Citizen Programs" });
+  ReactGA.send({ hitType: "pageview", page: "/noise-air-quality", title: "Noise & Air Quality" });
+  ReactGA.send({ hitType: "pageview", page: "/mobility-connectivity", title: "Mobility & Connectivity" });
+  ReactGA.send({ hitType: "pageview", page: "/electric-vehicle-charging", title: "Electric Vehicle and Charging" });
+  ReactGA.send({ hitType: "pageview", page: "/last-mile-connectivity", title: "Last mile Connectivity" });
+  ReactGA.send({ hitType: "pageview", page: "/public-transport", title: "Public Transport" });
+  ReactGA.send({ hitType: "pageview", page: "/traffic-congestion", title: "Traffic Congestion" });
+  ReactGA.send({ hitType: "pageview", page: "/energy-environment", title: "Energy & Environment" });
+  ReactGA.send({ hitType: "pageview", page: "/clean-energy", title: "Clean Energy" });
+  ReactGA.send({ hitType: "pageview", page: "/waste-management", title: "Waste Management" });
+  ReactGA.send({ hitType: "pageview", page: "/climate-weather", title: "Climate & Weather" });
+  ReactGA.send({ hitType: "pageview", page: "/sustainability", title: "Sustainability" });
+  ReactGA.send({ hitType: "pageview", page: "/solar-program", title: "Solar Program" });
+
   return (
     <>
       <header>

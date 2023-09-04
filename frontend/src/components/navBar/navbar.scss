@@ -4,7 +4,7 @@
   position: relative;
 }
 
-.Nav{
+.Nav {
   background-color: #262626;
 }
 
@@ -19,7 +19,7 @@
     }
   }
   nav {
-    .cross{
+    .cross {
       display: none;
     }
     .nav1 {
@@ -53,23 +53,23 @@
       left: 0;
       bottom: -47px;
       padding: 0rem 7rem;
-      background-color: #0A6EBD;
+      background-color: #0a6ebd;
       width: 100%;
       @include flex-between;
       .link {
         padding: 0.7rem;
-        a{
+        a {
           color: white;
           font-size: 0.9rem;
         }
-        svg{
+        svg {
           color: white;
         }
         .subLink {
           top: 48px;
           left: 0;
           width: 250px;
-          background-color: #0A6EBD
+          background-color: #0a6ebd;
         }
       }
     }
@@ -85,10 +85,24 @@
         background-color: $blue;
         padding: 0.6rem 1rem;
         border-radius: 50px;
-        transition: all .3s ease;
-        &:hover{
+        transition: all 0.3s ease;
+        &:hover {
           background-color: white;
           color: black;
+        }
+
+        button {
+          color: white;
+          cursor: pointer;
+          background-color: rgba(255, 255, 255, 0);
+          border-radius: 50px;
+          outline: none;
+          border: none;
+          transition: all 0.3s ease;
+          &:hover {
+            background-color: rgba(255, 255, 255, 0);
+            color: black;
+          }
         }
       }
     }
@@ -99,7 +113,7 @@
   }
 }
 
-@media(max-width:1500px){
+@media (max-width: 1500px) {
   .navbar_wrapper {
     nav {
       .nav2 {
@@ -107,30 +121,30 @@
         left: 0;
         bottom: -49px;
         padding: 0rem 2rem;
-        background-color: #0A6EBD;
+        background-color: #0a6ebd;
         width: 100%;
         @include flex-between;
         .link {
           padding: 0.8rem;
-          a{
+          a {
             color: white;
             font-size: 0.9rem;
           }
-          svg{
+          svg {
             color: white;
           }
           .subLink {
             top: 48px;
             left: 0;
             width: 250px;
-            background-color: #0A6EBD
+            background-color: #0a6ebd;
           }
         }
       }
     }
   }
 }
-@media(max-width:1400px){
+@media (max-width: 1400px) {
   .navbar_wrapper {
     nav {
       .nav2 {
@@ -138,30 +152,30 @@
         left: 0;
         bottom: -47px;
         padding: 0rem 1rem;
-        background-color: #0A6EBD;
+        background-color: #0a6ebd;
         width: 100%;
         @include flex-between;
         .link {
           padding: 0.7rem;
-          a{
+          a {
             color: white;
             font-size: 0.9rem;
           }
-          svg{
+          svg {
             color: white;
           }
           .subLink {
             top: 48px;
             left: 0;
             width: 250px;
-            background-color: #0A6EBD
+            background-color: #0a6ebd;
           }
         }
       }
     }
   }
 }
-@media(max-width:1300px){
+@media (max-width: 1300px) {
   .navbar_wrapper {
     nav {
       .nav2 {
@@ -169,23 +183,23 @@
         left: 0;
         bottom: -47px;
         padding: 0rem 0rem;
-        background-color: #0A6EBD;
+        background-color: #0a6ebd;
         width: 100%;
         @include flex-between;
         .link {
           padding: 0.7rem;
-          a{
+          a {
             color: white;
             font-size: 0.9rem;
           }
-          svg{
+          svg {
             color: white;
           }
           .subLink {
             top: 48px;
             left: 0;
             width: 250px;
-            background-color: #0A6EBD
+            background-color: #0a6ebd;
           }
         }
       }
@@ -193,10 +207,9 @@
   }
 }
 
-
 @media (max-width: 1280px) {
   .navbar_wrapper {
-    padding: .6rem 1rem;
+    padding: 0.6rem 1rem;
     .logo {
       width: 220px;
     }
@@ -209,14 +222,14 @@
       width: 100%;
       height: 100%;
       @include flex-column;
-      transition: all .5s ease;
+      transition: all 0.5s ease;
       z-index: 10;
       overflow-y: scroll;
       justify-content: flex-start;
       &::-webkit-scrollbar {
         display: none;
       }
-      .cross{
+      .cross {
         display: block;
         color: black;
         display: flex;
@@ -224,7 +237,7 @@
         align-items: center;
         padding: 1rem;
         cursor: pointer;
-        svg{
+        svg {
           font-size: 1.5rem;
         }
       }
@@ -279,7 +292,7 @@
               }
             }
           }
-          .subLinkActive{
+          .subLinkActive {
             height: 100%;
             opacity: 1;
             pointer-events: all;
@@ -301,7 +314,7 @@
           svg {
             fill: black;
           }
-          a{
+          a {
             color: black;
           }
           .realLink {
@@ -326,7 +339,7 @@
               }
             }
           }
-          .subLinkActive{
+          .subLinkActive {
             height: 100%;
             opacity: 1;
             pointer-events: all;
@@ -334,8 +347,8 @@
         }
       }
     }
-    .navActive{
-      left: 0px
+    .navActive {
+      left: 0px;
     }
     .search_wrap {
       @include flex-center;
@@ -348,10 +361,10 @@
           background-color: $primary-color;
           padding: 0.6rem;
           border-radius: 10px;
-          background-color: #0A6EBD;
+          background-color: #0a6ebd;
         }
       }
-      .bar{
+      .bar {
         display: block;
         margin-left: 10px;
         cursor: pointer;
@@ -375,4 +388,3 @@
     }
   }
 }
-
