@@ -170,7 +170,7 @@ const Navbar = () => {
         </nav>
         <div className="search_wrap">
           <div className="membership">
-            <Link to="/register"><button>EARN SMART CITY CITIZEN TOKENS</button></Link>
+            <Link to="/rewardtoken"><button>EARN SMART CITY CITIZEN TOKENS</button></Link>
           </div>
           <div className="bar" onClick={handleBar}>
             <FaBars />
