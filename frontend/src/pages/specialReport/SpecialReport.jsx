@@ -4,6 +4,7 @@ import "./specialReport.scss";
 // useFetch
 import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { Link } from "react-router-dom";
 
 const SpecialReport = () => {
   // get special reports 
@@ -38,6 +39,11 @@ const SpecialReport = () => {
                   {headerparagraphs?.[0]?.attributes.reports_paragraph}
                   </ReactMarkdown>
                 </div>
+
+                <div className="pdf_button">
+                  <a href="#">DOWNLOAD PDF</a>
+                </div>
+
                 <div className="newses">
                   {specials?.map((special) => (
                     <NewsCard key={special.id} allnews={special} collection="specials" />

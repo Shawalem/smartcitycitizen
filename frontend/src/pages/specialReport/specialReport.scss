@@ -39,6 +39,20 @@
           }
         }
       }
+
+      .pdf_button {
+        margin-top: 40px;
+        a {
+          background: #0a6ebd;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          padding-left: 30px;
+          padding-right: 30px;
+          color: white;
+          text-decoration: none;
+          border-radius: 50px;
+        }
+      }
     }
   }
   .webinar {
