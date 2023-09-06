@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const SpecialReport = () => {
   // get special reports 
   const { data: specials, isLoading } = useFetch("/specials?sort[0]=date:desc&populate=*");
+  console.log(specials)
 
   const { data: opinions } = useFetch("/opinions?sort[0]=date:desc&populate=*");
 
