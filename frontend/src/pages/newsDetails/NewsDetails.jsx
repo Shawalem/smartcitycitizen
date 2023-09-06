@@ -658,9 +658,38 @@ const NewsDetails = () => {
                     </div>
                   </div>
                 </div>
+
+                <div className="pdf_button">
+                  <a href="#">DOWNLOAD PDF</a>
+                </div>
               </div>
               <SideBar />
             </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             {/* {galary && (
               <div className="galary">
                 <h1>Gallery</h1>

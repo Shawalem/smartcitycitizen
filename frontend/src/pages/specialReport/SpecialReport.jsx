@@ -41,9 +41,7 @@ const SpecialReport = () => {
                   </ReactMarkdown>
                 </div>
 
-                <div className="pdf_button">
-                  <a href="#">DOWNLOAD PDF</a>
-                </div>
+                
 
                 <div className="newses">
                   {specials?.map((special) => (

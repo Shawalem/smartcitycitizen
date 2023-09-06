@@ -38,7 +38,20 @@
 
       .newsDescription {
         margin-top: 50px;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
+      }
+      .pdf_button {
+        margin-bottom: 30px;
+        a {
+          background: #0a6ebd;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          padding-left: 30px;
+          padding-right: 30px;
+          color: white;
+          text-decoration: none;
+          border-radius: 50px;
+        }
       }
     }
   }
