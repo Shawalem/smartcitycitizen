@@ -575,6 +575,8 @@ const NewsDetails = () => {
     culturalspacesData?.img?.data?.attributes?.url ||
     municipalbuildingsData?.img?.data?.attributes?.url;
 
+  const upload_pdf = specialsData?.upload_pdf?.data?.attributes?.url;
+
   // extrat data date from backend
   const description =
     latestwebsData?.description ||
@@ -660,7 +662,7 @@ const NewsDetails = () => {
                 </div>
 
                 <div className="pdf_button">
-                  <a href="#">DOWNLOAD PDF</a>
+                  <a href={upload_pdf} download={upload_pdf} target="_blank" rel="noopener noreferrer">DOWNLOAD PDF</a>
                 </div>
               </div>
               <SideBar />
