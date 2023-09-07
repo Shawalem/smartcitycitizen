@@ -578,7 +578,6 @@ const NewsDetails = () => {
   const upload_pdf = 
     specialsData?.upload_pdf?.data?.attributes?.url;
     latestwebsData?.upload_pdf?.data?.attributes?.url ||
-    specialsData?.upload_pdf?.data?.attributes?.url ||
     wastemanagementsData?.upload_pdf?.data?.attributes?.url ||
     volunteersData?.upload_pdf?.data?.attributes?.url ||
     trafficcongestionsData?.upload_pdf?.data?.attributes?.url ||
