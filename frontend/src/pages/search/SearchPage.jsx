@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { Helmet } from "react-helmet";
 import "./searchPage.scss";
 import { Loader, NewsCard } from "../../components";
 
 const SearchPage = () => {
+  const { collection } = useParams();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const searchTerm = searchParams.get("query");
@@ -14,249 +15,246 @@ const SearchPage = () => {
   // get latest news
     // import from backend
     const { data: allnewses, isLoading } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/allnewses?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: parksandgreenspaces } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/parksandgreenspaces?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: wastemanagements } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/parksandgreenspaces?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: volunteers } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/volunteers?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
-  
     const { data: trafficcongestions } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/trafficcongestions?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: sustainabilities } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/sustainabilities?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: solarprograms } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/solarprograms?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: smartindustries } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/smartindustries?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: smartbuildings } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/smartbuildings?populate=*&filters[title][$contains]=${searchTerm}`
     );
-  
   
     const { data: publictransports } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/publictransports?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
-  
     const { data: pedestrians } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/pedestrians?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: partners } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/partners?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
-  
     const { data: inthenewses } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/inthenewses?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: noiseairqualities } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/noiseairqualities?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
-  
     const { data: jobses } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/jobses?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: editors } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/editors?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: footercitylights } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/footercitylights?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: electricvehicleandchargings } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/electricvehicleandchargings?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: events } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/events?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: donates } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/donates?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
-  
     const { data: digitalinfrastructures } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/digitalinfrastructures?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: cybersecurities } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/cybersecurities?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: companies } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/companies?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: citylights } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/citylights?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: climateandweathers } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/climateandweathers?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: cleanenergies } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/cleanenergies?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
-  
     const { data: citizensecurities } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/citizensecurities?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: blogs } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/blogs?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: articles } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/articles?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: cityprofiles } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/cityprofiles?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: researches } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/researches?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: webinars } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/webinars?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: opinions } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/opinions?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: editorblogs } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/editorblogs?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: cityresources } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/${collection}?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: smartcities } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/smartcities?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: whitepapers } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/whitepapers?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: prodcasts } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/prodcasts?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: aiandmachines } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/aiandmachines?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: analytics } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/analytics?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: marketmonets } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
+    {
+      /* WORK ON TOMOROW */
+    }
+  
     const { data: trendreports } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/trendreports?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: privacysecurities } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/privacysecurities?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: governancecitizens } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/governancecitizens?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: citizenengagements } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/citizenengagements?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: energyenvironments } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/energyenvironments?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: airqualities } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/airqualities?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: batteriesrenewables } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/batteriesrenewables?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: solarpowers } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/solarpowers?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: windpowers } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/windpowers?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: mobilities } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/mobilities?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: airtravels } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/$airtravels?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: electricvehicles } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/electricvehicles?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: railtravels } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/railtravels?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: urbanspaces } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/urbanspaces?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: commercialbuildings } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/commercialbuildings?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: culturalspaces } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/culturalspaces?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: municipalbuildings } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/municipalbuildings?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: latestwebs } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/latestwebs?populate=*&filters[title][$contains]=${searchTerm}`
     );
     const { data: specials } = useFetch(
-      `/${collection}?populate=*&filters[id][$eq]=${id}`
+      `/specials?populate=*&filters[title][$contains]=${searchTerm}`
     );
 
     if (isLoading) {
