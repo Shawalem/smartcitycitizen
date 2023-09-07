@@ -575,7 +575,68 @@ const NewsDetails = () => {
     culturalspacesData?.img?.data?.attributes?.url ||
     municipalbuildingsData?.img?.data?.attributes?.url;
 
-  const upload_pdf = specialsData?.upload_pdf?.data?.attributes?.url;
+  const upload_pdf = 
+    specialsData?.upload_pdf?.data?.attributes?.url;
+    latestwebsData?.upload_pdf?.data?.attributes?.url ||
+    specialsData?.upload_pdf?.data?.attributes?.url ||
+    wastemanagementsData?.upload_pdf?.data?.attributes?.url ||
+    volunteersData?.upload_pdf?.data?.attributes?.url ||
+    trafficcongestionsData?.upload_pdf?.data?.attributes?.url ||
+    sustainabilitiesData?.upload_pdf?.data?.attributes?.url ||
+    solarprogramsData?.upload_pdf?.data?.attributes?.url ||
+    smartindustriesData?.upload_pdf?.data?.attributes?.url ||
+    smartbuildingsData?.upload_pdf?.data?.attributes?.url ||
+    publictransportsData?.upload_pdf?.data?.attributes?.url ||
+    pedestriansData?.upload_pdf?.data?.attributes?.url ||
+    partnersData?.upload_pdf?.data?.attributes?.url ||
+    parksandgreenspacesData?.upload_pdf?.data?.attributes?.url ||
+    noiseairqualitiesData?.upload_pdf?.data?.attributes?.url ||
+    jobsesData?.upload_pdf?.data?.attributes?.url ||
+    inthenewsesData?.upload_pdf?.data?.attributes?.url ||
+    footercitylightsData?.upload_pdf?.data?.attributes?.url ||
+    eventsData?.upload_pdf?.data?.attributes?.url ||
+    electricvehicleandchargingsData?.upload_pdf?.data?.attributes?.url ||
+    donatesData?.upload_pdf?.data?.attributes?.url ||
+    digitalinfrastructuresData?.upload_pdf?.data?.attributes?.url ||
+    cybersecuritiesData?.upload_pdf?.data?.attributes?.url ||
+    companiesData?.upload_pdf?.data?.attributes?.url ||
+    climateandweathersData?.upload_pdf?.data?.attributes?.url ||
+    cleanenergiesData?.upload_pdf?.data?.attributes?.url ||
+    citylightsData?.upload_pdf?.data?.attributes?.url ||
+    citizensecuritiesData?.upload_pdf?.data?.attributes?.url ||
+    blogsData?.upload_pdf?.data?.attributes?.url ||
+    articlesData?.upload_pdf?.data?.attributes?.url ||
+    editorsData?.upload_pdf?.data?.attributes?.url ||
+    cityprofilesData?.upload_pdf?.data?.attributes?.url ||
+    researchesData?.upload_pdf?.data?.attributes?.url ||
+    webinarsData?.upload_pdf?.data?.attributes?.url ||
+    opinionsData?.upload_pdf?.data?.attributes?.url ||
+    editorblogsData?.upload_pdf?.data?.attributes?.url ||
+    cityresourcesData?.upload_pdf?.data?.attributes?.url ||
+    smartcitiesData?.upload_pdf?.data?.attributes?.url ||
+    whitepapersData?.upload_pdf?.data?.attributes?.url ||
+    prodcastsData?.upload_pdf?.data?.attributes?.url ||
+    aiandmachinesData?.upload_pdf?.data?.attributes?.url ||
+    analyticsData?.upload_pdf?.data?.attributes?.url ||
+    marketmonetsData?.upload_pdf?.data?.attributes?.url ||
+    trendreportsData?.upload_pdf?.data?.attributes?.url ||
+    privacysecuritiesData?.upload_pdf?.data?.attributes?.url ||
+    governancecitizensData?.upload_pdf?.data?.attributes?.url ||
+    citizenengagementsData?.upload_pdf?.data?.attributes?.url ||
+    energyenvironmentsData?.upload_pdf?.data?.attributes?.url ||
+    airqualitiesData?.upload_pdf?.data?.attributes?.url ||
+    batteriesrenewablesData?.upload_pdf?.data?.attributes?.url ||
+    solarpowersData?.upload_pdf?.data?.attributes?.url ||
+    windpowersData?.upload_pdf?.data?.attributes?.url ||
+    mobilitiesData?.upload_pdf?.data?.attributes?.url ||
+    airtravelsData?.upload_pdf?.data?.attributes?.url ||
+    electricvehiclesData?.upload_pdf?.data?.attributes?.url ||
+    railtravelsData?.upload_pdf?.data?.attributes?.url ||
+    urbanspacesData?.upload_pdf?.data?.attributes?.url ||
+    commercialbuildingsData?.upload_pdf?.data?.attributes?.url ||
+    culturalspacesData?.upload_pdf?.data?.attributes?.url ||
+    municipalbuildingsData?.upload_pdf?.data?.attributes?.url;
+    
 
   // extrat data date from backend
   const description =
