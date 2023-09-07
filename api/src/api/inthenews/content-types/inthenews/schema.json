@@ -30,6 +30,14 @@
       "type": "media",
       "multiple": false
     },
+    "upload_pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
     "para": {
       "type": "text"
     },

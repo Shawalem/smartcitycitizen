@@ -23,6 +23,14 @@
         "audios"
       ]
     },
+    "upload_pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
     "title": {
       "type": "string"
     }
