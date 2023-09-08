@@ -151,11 +151,11 @@ const SearchPage = () => {
     );
   
     const { data: cityresources } = useFetch(
-      `/${collection}?populate=*&filters[title][$contains]=${searchTerm}`
+      `/cityresources?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: smartcities } = useFetch(
-      `/smartcities?populate=*&filters[title][$contains]=${searchTerm}`
+      `/$smartcities?populate=*&filters[title][$contains]=${searchTerm}`
     );
   
     const { data: whitepapers } = useFetch(
