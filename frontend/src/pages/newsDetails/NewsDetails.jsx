@@ -722,7 +722,7 @@ const NewsDetails = () => {
                 </div>
 
                 <div className="pdf_button">
-                  <a download={upload_pdf}  rel="noopener noreferrer">DOWNLOAD PDF</a>
+                  <a href={upload_pdf} download={upload_pdf}  rel="noopener noreferrer">DOWNLOAD PDF</a>
                 </div>
               </div>
               <SideBar />
