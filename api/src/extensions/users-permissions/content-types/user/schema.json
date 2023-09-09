@@ -65,17 +65,118 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "firstName": {
-      "type": "string"
+    "first_name": {
+      "type": "string",
+      "required": true
     },
-    "lastName": {
-      "type": "string"
+    "last_name": {
+      "type": "string",
+      "required": true
     },
-    "jobTitle": {
-      "type": "string"
+    "company_name": {
+      "type": "string",
+      "required": true
     },
-    "company": {
-      "type": "string"
+    "your_role_as": {
+      "type": "enumeration",
+      "enum": [
+        "SmartCity Citizen",
+        "Society",
+        "Educational/Non Profit",
+        "Private Sector",
+        "Public Sector"
+      ],
+      "required": true
+    },
+    "country": {
+      "type": "enumeration",
+      "enum": [
+        "India",
+        "Bangladesh",
+        "Pakistan",
+        "Afghanistan",
+        "Albania",
+        "Algeria",
+        "American Samoa",
+        "Angola",
+        "Antarctica",
+        "Argentina",
+        "Armenia",
+        "Aruba",
+        "Bahamas",
+        "Barbados",
+        "Bahrain",
+        "Belarus",
+        "Belgium",
+        "Belize",
+        "Benin",
+        "Bermuda",
+        "Bhutan",
+        "Brazil",
+        "Cambodia",
+        "Canada",
+        "Cameroon",
+        "Cape Verde",
+        "Chad",
+        "Chile",
+        "China",
+        "Christmas Island",
+        "Cocos Keeling Islands",
+        "Comoros",
+        "France",
+        "French Guiana",
+        "Gabon",
+        "Germany"
+      ]
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "number": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "max": 15
+    },
+    "what_sector_are_you_involved": {
+      "type": "enumeration",
+      "enum": [
+        "Smartcity Authority",
+        "Research Institute",
+        "Non-Profit",
+        "Government",
+        "Corporate Company",
+        "Urban Palnning"
+      ],
+      "required": false
+    },
+    "what_is_your_job_function": {
+      "type": "enumeration",
+      "enum": [
+        "Professor/Teacher/Trainer",
+        "Architect / Town Planner",
+        "Engineer / Designer",
+        "Society Member",
+        "Enforcement Authority",
+        "Student / Volunteer",
+        "Other"
+      ],
+      "required": true
+    },
+    "what_is_your_level_of_seniority": {
+      "type": "enumeration",
+      "enum": [
+        "Owner/Partner",
+        "C-Suite",
+        "Professor",
+        "Director",
+        "Senior Manager",
+        "Staff / Executive",
+        "Trainee/Student/Intern",
+        "Other role"
+      ],
+      "required": true
     }
   }
 }
