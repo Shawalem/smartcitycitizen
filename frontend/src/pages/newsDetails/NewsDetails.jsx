@@ -722,55 +722,12 @@ const NewsDetails = () => {
                 </div>
 
                 <div className="pdf_button">
-                  <a href={upload_pdf} download={upload_pdf} target="_blank" rel="noopener noreferrer">DOWNLOAD PDF</a>
+                  <a href={upload_pdf} download={upload_pdf}  rel="noopener noreferrer">DOWNLOAD PDF</a>
                 </div>
               </div>
               <SideBar />
             </div>
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            {/* {galary && (
-              <div className="galary">
-                <h1>Gallery</h1>
-                <div className="img_wrapper">
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                  <div className="galary_img">
-                    <img src={galary_img} alt="" />
-                  </div>
-                </div>
-              </div>
-            )} */}
           </div>
         </div>
       </section>
