@@ -3,9 +3,7 @@ import { SideBar } from "../../components";
 import "./details.scss";
 import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import galary_img from "../../assets/galary.jpg";
-import { useEffect } from "react";
-import { useState } from "react";
+// import { FacebookShareButton, TwitterShareButton, LinkedinShareButton } from 'react-share';
 
 const NewsDetails = () => {
   const { id, collection } = useParams();
@@ -22,6 +20,7 @@ const NewsDetails = () => {
   // }, []);
 
   // import from backend
+
   const { data: allnewses } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
   );
@@ -327,6 +326,8 @@ const NewsDetails = () => {
   const culturalspacesData = culturalspaces?.[0]?.attributes;
   const municipalbuildingsData = municipalbuildings?.[0]?.attributes;
 
+  // Extract the detail page for sical media sharing
+
   // Extract the necessary details from the fetched data
   const title =
     latestwebsData?.title ||
@@ -575,9 +576,8 @@ const NewsDetails = () => {
     culturalspacesData?.img?.data?.attributes?.url ||
     municipalbuildingsData?.img?.data?.attributes?.url;
 
-  const upload_pdf = 
-    specialsData?.upload_pdf?.data?.attributes?.url;
-    latestwebsData?.upload_pdf?.data?.attributes?.url ||
+  const upload_pdf = specialsData?.upload_pdf?.data?.attributes?.url;
+  latestwebsData?.upload_pdf?.data?.attributes?.url ||
     wastemanagementsData?.upload_pdf?.data?.attributes?.url ||
     volunteersData?.upload_pdf?.data?.attributes?.url ||
     trafficcongestionsData?.upload_pdf?.data?.attributes?.url ||
@@ -635,7 +635,6 @@ const NewsDetails = () => {
     commercialbuildingsData?.upload_pdf?.data?.attributes?.url ||
     culturalspacesData?.upload_pdf?.data?.attributes?.url ||
     municipalbuildingsData?.upload_pdf?.data?.attributes?.url;
-    
 
   // extrat data date from backend
   const description =
@@ -722,12 +721,17 @@ const NewsDetails = () => {
                 </div>
 
                 <div className="pdf_button">
-                  <a href={upload_pdf} download={upload_pdf}  rel="noopener noreferrer">DOWNLOAD PDF</a>
+                  <a
+                    href={upload_pdf}
+                    download={upload_pdf}
+                    rel="noopener noreferrer"
+                  >
+                    DOWNLOAD PDF
+                  </a>
                 </div>
+                <SideBar />
               </div>
-              <SideBar />
             </div>
-            
           </div>
         </div>
       </section>
