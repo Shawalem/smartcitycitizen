@@ -139,7 +139,7 @@
       "required": true
     },
     "number": {
-      "type": "integer",
+      "type": "decimal",
       "required": true,
       "unique": false
     },
