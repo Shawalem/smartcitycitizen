@@ -30,29 +30,7 @@ const useFetch = (url) => {
     fetchData();
   }, [url]);
 
-  const registerUser = async (config) => {
-    setIsLoading(true);
-    try {
-      const response = await request.post(config);
-      registerUser(response.data);
-    } catch (error) {
-      setError(error);
-    }
-    setIsLoading(false);
-  };
-
-  const loginUser = async (credentials) => {
-    setIsLoading(true);
-    try {
-      const response = await request.post("/auth/local", credentials);
-      setData(response.data);
-    } catch (error) {
-      setError(error);
-    }
-    setIsLoading(false);
-  };
-
-  return { data, isLoading, error, registerUser, loginUser,count };
+  return { data, isLoading, error,count };
 };
 
 
