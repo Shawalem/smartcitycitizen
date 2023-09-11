@@ -139,9 +139,9 @@
       "required": true
     },
     "number": {
-      "type": "decimal",
+      "type": "biginteger",
       "required": true,
-      "unique": false
+      "unique": true
     },
     "what_sector_are_you_involved": {
       "type": "enumeration",
