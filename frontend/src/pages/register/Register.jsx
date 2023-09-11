@@ -9,7 +9,7 @@ const Register = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
 
   const onSubmit = (data)=>{
-      axios.post(`${import.meta.env.VITE_REACT_APP_API_URL}/users/register`,data)
+      axios.post(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/local`,data)
       .then(res =>{
         console.log(res.data);
       }).catch(e=>{
