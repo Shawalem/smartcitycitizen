@@ -141,8 +141,7 @@
     "number": {
       "type": "integer",
       "required": true,
-      "unique": false,
-      "max": 15
+      "unique": false
     },
     "what_sector_are_you_involved": {
       "type": "enumeration",
