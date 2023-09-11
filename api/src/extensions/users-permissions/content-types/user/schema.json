@@ -34,7 +34,8 @@
       "minLength": 6,
       "configurable": false,
       "private": true,
-      "searchable": false
+      "searchable": false,
+      "required":true
     },
     "resetPasswordToken": {
       "type": "string",

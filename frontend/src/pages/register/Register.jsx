@@ -1,17 +1,22 @@
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import the toastify CSS
+import axios from 'axios'
 import "./register.scss";
-import useFetch from "../../hooks/useFetch";
-// import { useForm, reset } from "react-hook-form";
 
 
 const Register = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
 
   const onSubmit = (data)=>{
-    console.log(data);
+      axios.post(`${import.meta.env.VITE_REACT_APP_API_URL}/users/register`,data)
+      .then(res =>{
+        console.log(res.data);
+      }).catch(e=>{
+        if(e){
+          toast.error('something went wrong')
+        }
+      })
   }
 
   return (
