@@ -71,6 +71,15 @@ const Register = () => {
               </div>
 
               <div className="form_input">
+                <span>User Name</span>
+                <input
+                  type="text"
+                  {...register("username", { required: true })}
+                />
+                {errors.lastName && <p>Last Name is Required</p>}
+              </div>
+
+              <div className="form_input">
                 <span>Job Title</span>
                 <input type="text" {...register("jobTitle")} />
               </div>
