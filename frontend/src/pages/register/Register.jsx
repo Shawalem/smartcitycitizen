@@ -7,16 +7,26 @@ import "./register.scss";
 
 const Register = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
-
   const onSubmit = (data)=>{
-      axios.post(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/local/register`,data)
-      .then(res =>{
-        console.log(res.data);
-      }).catch(e=>{
-        if(e){
-          toast.error('something went wrong')
-        }
-      })
+    const link = `https://backend-app-lft6m.ondigitalocean.app/api/auth/local/register`;
+    // axios.post(`https://backend-app-lft6m.ondigitalocean.app/api/auth/local/register`,data)
+    fetch(link,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        Authorization: "bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data =>{
+      console.log(data);
+    })
+    .catch(e=>{
+      console.log(e.message);
+    })
+
+
   }
 
   return (
