@@ -16,12 +16,14 @@
       "type": "string",
       "minLength": 3,
       "unique": true,
-      "configurable": false
+      "configurable": false,
+      "required": true
     },
     "email": {
       "type": "email",
       "minLength": 6,
-      "configurable": false
+      "configurable": false,
+      "required": true
     },
     "provider": {
       "type": "string",
@@ -32,7 +34,8 @@
       "minLength": 6,
       "configurable": false,
       "private": true,
-      "searchable": false
+      "searchable": false,
+      "required":true
     },
     "resetPasswordToken": {
       "type": "string",
@@ -64,16 +67,20 @@
       "configurable": false
     },
     "first_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "last_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "job_title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "company_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "your_role_as": {
       "type": "enumeration",
@@ -83,7 +90,8 @@
         "Educational/Non Profit",
         "Private Sector",
         "Public Sector"
-      ]
+      ],
+      "required": true
     },
     "country": {
       "type": "enumeration",
@@ -127,10 +135,12 @@
       ]
     },
     "city": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "number": {
       "type": "biginteger",
+      "required": true,
       "unique": true
     },
     "what_sector_are_you_involved": {
@@ -142,7 +152,8 @@
         "Government",
         "Corporate Company",
         "Urban Palnning"
-      ]
+      ],
+      "required": false
     },
     "what_is_your_job_function": {
       "type": "enumeration",
@@ -154,7 +165,8 @@
         "Enforcement Authority",
         "Student / Volunteer",
         "Other"
-      ]
+      ],
+      "required": true
     },
     "what_is_your_level_of_seniority": {
       "type": "enumeration",
@@ -167,7 +179,8 @@
         "Staff / Executive",
         "Trainee/Student/Intern",
         "Other role"
-      ]
+      ],
+      "required": true
     }
   }
 }
