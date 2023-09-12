@@ -9,7 +9,7 @@ const Register = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
   const onSubmit = (data)=>{
     const link = `https://backend-app-lft6m.ondigitalocean.app/api/auth/local/register`;
-    // axios.post(`https://backend-app-lft6m.ondigitalocean.app/api/auth/local/register`,data)
+    data.username = "smart city citizen"
     fetch(link,{
       method:"POST",
       headers:{
@@ -25,6 +25,7 @@ const Register = () => {
     .catch(e=>{
       console.log(e.message);
     })
+    
 
 
   }
@@ -183,13 +184,13 @@ const Register = () => {
                   {...register("what_sector_are_you_involved", { required: true })}
                 >
                   <option value="" defaultValue=""></option>
-                  <option value="SmartCity Authority">
+                  <option value="Smartcity Authority">
                     Smartcity Authority
                   </option>
-                  <option value="University / Institute">Research Institute</option>
+                  <option value="Research Institute">Research Institute</option>
                   <option value="Non-Profit">Non-Profit</option>
                   <option value="Government">Government</option>
-                  <option value="corporate Company">Corporate Company</option>
+                  <option value="Corporate Company">Corporate Company</option>
                   <option value="Urban Palnning">Urban Palnning</option>
                 </select>
                 {errors.involved && <p>involved is Required</p>}
@@ -205,11 +206,11 @@ const Register = () => {
                   <option value="Professor/Teacher/Trainer">
                     Professor/Teacher/Trainer
                   </option>
-                  <option value="Architect/ Town Planner">Architect / Town Planner</option>
+                  <option value="Architect / Town Planner">Architect / Town Planner</option>
                   <option value="Engineer / Designer">Engineer / Designer</option>
                   <option value="Society Member">Society Member</option>
                   <option value="Enforcement Authority">Enforcement Authority</option>
-                  <option value="Volunteer">Student / Volunteer</option>
+                  <option value="Student / Volunteer">Student / Volunteer</option>
                   <option value="Other">Other</option>
                 </select>
                 {errors.jobFunction && <p>jobFunction is Required</p>}
