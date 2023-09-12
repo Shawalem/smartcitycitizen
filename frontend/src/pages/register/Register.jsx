@@ -56,7 +56,7 @@ const Register = () => {
                 <span>First Name</span>
                 <input
                   type="text"
-                  {...register("firstName", { required: true })}
+                  {...register("first_name", { required: true })}
                 />
                 {errors.firstName && <p>First Name is Required</p>}
               </div>
@@ -65,28 +65,19 @@ const Register = () => {
                 <span>Last Name</span>
                 <input
                   type="text"
-                  {...register("lastName", { required: true })}
-                />
-                {errors.lastName && <p>Last Name is Required</p>}
-              </div>
-
-              <div className="form_input">
-                <span>User Name</span>
-                <input
-                  type="text"
-                  {...register("username", { required: true })}
+                  {...register("last_name", { required: true })}
                 />
                 {errors.lastName && <p>Last Name is Required</p>}
               </div>
 
               <div className="form_input">
                 <span>Job Title</span>
-                <input type="text" {...register("jobTitle")} />
+                <input type="text" {...register("job_title")} />
               </div>
 
               <div className="form_input">
                 <span>Company</span>
-                <input type="text" {...register("company")} />
+                <input type="text" {...register("company_name")} />
               </div>
 
               <div className="form_input">
@@ -115,7 +106,7 @@ const Register = () => {
                 <span>Your Role As</span>
                 <select
                   type="text"
-                  {...register("industry", { required: true })}
+                  {...register("your_role_as", { required: true })}
                 >
                   <option value="" defaultValue=""></option>
                   <option value="SmartCity Citizen">SmartCity Citizen</option>
@@ -189,7 +180,7 @@ const Register = () => {
                 <span>What sector are you involved with?</span>
                 <select
                   type="text"
-                  {...register("involved", { required: true })}
+                  {...register("what_sector_are_you_involved", { required: true })}
                 >
                   <option value="" defaultValue=""></option>
                   <option value="SmartCity Authority">
@@ -208,7 +199,7 @@ const Register = () => {
                 <span>What is your Job Function?</span>
                 <select
                   type="text"
-                  {...register("jobFunction", { required: true })}
+                  {...register("what_is_your_job_function", { required: true })}
                 >
                   <option value="" defaultValue=""></option>
                   <option value="Professor/Teacher/Trainer">
@@ -228,7 +219,7 @@ const Register = () => {
                 <span>What is your level of seniority?</span>
                 <select
                   type="text"
-                  {...register("seniority", { required: true })}
+                  {...register("what_is_your_level_of_seniority", { required: true })}
                 >
                   <option value="" defaultValue=""></option>
                   <option value="Owner/Partner">
