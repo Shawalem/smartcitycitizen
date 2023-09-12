@@ -9,7 +9,9 @@ const Register = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
   const onSubmit = (data)=>{
     const link = `https://backend-app-lft6m.ondigitalocean.app/api/auth/local/register`;
-    data.username = "smart city citizen"
+
+    data.username = `smart city citizen${Math.ceil(Math.random()*100000)}`;
+
     fetch(link,{
       method:"POST",
       headers:{
@@ -21,6 +23,7 @@ const Register = () => {
     .then(res => res.json())
     .then(data =>{
       console.log(data);
+      toast.success('Register successful')
     })
     .catch(e=>{
       console.log(e.message);
