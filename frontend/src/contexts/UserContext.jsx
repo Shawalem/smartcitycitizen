@@ -4,7 +4,8 @@ import React, { createContext, useState } from 'react'
 export const AuthContext = createContext()
 
 const UserContext = ({children}) => {
-    const [user,setUser] = useState([])
+    const [user,setUser] = useState({})
+    console.log(user);
 
     const info = {user,setUser};
   return (

@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import "./header.scss";
 import { Link, useNavigate } from "react-router-dom";
 import SubLink from "../subLink/SubLink";
+import { AuthContext } from "../../contexts/UserContext";
 
 const Header = () => {
-  const navigate = useNavigate()
-  const [searchTerm, setSearchTerm] = useState('');
+  const { user:userInfo } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchInput = (e) => {
     setSearchTerm(e.target.value);
@@ -16,28 +18,28 @@ const Header = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (searchTerm.length > 0) {
-      navigate(`/search?query=${searchTerm}`)
-      document.querySelector('input').value = '';
-      setSearchTerm('');
+      navigate(`/search?query=${searchTerm}`);
+      document.querySelector("input").value = "";
+      setSearchTerm("");
     } else {
       console.log("none");
     }
-  }
+  };
 
   const subLinks = [
     {
-      name:"About Us",
-      ref:'/about-us'
+      name: "About Us",
+      ref: "/about-us",
     },
     {
-      name:"Careers",
-      ref:'/careers'
+      name: "Careers",
+      ref: "/careers",
     },
     {
-      name:"Contact us",
-      ref:'/contact-us'
-    }
-  ]
+      name: "Contact us",
+      ref: "/contact-us",
+    },
+  ];
   return (
     <div className="container">
       <div className="header_wrapper">
@@ -55,20 +57,35 @@ const Header = () => {
         </div>
         <form onClick={handleSubmit}>
           <div className="search">
-            <input onChange={handleSearchInput} type="text" className="input" placeholder="Enter a search term" />
+            <input
+              onChange={handleSearchInput}
+              type="text"
+              className="input"
+              placeholder="Enter a search term"
+            />
             <div>
               <BsSearch />
             </div>
           </div>
         </form>
         <div className="header_nav">
-          <SubLink mainLink='About' mainLinkRef='/about-us' subLinks={subLinks} />
-          <div className="link">
-            <Link to="/login">Login</Link>
-          </div>
-          <div className="link">
-            <Link to="/register">Register</Link>
-          </div>
+          <SubLink
+            mainLink="About"
+            mainLinkRef="/about-us"
+            subLinks={subLinks}
+          />
+          {userInfo?.user?.email ? (
+            <button>log out</button>
+          ) : (
+            <>
+              <div className="link">
+                <Link to="/login">Login</Link>
+              </div>
+              <div className="link">
+                <Link to="/register">Register</Link>
+              </div>
+            </>
+          )} 
         </div>
       </div>
     </div>

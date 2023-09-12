@@ -3,10 +3,13 @@ import { Helmet } from "react-helmet";
 import { toast } from "react-toastify";
 import axios from 'axios'
 import "./register.scss";
+import { useContext } from "react";
+import {AuthContext} from '../../contexts/UserContext'
 
 
 const Register = () => {
-  const { handleSubmit, register, formState: { errors } } = useForm();
+  const {setUser} = useContext(AuthContext);
+  const { handleSubmit, register,reset, formState: { errors } } = useForm();
   const onSubmit = (data)=>{
     const link = `https://backend-app-lft6m.ondigitalocean.app/api/auth/local/register`;
 
@@ -15,18 +18,22 @@ const Register = () => {
     fetch(link,{
       method:"POST",
       headers:{
-        "Content-Type":"application/json",
-        Authorization: "bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
+        "Content-Type":"application/json"
       },
       body: JSON.stringify(data)
     })
     .then(res => res.json())
     .then(data =>{
-      console.log(data);
-      toast.success('Register successful')
+      if(data.error){
+        toast.error(data.error.message)
+      }else{
+        toast.success('Register successful')
+        setUser(data)
+        reset()
+      }
     })
     .catch(e=>{
-      console.log(e.message);
+      toast.error('something went wrong!')
     })
     
 
@@ -232,7 +239,7 @@ const Register = () => {
                   <option value="C-Suite">C-Suite</option>
                   <option value="Professor">Professor</option>
                   <option value="Director">Director</option>
-                  <option value="Senior Manager ">Senior Manager</option>
+                  <option value="Senior Manager">Senior Manager</option>
                   <option value="Staff / Executive">Staff / Executive</option>
                   <option value="Trainee/Student/Intern">Trainee/Student/Intern</option>
                   <option value="Other role">Other role</option>
