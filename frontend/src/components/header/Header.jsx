@@ -49,7 +49,7 @@ const Header = () => {
               <FaTwitter />
             </div>
           </a>
-          <a href="https://www.linkedin.com/in/smartcitycitizen/">
+          <a href="https://www.linkedin.com/company/smartcitycitizen/">
             <div>
               <FaLinkedinIn />
             </div>
