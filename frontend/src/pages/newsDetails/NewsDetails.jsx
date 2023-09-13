@@ -7,19 +7,8 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const NewsDetails = () => {
   const { id, collection } = useParams();
-  // const [galary, setGalary] = useState(false);
-  // useEffect(() => {
-  //   const w = window.location.host + "/details/cityresources";
-  //   const d = window.location.href;
-
-  //   if (d.includes(w)) {
-  //     setGalary(true);
-  //   } else {
-  //     setGalary(false);
-  //   }
-  // }, []);
-
-  // import from backend
+  const mainLink = window.location.host + "/details/opinions";
+  const link = window.location.href;
 
   const { data: allnewses } = useFetch(
     `/${collection}?populate=*&filters[id][$eq]=${id}`
@@ -711,7 +700,7 @@ const NewsDetails = () => {
                 </div>
                 <div className="newses">
                   <div className="newsDetails">
-                    <div className="derailsImg">
+                    <div className="derailsImg" style={(link.includes(mainLink)) ? {width:"40%",borderRadius:"100%",overflow:"hidden"} : {}}>
                       <img src={`${img}`} alt="news" />
                     </div>
                     <div className="newsDescription">
@@ -729,8 +718,8 @@ const NewsDetails = () => {
                     DOWNLOAD PDF
                   </a>
                 </div>
-                <SideBar />
               </div>
+                <SideBar />
             </div>
           </div>
         </div>

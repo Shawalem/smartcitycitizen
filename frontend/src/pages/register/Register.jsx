@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet";
 import { toast } from "react-toastify";
-import axios from 'axios'
 import "./register.scss";
 import { useContext } from "react";
-import {AuthContext} from '../../contexts/UserContext'
+import {AuthContext} from '../../contexts/UserContext';
+import string_encode_decode from 'string-encode-decode'
 
 
 const Register = () => {
@@ -12,9 +12,7 @@ const Register = () => {
   const { handleSubmit, register,reset, formState: { errors } } = useForm();
   const onSubmit = (data)=>{
     const link = `https://backend-app-lft6m.ondigitalocean.app/api/auth/local/register`;
-
-    data.username = `smart city citizen${Math.ceil(Math.random()*100000)}`;
-
+    data.username = `smartCityCitizen${Math.ceil(Math.random()*100000)}`;
     fetch(link,{
       method:"POST",
       headers:{
@@ -23,13 +21,18 @@ const Register = () => {
       body: JSON.stringify(data)
     })
     .then(res => res.json())
-    .then(data =>{
-      if(data.error){
-        toast.error(data.error.message)
+    .then(userinfo =>{
+      if(userinfo.error){
+        toast.error(userinfo.error.message)
       }else{
-        toast.success('Register successful')
-        setUser(data)
-        reset()
+        toast.success('Register successful');
+        const user = {
+          x: string_encode_decode.encode(userinfo.user.email),
+          y:string_encode_decode.encode(data.password)
+        }
+        localStorage.setItem('smartCityCitizen', JSON.stringify(user));
+        setUser(userinfo);
+        reset();
       }
     })
     .catch(e=>{

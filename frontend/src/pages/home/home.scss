@@ -295,6 +295,12 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+    .home_opinion {
+      .home_opinion_wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px;
+      }
+    }
   }
 }
 @media (max-width: 576px) {
@@ -340,6 +346,12 @@
     .home_webinars {
       .home_webinars_wrapper {
         grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    .home_opinion {
+      .home_opinion_wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 40px;
       }
     }
   }
