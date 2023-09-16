@@ -28,10 +28,10 @@ const Register = () => {
         toast.success('Register successful');
         const user = {
           x: string_encode_decode.encode(userinfo.user.email),
-          y:string_encode_decode.encode(data.password)
+          t:string_encode_decode.encode(userinfo.jwt)
         }
         localStorage.setItem('smartCityCitizen', JSON.stringify(user));
-        setUser(userinfo);
+        setUser({email:userinfo.user.email,jwt:userinfo.jwt});
         reset();
       }
     })

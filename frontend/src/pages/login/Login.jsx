@@ -1,24 +1,46 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./login.scss";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet";
-import useFetch from "../../hooks/useFetch";
+import { toast } from "react-toastify";
+import axios from "axios";
+import bcrypt from "string-encode-decode";
+import {AuthContext} from '../../contexts/UserContext'
 
 const Login = () => {
+  const {setUser} = useContext(AuthContext)
   const {
     handleSubmit,
     register,
     formState: { errors },
+    reset,
   } = useForm();
-  const { loginUser } = useFetch("/auth/local"); // Pass the login URL
 
   const onSubmit = async (data) => {
     try {
-      // Call the loginUser function with the form data
-      await loginUser(data);
-      alert("Login successful!");
+      const userInfo = {
+        identifier: data.email,
+        password: data.password,
+      };
+      axios
+        .post(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/local`, userInfo)
+        .then((res) => {
+          const userInformation = {
+            x: bcrypt.encode(res.data.user.email),
+            t: bcrypt.encode(res.data.jwt),
+          };
+          localStorage.setItem(
+            "smartCityCitizen",
+            JSON.stringify(userInformation)
+          );
+            setUser({email:res.data.user.email,jwt:res.data.jwt})
+          reset();
+        })
+        .catch((e) => {
+          toast.error(e.message);
+        });
     } catch (error) {
-      console.log("Error during login", error);
+      toast.error("something is wrong!");
     }
   };
 

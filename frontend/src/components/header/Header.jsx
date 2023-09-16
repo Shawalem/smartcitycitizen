@@ -7,7 +7,7 @@ import SubLink from "../subLink/SubLink";
 import { AuthContext } from "../../contexts/UserContext";
 
 const Header = () => {
-  const { user:userInfo } = useContext(AuthContext);
+  const { user:userInfo,setUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -25,6 +25,11 @@ const Header = () => {
       console.log("none");
     }
   };
+  console.log(userInfo);
+  const handleLogout = ()=>{
+    localStorage.removeItem('smartCityCitizen');
+    setUser({})
+  }
 
   const subLinks = [
     {
@@ -74,8 +79,8 @@ const Header = () => {
             mainLinkRef="/about-us"
             subLinks={subLinks}
           />
-          {userInfo?.user?.email ? (
-            <button>log out</button>
+          {userInfo?.email ? (
+            <button onClick={handleLogout}>log out</button>
           ) : (
             <>
               <div className="link">
