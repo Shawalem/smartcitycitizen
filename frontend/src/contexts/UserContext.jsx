@@ -9,11 +9,15 @@ const UserContext = ({children}) => {
     const [user,setUser] = useState({});
     useEffect(()=>{
       const localData = JSON.parse(localStorage.getItem('smartCityCitizen'))
-      const data = {
-        email:bcrypt.decode(localData.x),
-        jwt: bcrypt.decode(localData.t)
+      if(localData){
+        const data = {
+          email:bcrypt.decode(localData.x),
+          jwt: bcrypt.decode(localData.t)
+        }
+        setUser(data)
+      }else{
+        setUser({})
       }
-      setUser(data)
     },[])
 
     const info = {user,setUser};
