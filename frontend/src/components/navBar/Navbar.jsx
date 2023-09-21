@@ -131,7 +131,7 @@ const Navbar = () => {
             </div>
             <div className="link">
               <div className="realLink" onClick={handleLink}>
-                <Link to="/citizen-health-wellbeing">Citizen Health & Wellbeing </Link>
+                <Link to="/citizen-health-wellbeing">Health & Wellbeing </Link>
                 <RiArrowDownSLine />
               </div>
               <div className="subLink">
