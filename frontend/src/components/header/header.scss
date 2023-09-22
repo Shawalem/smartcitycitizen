@@ -33,7 +33,7 @@
         width: 50%;
       }
       div {
-        background-color: #0A6EBD;
+        background-color: #0a6ebd;
         color: white;
         padding: 0.7rem;
         @include flex-center;
@@ -47,8 +47,8 @@
     align-items: center;
     .link {
       margin-right: 20px;
-      a{
-        &:hover{
+      a {
+        &:hover {
           color: $blue;
         }
       }
@@ -56,14 +56,75 @@
   }
 }
 
-.ad_sec{
+.ad_sec {
   margin: 20px 0;
   height: 100px;
   text-align: center;
-  img{
+  img {
     width: 730px;
     height: 100%;
   }
+}
+
+.notify {
+  text-align: center;
+  font-size: 0.9rem;
+  p {
+    u {
+      cursor: pointer;
+    }
+  }
+  .code_box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+    transform: translate(-50%,-50%);
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 4px 3px 17px 8px #0a6ebd69;
+    border-radius: 20px;
+    display: none;
+    p {
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      input {
+        font-size: 1.1rem;
+        padding: 0.5rem;
+        border-radius: 10px;
+        border: 1px solid black;
+        outline: none;
+        margin-bottom: 20px;
+      }
+      button {
+        width: 40%;
+        margin: auto;
+        font-size: 1rem;
+        padding: 0.6rem;
+        border-radius: 30px;
+        color: white;
+        background-color: $blue;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+  .active_box {
+    display: block;
+  }
+}
+.dActive {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.544);
+  z-index: 2;
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -73,13 +134,13 @@
       display: flex;
       align-items: center;
       div {
-        svg{
-            font-size: .8rem;
+        svg {
+          font-size: 0.8rem;
         }
       }
     }
     .search {
-        display: none;
+      display: none;
     }
     .header_nav {
       .link {
@@ -95,13 +156,13 @@
       display: flex;
       align-items: center;
       div {
-        svg{
-            font-size: .8rem;
+        svg {
+          font-size: 0.8rem;
         }
       }
     }
     form {
-        display: none;
+      display: none;
     }
     .header_nav {
       .link {

@@ -3,45 +3,72 @@ import { Helmet } from "react-helmet";
 import { toast } from "react-toastify";
 import "./register.scss";
 import { useContext } from "react";
-import {AuthContext} from '../../contexts/UserContext';
-import string_encode_decode from 'string-encode-decode'
-
+import { AuthContext } from "../../contexts/UserContext";
+import string_encode_decode from "string-encode-decode";
+import emailjs from "@emailjs/browser";
 
 const Register = () => {
-  const {setUser} = useContext(AuthContext);
-  const { handleSubmit, register,reset, formState: { errors } } = useForm();
-  const onSubmit = (data)=>{
+  const { setUser } = useContext(AuthContext);
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
     const link = `https://backend-app-lft6m.ondigitalocean.app/api/auth/local/register`;
-    data.username = `smartCityCitizen${Math.ceil(Math.random()*100000)}`;
-    fetch(link,{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json"
+    data.username = `smartCityCitizen${Math.ceil(Math.random() * 100000)}`;
+    fetch(link, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
-    .then(res => res.json())
-    .then(userinfo =>{
-      if(userinfo.error){
-        toast.error(userinfo.error.message)
-      }else{
-        toast.success('Register successful');
-        const user = {
-          x: string_encode_decode.encode(userinfo.user.email),
-          t:string_encode_decode.encode(userinfo.jwt)
+      .then((res) => res.json())
+      .then((userinfo) => {
+        if (userinfo.error) {
+          toast.error(userinfo.error.message);
+        } else {
+          const min = 100000;
+          const max = 999999;
+          const randomNumber =
+            Math.floor(Math.random() * (max - min + 1)) + min;
+          const user = {
+            x: string_encode_decode.encode(userinfo.user.email),
+            t: string_encode_decode.encode(userinfo.jwt),
+          };
+          const emailUser = {
+            user_email: userinfo.user.email,
+            user_name: userinfo.user.first_name,
+            verify_code: randomNumber,
+          };
+
+          emailjs
+            .send(
+              "service_ces956g",
+              "template_cvhkhbh",
+              emailUser,
+              "5joLpLpaAqepgsxCI"
+            )
+            .then((res) => {
+              console.log(res);
+              toast.success("Register successful");
+            })
+            .catch((e) => {
+              console.log(e.message);
+            });
+
+          localStorage.setItem("smartCityCitizen", JSON.stringify(user));
+          setUser({ email: userinfo.user.email, jwt: userinfo.jwt });
+          reset();
         }
-        localStorage.setItem('smartCityCitizen', JSON.stringify(user));
-        setUser({email:userinfo.user.email,jwt:userinfo.jwt});
-        reset();
-      }
-    })
-    .catch(e=>{
-      toast.error('something went wrong!')
-    })
-    
-
-
-  }
+      })
+      .catch((e) => {
+        // toast.error("something went wrong!");
+        toast.error(e.message);
+      });
+  };
 
   return (
     <>
@@ -55,14 +82,18 @@ const Register = () => {
             <div className="registration_para">
               <h1>Registration</h1>
               <p>
-               Register as Smart City Citizen  or as our Corporate Memeber to access
-                all resources and information of SmartCityCitizen.com and to share ideas to solve Smart City Development challenges.....it's
-                free for Smart City Citizens!
+                Register as Smart City Citizen or as our Corporate Memeber to
+                access all resources and information of SmartCityCitizen.com and
+                to share ideas to solve Smart City Development
+                challenges.....it's free for Smart City Citizens!
               </p>
               <p>
-                By registering you will be able participate in Citizen Engagement projects / surveys in addition to access to news items,
-                podcasts and city profiles along with registering to newsletters to your email based on your interests and profile.
-                We will also send invitations to citizen engagement events / surveys in your city.
+                By registering you will be able participate in Citizen
+                Engagement projects / surveys in addition to access to news
+                items, podcasts and city profiles along with registering to
+                newsletters to your email based on your interests and profile.
+                We will also send invitations to citizen engagement events /
+                surveys in your city.
               </p>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -115,7 +146,6 @@ const Register = () => {
                 {errors.password && <p>Password is Required</p>}
               </div>
 
-              
               <div className="form_input">
                 <span>Your Role As</span>
                 <select
@@ -125,7 +155,9 @@ const Register = () => {
                   <option value="" defaultValue=""></option>
                   <option value="SmartCity Citizen">SmartCity Citizen</option>
                   <option value="Society">Society</option>
-                  <option value="Educational/Non Profit">Educational/Non Profit</option>
+                  <option value="Educational/Non Profit">
+                    Educational/Non Profit
+                  </option>
                   <option value="Private Sector">Private Sector</option>
                   <option value="Public Sector">Public Sector</option>
                 </select>
@@ -144,7 +176,7 @@ const Register = () => {
                   <option value="Pakistan">Pakistan</option>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Albania">Albania</option>
-                  <option value="	Algeria">	Algeria</option>
+                  <option value="	Algeria"> Algeria</option>
                   <option value="American Samoa">American Samoa</option>
                   <option value="Angola">Angola</option>
                   <option value="Antarctica">Antarctica</option>
@@ -170,7 +202,9 @@ const Register = () => {
                   <option value="Chile">Chile</option>
                   <option value="China">China</option>
                   <option value="Christmas Island">Christmas Island</option>
-                  <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                  <option value="Cocos (Keeling) Islands">
+                    Cocos (Keeling) Islands
+                  </option>
                   <option value="Comoros">Comoros</option>
                   <option value="France">France</option>
                   <option value="French Guiana">French Guiana</option>
@@ -194,7 +228,9 @@ const Register = () => {
                 <span>What sector are you involved with?</span>
                 <select
                   type="text"
-                  {...register("what_sector_are_you_involved", { required: true })}
+                  {...register("what_sector_are_you_involved", {
+                    required: true,
+                  })}
                 >
                   <option value="" defaultValue=""></option>
                   <option value="Smartcity Authority">
@@ -219,11 +255,19 @@ const Register = () => {
                   <option value="Professor/Teacher/Trainer">
                     Professor/Teacher/Trainer
                   </option>
-                  <option value="Architect / Town Planner">Architect / Town Planner</option>
-                  <option value="Engineer / Designer">Engineer / Designer</option>
+                  <option value="Architect / Town Planner">
+                    Architect / Town Planner
+                  </option>
+                  <option value="Engineer / Designer">
+                    Engineer / Designer
+                  </option>
                   <option value="Society Member">Society Member</option>
-                  <option value="Enforcement Authority">Enforcement Authority</option>
-                  <option value="Student / Volunteer">Student / Volunteer</option>
+                  <option value="Enforcement Authority">
+                    Enforcement Authority
+                  </option>
+                  <option value="Student / Volunteer">
+                    Student / Volunteer
+                  </option>
                   <option value="Other">Other</option>
                 </select>
                 {errors.jobFunction && <p>jobFunction is Required</p>}
@@ -233,18 +277,20 @@ const Register = () => {
                 <span>What is your level of seniority?</span>
                 <select
                   type="text"
-                  {...register("what_is_your_level_of_seniority", { required: true })}
+                  {...register("what_is_your_level_of_seniority", {
+                    required: true,
+                  })}
                 >
                   <option value="" defaultValue=""></option>
-                  <option value="Owner/Partner">
-                    Owner/Partner
-                  </option>
+                  <option value="Owner/Partner">Owner/Partner</option>
                   <option value="C-Suite">C-Suite</option>
                   <option value="Professor">Professor</option>
                   <option value="Director">Director</option>
                   <option value="Senior Manager">Senior Manager</option>
                   <option value="Staff / Executive">Staff / Executive</option>
-                  <option value="Trainee/Student/Intern">Trainee/Student/Intern</option>
+                  <option value="Trainee/Student/Intern">
+                    Trainee/Student/Intern
+                  </option>
                   <option value="Other role">Other role</option>
                 </select>
                 {errors.seniority && <p>seniority is Required</p>}
@@ -252,16 +298,17 @@ const Register = () => {
 
               <div className="form_input check">
                 <span>
-                  By completing this form, you will receive Invitation for smartcity Citizen Engagement events/ surveys/ opinion polls in addition to 
-                  regular newsletter, as well as updates regarding our research,
-                  events, webinars and more. You can update your preferences any
-                  time from the bottom of any email you receive from
-                  SmartCityCitizen.com.  We are committed
-                  to respecting and protecting your privacy. SmartCitycitizen is a B2B & B2C publishing organisation, and will always
-                  communicate with its users accordingly. If you have any
-                  queries you can contact one of our team at
-                  hello@smartcitycitizens.com. 
-                  Yes, I agree with the privacy policy and terms and conditions.
+                  By completing this form, you will receive Invitation for
+                  smartcity Citizen Engagement events/ surveys/ opinion polls in
+                  addition to regular newsletter, as well as updates regarding
+                  our research, events, webinars and more. You can update your
+                  preferences any time from the bottom of any email you receive
+                  from SmartCityCitizen.com. We are committed to respecting and
+                  protecting your privacy. SmartCitycitizen is a B2B & B2C
+                  publishing organisation, and will always communicate with its
+                  users accordingly. If you have any queries you can contact one
+                  of our team at hello@smartcitycitizens.com. Yes, I agree with
+                  the privacy policy and terms and conditions.
                 </span>
                 <input
                   type="checkbox"
