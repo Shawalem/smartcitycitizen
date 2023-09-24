@@ -25,6 +25,7 @@ const Login = () => {
       axios
         .post(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/local`, userInfo)
         .then((res) => {
+          console.log(res);
           const userInformation = {
             x: bcrypt.encode(res.data.user.email),
             t: bcrypt.encode(res.data.jwt),

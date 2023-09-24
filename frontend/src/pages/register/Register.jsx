@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import "./register.scss";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/UserContext";
-import string_encode_decode from "string-encode-decode";
+import bycript from "string-encode-decode";
 import emailjs from "@emailjs/browser";
 
 const Register = () => {
@@ -30,13 +30,30 @@ const Register = () => {
         if (userinfo.error) {
           toast.error(userinfo.error.message);
         } else {
+
           const min = 100000;
           const max = 999999;
           const randomNumber =
             Math.floor(Math.random() * (max - min + 1)) + min;
+            const stringCode = randomNumber.toString()
+            console.log(stringCode);
+          //   console.log('real number',randomNumber);
+          //   const code = {
+          //     vCode: bycript.encode(stringCode)
+          //   }
+          // localStorage.setItem("smartCityCitizenCode", JSON.stringify(code));
+
+          // const lObj = JSON.parse(localStorage.getItem("smartCityCitizenCode"))
+          //   console.log(lObj);
+          //   const realObj = {
+          //     ccc: +bycript.decode(lObj.vCode)
+          //   }
+          //   console.log(realObj);
+
           const user = {
-            x: string_encode_decode.encode(userinfo.user.email),
-            t: string_encode_decode.encode(userinfo.jwt),
+            x: bycript.encode(userinfo.user.email),
+            t: bycript.encode(userinfo.jwt),
+            v:bycript.encode(stringCode)
           };
           const emailUser = {
             user_email: userinfo.user.email,
@@ -60,7 +77,7 @@ const Register = () => {
             });
 
           localStorage.setItem("smartCityCitizen", JSON.stringify(user));
-          setUser({ email: userinfo.user.email, jwt: userinfo.jwt });
+          setUser({ email: userinfo.user.email, jwt: userinfo.jwt,verify_code:randomNumber });
           reset();
         }
       })

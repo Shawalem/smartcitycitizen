@@ -53,18 +53,22 @@ const Header = () => {
   };
   return (
     <div className="container">
-      <div className="notify">
-        <p>
-          Verify your email <u onClick={handleBox}>click here</u>
-        </p>
-        <div className="code_box" ref={verifyBox}>
-          <p>Put your code here!</p>
-          <form>
-            <input type="text" />
-            <button>verify</button>
-          </form>
+      {userInfo?.verify_code ? (
+        <div className="notify">
+          <p>
+            Verify your email <u onClick={handleBox}>click here</u>
+          </p>
+          <div className="code_box" ref={verifyBox}>
+            <p>Put your code here!</p>
+            <form>
+              <input type="text" />
+              <button>verify</button>
+            </form>
+          </div>
         </div>
-      </div>
+      ) : (
+        ""
+      )}
       <div className="dActive" ref={dActive} onClick={handleActiveBox}></div>
 
       <div className="header_wrapper">

@@ -7,14 +7,17 @@ export const AuthContext = createContext()
 
 const UserContext = ({children}) => {
     const [user,setUser] = useState({});
+    // const [verifyCode,setVerifyCode] = useState(null)
     useEffect(()=>{
       const localData = JSON.parse(localStorage.getItem('smartCityCitizen'))
       if(localData){
         const data = {
           email:bcrypt.decode(localData.x),
-          jwt: bcrypt.decode(localData.t)
+          jwt: bcrypt.decode(localData.t),
+          verify_code:+bcrypt.decode(localData.v)
         }
         setUser(data)
+        console.log(data);
       }else{
         setUser({})
       }
