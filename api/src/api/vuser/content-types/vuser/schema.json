@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vusers",
+  "info": {
+    "singularName": "vuser",
+    "pluralName": "vusers",
+    "displayName": "verified User",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true,
+      "unique": true
+    }
+  }
+}

@@ -6,4 +6,4 @@
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::verifieduser.verifieduser');
+module.exports = createCoreController('api::vuser.vuser');
