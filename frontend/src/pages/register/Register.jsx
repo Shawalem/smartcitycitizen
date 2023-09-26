@@ -36,20 +36,6 @@ const Register = () => {
           const randomNumber =
             Math.floor(Math.random() * (max - min + 1)) + min;
             const stringCode = randomNumber.toString()
-
-          //   console.log('real number',randomNumber);
-          //   const code = {
-          //     vCode: bycript.encode(stringCode)
-          //   }
-          // localStorage.setItem("smartCityCitizenCode", JSON.stringify(code));
-
-          // const lObj = JSON.parse(localStorage.getItem("smartCityCitizenCode"))
-          //   console.log(lObj);
-          //   const realObj = {
-          //     ccc: +bycript.decode(lObj.vCode)
-          //   }
-          //   console.log(realObj);
-
           const vInfo = {
             x:bycript.encode(userinfo.user.email),
             v:bycript.encode(stringCode)
@@ -62,6 +48,7 @@ const Register = () => {
           const emailUser = {
             user_email: userinfo.user.email,
             user_name: userinfo.user.first_name,
+            verify_code: randomNumber
           };
 
           emailjs

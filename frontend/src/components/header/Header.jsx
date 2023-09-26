@@ -5,9 +5,11 @@ import "./header.scss";
 import { Link, useNavigate } from "react-router-dom";
 import SubLink from "../subLink/SubLink";
 import { AuthContext } from "../../contexts/UserContext";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const Header = () => {
-  const { user: userInfo, setUser,vUser } = useContext(AuthContext);
+  const { user: userInfo, setUser, vUser } = useContext(AuthContext);
   const verifyBox = useRef(HTMLDivElement);
   const dActive = useRef(HTMLDivElement);
   const navigate = useNavigate();
@@ -51,17 +53,60 @@ const Header = () => {
     verifyBox.current.classList.remove("active_box");
     dActive.current.style.display = "none";
   };
+
+  const handleVerifySubmit = (e) => {
+    e.preventDefault();
+    // const form = e.target;
+    // const codeNumber = form.code.value;
+
+    // if(userInfo?.email === vUser?.email && vUser?.verify_code === +codeNumber){
+    //   axios.post(`https://backend-app-lft6m.ondigitalocean.app/api/vusers`,{email:userInfo?.email},{
+    //     headers:{
+    //       Authorization: "bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
+    //     }
+    //   })
+    //   .then(res =>{
+    //     console.log(res.data);
+    //     toast.success("verification complete.")
+    //   })
+    //   .catch(err =>{
+    //     console.log(err.message);
+    //   })
+    // }else{
+    //   toast.error("Email or verify code didn't match!")
+    // }
+    // form.reset();
+    // handleActiveBox()
+
+    axios
+      .get(
+        `https://backend-app-lft6m.ondigitalocean.app/api/vusers`,
+        // { email:"e@gmail.com" },
+        // {
+        //   headers: {
+        //     Authorization: "bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
+        //   },
+        // }
+      )
+      .then((res) => {
+        console.log(res.data);
+        toast.success("verification complete.");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   return (
     <div className="container">
-      {vUser?.verify_code ? (
+      {vUser?.verify_code && userInfo?.email ? (
         <div className="notify">
           <p>
             Verify your email <u onClick={handleBox}>click here</u>
           </p>
           <div className="code_box" ref={verifyBox}>
             <p>Put your code here!</p>
-            <form>
-              <input type="text" />
+            <form onSubmit={handleVerifySubmit}>
+              <input type="text" name="code" required maxLength={6} />
               <button>verify</button>
             </form>
           </div>

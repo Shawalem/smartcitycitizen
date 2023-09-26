@@ -14,11 +14,9 @@ const UserContext = ({children}) => {
       if(localData){
         const data = {
           email:bcrypt.decode(localData.x),
-          jwt: bcrypt.decode(localData.t),
-          verify_code:+bcrypt.decode(localData.v)
+          jwt: bcrypt.decode(localData.t)
         }
         setUser(data)
-        console.log(data);
       }else{
         setUser({})
       }
