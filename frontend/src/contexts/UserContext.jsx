@@ -7,9 +7,10 @@ export const AuthContext = createContext()
 
 const UserContext = ({children}) => {
     const [user,setUser] = useState({});
-    // const [verifyCode,setVerifyCode] = useState(null)
+    const [vUser,set_vUser] = useState({})
     useEffect(()=>{
       const localData = JSON.parse(localStorage.getItem('smartCityCitizen'))
+      const vLocalData = JSON.parse(localStorage.getItem('vSmartCityCitizen'))
       if(localData){
         const data = {
           email:bcrypt.decode(localData.x),
@@ -21,9 +22,18 @@ const UserContext = ({children}) => {
       }else{
         setUser({})
       }
+      if(vLocalData){
+        const vData = {
+          email: bcrypt.decode(vLocalData.x),
+          verify_code: +bcrypt.decode(vLocalData.v)
+        }
+        set_vUser(vData)
+      }else{
+        set_vUser({})
+      }
     },[])
 
-    const info = {user,setUser};
+    const info = {user,setUser,set_vUser,vUser};
   return (
     <AuthContext.Provider value={info}>
         {children}

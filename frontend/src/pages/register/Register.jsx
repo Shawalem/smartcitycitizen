@@ -8,7 +8,7 @@ import bycript from "string-encode-decode";
 import emailjs from "@emailjs/browser";
 
 const Register = () => {
-  const { setUser } = useContext(AuthContext);
+  const { setUser,set_vUser } = useContext(AuthContext);
   const {
     handleSubmit,
     register,
@@ -36,7 +36,7 @@ const Register = () => {
           const randomNumber =
             Math.floor(Math.random() * (max - min + 1)) + min;
             const stringCode = randomNumber.toString()
-            console.log(stringCode);
+
           //   console.log('real number',randomNumber);
           //   const code = {
           //     vCode: bycript.encode(stringCode)
@@ -50,15 +50,18 @@ const Register = () => {
           //   }
           //   console.log(realObj);
 
+          const vInfo = {
+            x:bycript.encode(userinfo.user.email),
+            v:bycript.encode(stringCode)
+
+          }
           const user = {
             x: bycript.encode(userinfo.user.email),
-            t: bycript.encode(userinfo.jwt),
-            v:bycript.encode(stringCode)
+            t: bycript.encode(userinfo.jwt)
           };
           const emailUser = {
             user_email: userinfo.user.email,
             user_name: userinfo.user.first_name,
-            verify_code: randomNumber,
           };
 
           emailjs
@@ -77,7 +80,9 @@ const Register = () => {
             });
 
           localStorage.setItem("smartCityCitizen", JSON.stringify(user));
-          setUser({ email: userinfo.user.email, jwt: userinfo.jwt,verify_code:randomNumber });
+          localStorage.setItem("vSmartCityCitizen", JSON.stringify(vInfo));
+          setUser({ email: userinfo.user.email, jwt: userinfo.jwt });
+          set_vUser({email:userinfo.user.email, verify_code:randomNumber})
           reset();
         }
       })

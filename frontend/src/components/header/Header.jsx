@@ -7,7 +7,7 @@ import SubLink from "../subLink/SubLink";
 import { AuthContext } from "../../contexts/UserContext";
 
 const Header = () => {
-  const { user: userInfo, setUser } = useContext(AuthContext);
+  const { user: userInfo, setUser,vUser } = useContext(AuthContext);
   const verifyBox = useRef(HTMLDivElement);
   const dActive = useRef(HTMLDivElement);
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ const Header = () => {
   };
   return (
     <div className="container">
-      {userInfo?.verify_code ? (
+      {vUser?.verify_code ? (
         <div className="notify">
           <p>
             Verify your email <u onClick={handleBox}>click here</u>
