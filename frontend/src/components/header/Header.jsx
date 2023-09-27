@@ -83,13 +83,12 @@ const Header = () => {
         "https://backend-app-lft6m.ondigitalocean.app/api/vusers",
         {
           data: {
-            email: "homakalmunshi@gmail.com",
-            // Add other fields as needed
+            email: "homakalmunshi@gmail.com", 
           },
         },
         {
           headers: {
-            Authorization: "Bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN, // Adjust the authorization header if needed
+            Authorization: "Bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
           },
         }
       )
