@@ -2,7 +2,7 @@ import { useContext, useRef, useState } from "react";
 import { FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import "./header.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 import SubLink from "../subLink/SubLink";
 import { AuthContext } from "../../contexts/UserContext";
 import { toast } from "react-toastify";
@@ -56,53 +56,49 @@ const Header = () => {
 
   const handleVerifySubmit = (e) => {
     e.preventDefault();
-    // const form = e.target;
-    // const codeNumber = form.code.value;
+    const form = e.target;
+    const codeNumber = form.code.value;
+    console.log(userInfo);
 
-    // if(userInfo?.email === vUser?.email && vUser?.verify_code === +codeNumber){
-    //   axios.post(`https://backend-app-lft6m.ondigitalocean.app/api/vusers`,{email:userInfo?.email},{
-    //     headers:{
-    //       Authorization: "bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
-    //     }
-    //   })
-    //   .then(res =>{
-    //     console.log(res.data);
-    //     toast.success("verification complete.")
-    //   })
-    //   .catch(err =>{
-    //     console.log(err.message);
-    //   })
-    // }else{
-    //   toast.error("Email or verify code didn't match!")
-    // }
-    // form.reset();
-    // handleActiveBox()
-
-    axios
-      .post(
-        "https://backend-app-lft6m.ondigitalocean.app/api/vusers",
-        {
-          data: {
-            email: "homakalmunshi@gmail.com", 
+    if (
+      userInfo?.email === vUser?.email &&
+      vUser?.verify_code === +codeNumber
+    ) {
+      axios
+        .post(
+          "https://backend-app-lft6m.ondigitalocean.app/api/vusers",
+          {
+            data: {
+              email: userInfo?.email ||vUser.email,
+            },
           },
-        },
-        {
-          headers: {
-            Authorization: "Bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
-          },
-        }
-      )
-      .then((response) => {
-        console.log(response.data);
-        toast.success("Verification complete.");
-      })
-      .catch((err) => {
-        console.error(err.message);
-      });
+          {
+            headers: {
+              Authorization:
+                "Bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
+            },
+          }
+        )
+        .then((res) => {
+          const localData = JSON.parse(localStorage.getItem("smartCityCitizen"))
+          localData.iv = true;
+          localStorage.setItem("smartCityCitizen",JSON.stringify(localData));
+          setUser({email:userInfo?.email,jwt:userInfo?.jwt, isVerified:true})
+          localStorage.removeItem("vSmartCityCitizen");
+          toast.success("Verification complete."); 
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    } else {
+      toast.error("Email or verify code didn't match!");
+    }
+    form.reset();
+    handleActiveBox();
   };
   return (
     <div className="container">
-      {vUser?.verify_code && userInfo?.email ? (
+      { userInfo.isVerified === false ? (
         <div className="notify">
           <p>
             Verify your email <u onClick={handleBox}>click here</u>

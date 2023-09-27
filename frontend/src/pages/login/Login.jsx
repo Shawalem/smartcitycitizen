@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./login.scss";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet";
 import { toast } from "react-toastify";
 import axios from "axios";
 import bcrypt from "string-encode-decode";
-import {AuthContext} from '../../contexts/UserContext'
+import { AuthContext } from "../../contexts/UserContext";
 
 const Login = () => {
-  const {setUser} = useContext(AuthContext)
+  const { setUser } = useContext(AuthContext);
+  const [loading,setLoading] = useState(false)
   const {
     handleSubmit,
     register,
@@ -17,6 +18,7 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setLoading(true)
     try {
       const userInfo = {
         identifier: data.email,
@@ -25,17 +27,56 @@ const Login = () => {
       axios
         .post(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/local`, userInfo)
         .then((res) => {
-          console.log(res);
-          const userInformation = {
-            x: bcrypt.encode(res.data.user.email),
-            t: bcrypt.encode(res.data.jwt),
-          };
-          localStorage.setItem(
-            "smartCityCitizen",
-            JSON.stringify(userInformation)
-          );
-            setUser({email:res.data.user.email,jwt:res.data.jwt})
-          reset();
+          axios
+            .get(
+              `https://backend-app-lft6m.ondigitalocean.app/api/vusers?email_contains=${res.data.user.email}`,
+              {
+                headers: {
+                  Authorization:
+                    "Bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
+                },
+              }
+            )
+            .then((response) => {
+              if (response.data.data[0]?.attributes?.email === res.data.user.email) {
+                const userInformation = {
+                  x: bcrypt.encode(res.data.user.email),
+                  t: bcrypt.encode(res.data.jwt),
+                  iv: true,
+                };
+                localStorage.setItem(
+                  "smartCityCitizen",
+                  JSON.stringify(userInformation)
+                );
+                setUser({
+                  email: res.data.user.email,
+                  jwt: res.data.jwt,
+                  isVerified: true,
+                });
+                reset();
+                setLoading(false)
+              } else {
+                const userInformation = {
+                  x: bcrypt.encode(res.data.user.email),
+                  t: bcrypt.encode(res.data.jwt),
+                  iv:false
+                };
+                localStorage.setItem(
+                  "smartCityCitizen",
+                  JSON.stringify(userInformation)
+                );
+                setUser({
+                  email: res.data.user.email,
+                  jwt: res.data.jwt,
+                  isVerified: false,
+                });
+                reset()
+                setLoading(false)
+              }
+            })
+            .catch((er) => {
+              console.log(er.message);
+            });
         })
         .catch((e) => {
           toast.error(e.message);
@@ -82,7 +123,13 @@ const Login = () => {
                 />
                 {errors.password && <p>Password is Required</p>}
               </div>
-              <button>Login</button>
+              {
+                loading ? (
+                  <button style={{pointerEvents:"none"}}>Logging...</button>
+                  ):(
+                  <button>Login</button>
+                )
+              }
             </form>
           </div>
         </div>

@@ -43,7 +43,8 @@ const Register = () => {
           }
           const user = {
             x: bycript.encode(userinfo.user.email),
-            t: bycript.encode(userinfo.jwt)
+            t: bycript.encode(userinfo.jwt),
+            iv:false
           };
           const emailUser = {
             user_email: userinfo.user.email,
@@ -59,7 +60,6 @@ const Register = () => {
               "5joLpLpaAqepgsxCI"
             )
             .then((res) => {
-              console.log(res);
               toast.success("Register successful");
             })
             .catch((e) => {
@@ -68,7 +68,7 @@ const Register = () => {
 
           localStorage.setItem("smartCityCitizen", JSON.stringify(user));
           localStorage.setItem("vSmartCityCitizen", JSON.stringify(vInfo));
-          setUser({ email: userinfo.user.email, jwt: userinfo.jwt });
+          setUser({ email: userinfo.user.email, jwt: userinfo.jwt, isVerified:false });
           set_vUser({email:userinfo.user.email, verify_code:randomNumber})
           reset();
         }
