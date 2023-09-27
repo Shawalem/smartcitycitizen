@@ -100,8 +100,8 @@ const Header = () => {
     <div className="container">
       { userInfo.isVerified === false ? (
         <div className="notify">
-          <p>
-            Verify your email <u onClick={handleBox}>click here</u>
+          <p className="notify_p">
+            Verify your email <u onClick={handleBox}>Click Here!</u>
           </p>
           <div className="code_box" ref={verifyBox}>
             <p>Put your code here!</p>
@@ -149,7 +149,7 @@ const Header = () => {
             subLinks={subLinks}
           />
           {userInfo?.email ? (
-            <button onClick={handleLogout}>log out</button>
+            <button className="logout_btn" onClick={handleLogout}>log out</button>
           ) : (
             <>
               <div className="link">

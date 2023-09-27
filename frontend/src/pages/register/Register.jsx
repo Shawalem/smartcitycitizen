@@ -34,7 +34,7 @@ const Register = () => {
           const min = 100000;
           const max = 999999;
           const randomNumber =
-            Math.floor(Math.random() * (max - min + 1)) + min;
+            Math.floor(Math.random() * (max - min + 10)) + min;
             const stringCode = randomNumber.toString()
           const vInfo = {
             x:bycript.encode(userinfo.user.email),

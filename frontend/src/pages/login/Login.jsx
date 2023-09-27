@@ -71,7 +71,7 @@ const Login = () => {
                   isVerified: false,
                 });
                 reset()
-                setLoading(false)
+                setLoading(false);
               }
             })
             .catch((er) => {
