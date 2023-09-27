@@ -79,21 +79,26 @@ const Header = () => {
     // handleActiveBox()
 
     axios
-      .get(
-        `https://backend-app-lft6m.ondigitalocean.app/api/vusers`,
-        // { email:"e@gmail.com" },
-        // {
-        //   headers: {
-        //     Authorization: "bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN,
-        //   },
-        // }
+      .post(
+        "https://backend-app-lft6m.ondigitalocean.app/api/vusers",
+        {
+          data: {
+            email: "homakalmunshi@gmail.com",
+            // Add other fields as needed
+          },
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + import.meta.env.VITE_REACT_APP_API_TOKEN, // Adjust the authorization header if needed
+          },
+        }
       )
-      .then((res) => {
-        console.log(res.data);
-        toast.success("verification complete.");
+      .then((response) => {
+        console.log(response.data);
+        toast.success("Verification complete.");
       })
       .catch((err) => {
-        console.log(err.message);
+        console.error(err.message);
       });
   };
   return (
