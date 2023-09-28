@@ -85,7 +85,7 @@ const Header = () => {
           localStorage.setItem("smartCityCitizen",JSON.stringify(localData));
           setUser({email:userInfo?.email,jwt:userInfo?.jwt, isVerified:true})
           localStorage.removeItem("vSmartCityCitizen");
-          toast.success("Verification complete."); 
+          toast.success("🎉Registration Successful!🎉"); 
         })
         .catch((err) => {
           console.log(err.message);

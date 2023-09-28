@@ -54,13 +54,13 @@ const Register = () => {
 
           emailjs
             .send(
-              "service_uy5kz6h",
-              "template_hy5rrek",
+              "service_t2348l5",
+              "template_vunjwea",
               emailUser,
               "7y6BCfwCdSHl7JAPZ"
             )
             .then((res) => {
-              toast.success("Register successful");
+              toast.success("A verification code sent to your email.");
             })
             .catch((e) => {
               console.log(e.message);
