@@ -54,10 +54,10 @@ const Register = () => {
 
           emailjs
             .send(
-              "service_ces956g",
-              "template_cvhkhbh",
+              "service_uy5kz6h",
+              "template_hy5rrek",
               emailUser,
-              "5joLpLpaAqepgsxCI"
+              "7y6BCfwCdSHl7JAPZ"
             )
             .then((res) => {
               toast.success("Register successful");
