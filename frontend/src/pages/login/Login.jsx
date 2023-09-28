@@ -55,6 +55,7 @@ const Login = () => {
                 });
                 reset();
                 setLoading(false)
+                toast.success("Login successfully");
               } else {
                 const userInformation = {
                   x: bcrypt.encode(res.data.user.email),
