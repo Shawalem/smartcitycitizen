@@ -1,5 +1,6 @@
 import { useContext, useRef, useState } from "react";
-import { FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { BsSearch } from "react-icons/bs";
 import "./header.scss";
 import { Link, json, useNavigate } from "react-router-dom";
@@ -120,12 +121,17 @@ const Header = () => {
         <div className="social">
           <a href="https://twitter.com/Smartcityctizen">
             <div>
-              <FaTwitter />
+              <FaXTwitter />
             </div>
           </a>
           <a href="https://www.linkedin.com/company/smartcitycitizen/">
             <div>
               <FaLinkedinIn />
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@Smartcitycitizen">
+            <div>
+              <FaYoutube />
             </div>
           </a>
         </div>
