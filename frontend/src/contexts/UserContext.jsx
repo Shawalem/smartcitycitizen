@@ -33,7 +33,7 @@ const UserContext = ({children}) => {
       }
     },[])
 
-    const info = {user,setUser,set_vUser,vUser};
+    const info = {user, setUser, set_vUser, vUser};
   return (
     <AuthContext.Provider value={info}>
         {children}

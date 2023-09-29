@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import bcrypt from "string-encode-decode";
 import { AuthContext } from "../../contexts/UserContext";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { setUser } = useContext(AuthContext);
@@ -29,7 +30,7 @@ const Login = () => {
         .then((res) => {
           axios
             .get(
-              `https://backend-app-lft6m.ondigitalocean.app/api/vusers?email_contains=${res.data.user.email}`,
+              `https://backend-app-lft6m.ondigitalocean.app/api/vusers?filters[email][$eq]=${res.data?.user?.email}`,
               {
                 headers: {
                   Authorization:
@@ -131,6 +132,7 @@ const Login = () => {
                   <button>Login</button>
                 )
               }
+              <p>Don't have an account? <Link to='/register' ><u>Register</u></Link> now</p>
             </form>
           </div>
         </div>

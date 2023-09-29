@@ -6,7 +6,14 @@ import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Link } from "react-router-dom";
 
+// for verification
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/UserContext";
+
 const Home = () => {
+  // for verification
+  const { user } = useContext(AuthContext); // email jwt isVerified
+
   // get latest news
   const { data: allnewses, isLoading } = useFetch(
     "/allnewses?sort[0]=date:desc&populate=*"
@@ -69,9 +76,21 @@ const Home = () => {
                   ))}
                 </div>
                 <div className="moreBtn">
-                  <Link to="/news">
-                    <button>Read More</button>
-                  </Link>
+
+
+
+                  {user?.isVerified && user?.email ? (
+                    <Link to="/news">
+                      <button>Read More</button>
+                    </Link>
+                  ) : (
+                    <Link to="/login">
+                      <button>Read More</button>
+                    </Link>
+                  )}
+
+
+
                 </div>
                 <div className="blog">
                   <h1>BLOGS</h1>
