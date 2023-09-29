@@ -1,4 +1,4 @@
-import { Loader, Page } from "../../../components";
+import { Loader, NewsCard, Page } from "../../../components";
 import { Helmet } from "react-helmet";
 // useFetch
 import useFetch from "../../../hooks/useFetch";

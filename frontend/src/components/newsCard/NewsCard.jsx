@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import "./card.scss";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/UserContext";
 // usefetch
 
 const NewsCard = ({ allnews, collection }) => {
-  // console.log(allnews);
+  // for verifation
+  const { user } = useContext(AuthContext);
 
   if (!allnews) {
     return null; // or you can return a placeholder component or message
@@ -14,16 +17,29 @@ const NewsCard = ({ allnews, collection }) => {
 
   return (
     <div className="news">
-      <div className="news_img">
-        <Link to={`/details/${collection}/${allnews.id}`}>
-          <img
-            src={`${imageUrl}`}
-            alt="news"
-          />
-        </Link>
-      </div>
+      {user?.isVerified && user?.email ? (
+        <div className="news_img">
+          <Link to={`/details/${collection}/${allnews.id}`}>
+            <img src={`${imageUrl}`} alt="news" />
+          </Link>
+        </div>
+      ) : (
+        <div className="news_img">
+          <Link to={"/login"}>
+            <img src={`${imageUrl}`} alt="news" />
+          </Link>
+        </div>
+      )}
+
       <div className="news_desc">
-        <Link to={`/details/${collection}/${allnews.id}`}>{allnews.attributes.title}</Link>
+        {user?.isVerified && user?.email ? (
+          <Link to={`/details/${collection}/${allnews.id}`}>
+            {allnews.attributes.title}
+          </Link>
+        ) : (
+          <Link to={`/login`}>{allnews.attributes.title}</Link>
+        )}
+
         {allnews.attributes.author || allnews.attributes.date ? (
           <div className="author">
             <strong>{allnews.attributes.author}</strong>
@@ -32,6 +48,7 @@ const NewsCard = ({ allnews, collection }) => {
         ) : (
           ""
         )}
+        
         <p>{allnews.attributes.para}</p>
       </div>
     </div>
@@ -39,4 +56,3 @@ const NewsCard = ({ allnews, collection }) => {
 };
 
 export default NewsCard;
-

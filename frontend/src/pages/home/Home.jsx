@@ -76,21 +76,9 @@ const Home = () => {
                   ))}
                 </div>
                 <div className="moreBtn">
-
-
-
-                  {user?.isVerified && user?.email ? (
-                    <Link to="/news">
-                      <button>Read More</button>
-                    </Link>
-                  ) : (
-                    <Link to="/login">
-                      <button>Read More</button>
-                    </Link>
-                  )}
-
-
-
+                  <Link to="/news">
+                    <button>Read More</button>
+                  </Link>
                 </div>
                 <div className="blog">
                   <h1>BLOGS</h1>
