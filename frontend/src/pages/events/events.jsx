@@ -36,7 +36,7 @@ const Events = () => {
                 <h1>{headerparagraphs?.[0]?.attributes.events_title}</h1>
                 <div className="news_paragraph">
                   <ReactMarkdown>
-                  {headerparagraphs?.[0]?.attributes.events_paragraph}
+                    {headerparagraphs?.[0]?.attributes.events_paragraph}
                   </ReactMarkdown>
                 </div>
                 <div className="newses">

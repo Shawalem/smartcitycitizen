@@ -22,7 +22,7 @@ const Safetysecurity = () => {
         />
       </Helmet>
 
-      <section className="city_en">
+      <section className="">
         <Page
           pageHeading={headerparagraphs?.[0]?.attributes.safetysecurity_title}
           pagePara={

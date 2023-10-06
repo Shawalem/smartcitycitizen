@@ -61,9 +61,11 @@ const Home = () => {
               <div className="news_sec">
                 <div className="intro">
                   <h1>{headerparagraphs?.[0]?.attributes.home_title}</h1>
-                  <ReactMarkdown>
-                    {headerparagraphs?.[0]?.attributes.home_paragraph}
-                  </ReactMarkdown>
+                  <div className="news_paragraph">
+                    <ReactMarkdown>
+                      {headerparagraphs?.[0]?.attributes.home_paragraph}
+                    </ReactMarkdown>
+                  </div>
                 </div>
                 <h1>Latest</h1>
                 <div className="newses">

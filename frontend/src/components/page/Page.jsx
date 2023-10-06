@@ -59,7 +59,9 @@ const Page = ({
               
               <div className="intro">
                 <h1>{pageHeading}</h1>
-                <ReactMarkdown>{pagePara}</ReactMarkdown>
+                <div className="news_paragraph">
+                  <ReactMarkdown>{pagePara}</ReactMarkdown>
+                </div>
               </div>
 
               

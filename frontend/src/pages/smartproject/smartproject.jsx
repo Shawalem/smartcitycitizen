@@ -1,6 +1,6 @@
-import "./smartproject.scss";
 import { SideBar,NewsCard, Loader } from '../../components'
 import { Helmet } from "react-helmet";
+import "./smartproject.scss";
 // useFetch
 import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
@@ -33,11 +33,13 @@ const Smartproject = () => {
       </Helmet>
       <section>
         <div className="container">
-          <div className="city_lights_wrapper">
+          <div className="City_lights_wrapper">
             <div className="latest_news">
               <div className="news_sec">
                 <h1>{headerparagraphs?.[0]?.attributes.smartcityprojects_title}</h1>
-                <ReactMarkdown>{headerparagraphs?.[0]?.attributes.smartcityprojects_paragraph}</ReactMarkdown>
+                <div className="news_paragraph">
+                  <ReactMarkdown>{headerparagraphs?.[0]?.attributes.smartcityprojects_paragraph}</ReactMarkdown>
+                </div>
                 <div className="newses">
                   {citylights?.map((citylight) => (
                     <NewsCard key={citylight} allnews={citylight} collection="citylights" />

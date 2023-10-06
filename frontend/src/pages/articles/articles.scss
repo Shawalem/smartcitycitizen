@@ -9,6 +9,10 @@
     gap: 20px;
     .news_sec {
       grid-column: 1/3;
+      .news_paragraph {
+        height: 130px;
+        overflow-y: scroll; 
+      }
       h1 {
         @include heading;
       }

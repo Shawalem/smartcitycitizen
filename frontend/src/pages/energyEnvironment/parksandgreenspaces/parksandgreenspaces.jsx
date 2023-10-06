@@ -41,7 +41,7 @@ const Parksandgreenspaces = () => {
         <title>Batteries And Renewable - Smart City Citizen</title>
         <meta name="description" content="Batteries and renewable" />
       </Helmet>
-      <section className="city_en">
+      <section className="park">
         <Page
           pageHeading={headerparagraphs?.[0]?.attributes.parksgreenspaces_title}
           pagePara={

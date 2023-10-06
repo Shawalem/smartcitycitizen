@@ -40,7 +40,7 @@ const Smartresidence = () => {
         <title>Smart Residence - Smart City Citizen</title>
         <meta name="description" content="Batteries and renewable" />
       </Helmet>
-      <section className="city_en">
+      <section className="smart_residence">
         <Page
           pageHeading={headerparagraphs?.[0]?.attributes.smartresidence_title}
           pagePara={headerparagraphs?.[0]?.attributes.smartresidence_paragraph}
