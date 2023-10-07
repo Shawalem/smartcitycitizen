@@ -82,24 +82,24 @@ const Home = () => {
                     <button>Read More</button>
                   </Link>
                 </div>
-                <div className="blog">
-                  <h1>BLOGS</h1>
-                  {blogs?.slice(0, 1).map((blog) => (
-                    <NewsCard key={blog.id} allnews={blog} collection="blogs" />
-                  ))}
-                </div>
-                <div className="Suggestions">
-                  <h1>Suggestions</h1>
-                  {privacysecurities?.slice(0, 1).map((privacysecurity) => (
-                    <NewsCard
-                      key={privacysecurity.id}
-                      allnews={privacysecurity}
-                      collection="privacysecurities"
-                    />
-                  ))}
-                </div>
               </div>
               <SideBar />
+            </div>
+            <div className="blog">
+              <h1>BLOGS</h1>
+              {blogs?.slice(0, 1).map((blog) => (
+                <NewsCard key={blog.id} allnews={blog} collection="blogs" />
+              ))}
+            </div>
+            <div className="Suggestions">
+              <h1>Suggestions</h1>
+              {privacysecurities?.slice(0, 1).map((privacysecurity) => (
+                <NewsCard
+                  key={privacysecurity.id}
+                  allnews={privacysecurity}
+                  collection="privacysecurities"
+                />
+              ))}
             </div>
             {/* reports */}
             <div className="special_report">
