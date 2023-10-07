@@ -1,5 +1,6 @@
 import './ad.scss'
 import useFetch from '../../hooks/useFetch'
+import { Link } from 'react-router-dom';
 
 const Ad = () => {
 
@@ -11,13 +12,15 @@ const Ad = () => {
   }
 
   const adImg = adpanels?.[0]?.attributes?.img?.data?.attributes?.url;
+  const adLinks = adpanels?.[0]?.attributes?.adlink;
   console.log(adImg)
   
   return (
     <div className='container'>
         <div className="ad">
           <div className="ad_img">
-          <img src={`${adImg}`} alt="ad" />
+            <Link to={`${adLinks}`} target='_blank'><img src={`${adImg}`} alt="ad" /></Link>
+            
           </div>
         </div>
     </div>
