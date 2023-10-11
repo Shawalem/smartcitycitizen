@@ -6,15 +6,7 @@ import UserContext from "./contexts/UserContext.jsx";
 import { hydrate, render } from "react-dom";
 import "./index.scss";
 
-// ReactDOM.createRoot(document.getElementById("root")).render(
-//   <BrowserRouter>
-//     <UserContext>
-//       <App />
-//     </UserContext>
-//   </BrowserRouter>
-// );
-
-const Main = () => (
+ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <UserContext>
       <App />
@@ -22,9 +14,17 @@ const Main = () => (
   </BrowserRouter>
 );
 
-const rootElement = document.getElementById("root");
-if (rootElement.hasChildNodes()) {
-  hydrate(<Main />, rootElement);
-} else {
-  render(<Main />, rootElement);
-}
+// const Main = () => (
+//   <BrowserRouter>
+//     <UserContext>
+//       <App />
+//     </UserContext>
+//   </BrowserRouter>
+// );
+
+// const rootElement = document.getElementById("root");
+// if (rootElement.hasChildNodes()) {
+//   hydrate(<Main />, rootElement);
+// } else {
+//   render(<Main />, rootElement);
+// }
