@@ -51,8 +51,13 @@ const CityProfile = () => {
   return (
     <>
       <Helmet>
+        <meta charSet="utf-8"/>
         <title>Smart City Citizen - City Profile</title>
-        <meta name="description" content="cities profile" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news,smartcitycitizen, worldnews, cityprofile"/>
+        <meta name="description" content="news about the cities" />
+        <link rel="canonical" href={window.location.href} />
       </Helmet>
       <section>
         <div className="container">

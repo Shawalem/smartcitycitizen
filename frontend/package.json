@@ -7,14 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "start": "vite preview --mode production --host 0.0.0.0 --port $PORT",
-    "postbuild": "react-snap"
+    "start": "vite preview --mode production --host 0.0.0.0 --port $PORT"
   },
   "reactSnap": {
     "source": "dist",
     "destination": "snapshots",
     "skipThirdPartyRequests": true,
-    "skip": "/about"
+    "urls":["http://localhost:5173/","http://localhost:5173/city-profile","http://localhost:5173/news"]
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

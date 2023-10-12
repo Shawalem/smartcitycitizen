@@ -3,4 +3,5 @@
     "destination": "snapshots",
     "skipThirdPartyRequests": true,
     "skip": "/about"
+    
   }

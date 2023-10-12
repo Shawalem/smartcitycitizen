@@ -20,8 +20,13 @@ const News = () => {
   return (
     <>
       <Helmet>
+        <meta charSet="utf-8"/>
         <title>Latest News And Case Studies - Smart City Citizen</title>
-        <meta name="description" content="latest new and case studies" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="description" content="news about the world" />
+        <link rel="canonical" href={window.location.href} />
       </Helmet>
       <section>
         <div className="container">
