@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </BrowserRouter>
 );
 
-// const Main = () => (
+// const main = (
 //   <BrowserRouter>
 //     <UserContext>
 //       <App />
@@ -22,9 +22,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 //   </BrowserRouter>
 // );
 
-// const rootElement = document.getElementById("root");
-// if (rootElement.hasChildNodes()) {
-//   hydrate(<Main />, rootElement);
+// const root = document.getElementById("root");
+// if (root.hasChildNodes()) {
+//   hydrate(main, root);
 // } else {
-//   render(<Main />, rootElement);
+//   render(main, root);
 // }

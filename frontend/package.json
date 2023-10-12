@@ -9,6 +9,12 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "start": "vite preview --mode production --host 0.0.0.0 --port $PORT"
   },
+  "reactSnap": {
+    "source": "dist",
+    "destination": "snapshots",
+    "skipThirdPartyRequests": true,
+    "urls":["http://localhost:5173/","http://localhost:5173/city-profile","http://localhost:5173/news"]
+  },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.11.1",

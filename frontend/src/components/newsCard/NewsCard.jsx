@@ -17,28 +17,20 @@ const NewsCard = ({ allnews, collection }) => {
 
   return (
     <div className="news">
-      {user?.isVerified && user?.email ? (
+      {/* {user?.isVerified && user?.email ? ( */}
         <div className="news_img">
           <Link to={`/details/${collection}/${allnews.id}`}>
             <img src={`${imageUrl}`} alt="news" />
           </Link>
         </div>
-      ) : (
-        <div className="news_img">
-          <Link to={"/login"}>
-            <img src={`${imageUrl}`} alt="news" />
-          </Link>
-        </div>
-      )}
+      
 
       <div className="news_desc">
-        {user?.isVerified && user?.email ? (
+        {/* {user?.isVerified && user?.email ? ( */}
           <Link to={`/details/${collection}/${allnews.id}`}>
             {allnews.attributes.title}
           </Link>
-        ) : (
-          <Link to={`/login`}>{allnews.attributes.title}</Link>
-        )}
+        
 
         {allnews.attributes.author || allnews.attributes.date ? (
           <div className="author">
