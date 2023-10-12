@@ -53,6 +53,10 @@ const Home = () => {
     <>
       <Helmet>
         <title>Smart City Citizen - Latest news</title>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="keyword1, keyword2, keyword3"/>
+        <meta name="description" content="" />
       </Helmet>
       <section id="Home">
         <div className="container">

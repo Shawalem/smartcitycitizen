@@ -151,7 +151,8 @@ const App = () => {
           <Route path="/advertise-with-us" element={<Advertise />} />
           <Route path="/contact-us" element={<ContactUs />} />
 
-          <Route path="/news" element={ <PrivetRoute> <News/> </PrivetRoute> } />
+          <Route path="/news" element={  <News/>  } />
+          {/* <Route path="/news" element={ <PrivetRoute> <News/> </PrivetRoute> } /> */}
 
           {/* city */}
           <Route path="/city-profile" element={<CityProfile />} />
@@ -250,7 +251,8 @@ const App = () => {
 
           <Route path="/city-lights" element={<Footercitylights />} />
           {/* news details */}
-          <Route path="/details/:collection/:id" element={ <PrivetRoute> <NewsDetails /> </PrivetRoute>} />
+          <Route path="/details/:collection/:id" element={ <NewsDetails />} />
+          {/* <Route path="/details/:collection/:id" element={ <PrivetRoute> <NewsDetails /> </PrivetRoute>} /> */}
           {/* search  */}
           <Route path="/search" element={<SearchPage />} />
 
