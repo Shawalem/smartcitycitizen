@@ -15,7 +15,12 @@ const AboutUs = () => {
     <>
       <Helmet>
         <title>Our Mission - Smart City Citizen</title>
-        <meta name="description" content="about us" />
+        <meta charSet="utf-8"/>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news,smartcitycitizen, world news, mission"/>
+        <meta name="description" content="smartcitizen mission" />
+        <link rel="canonical" href={window.location.href} />
       </Helmet>
       <section>
         <div className="container">

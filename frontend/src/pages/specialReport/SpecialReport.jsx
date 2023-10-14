@@ -24,6 +24,12 @@ const SpecialReport = () => {
     <>
       <Helmet>
         <title>Special Report - Smart City Citizen</title>
+        <meta charSet="utf-8"/>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news,smartcitycitizen, world news, specialreport"/>
+        <meta name="description" content="smart city citizen special report " />
+        <link rel="canonical" href={window.location.href} />
         <meta
           name="description"
           content="Here at SmartCitiesWorld, we produce Special Reports on a weekly basis. If you would like to contribute to any special report or opinion pieces please contact our editor Luke Antoniou on lukea@smartcitiesworld.net"

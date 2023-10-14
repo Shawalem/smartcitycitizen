@@ -18,11 +18,13 @@ const Citizenengagement = () => {
   return (
     <>
       <Helmet>
-        <title>Connectivity - Smart City Citizen</title>
-        <meta
-          name="description"
-          content="The lifeblood of a smart city, data and the connectivity power enables everything from digital twins, fibre networks and the Internet of Things. It relies on the likes of 4G and 5G, cloud and edge computing, analytics and AI and machine learning.  We cover it all here"
-        />
+        <title>Citizen Engagement - Smart City Citizen</title>
+        <meta charSet="utf-8"/>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="description" content="news about the world" />
+        <link rel="canonical" href={window.location.href} />
       </Helmet>
       <section className="city_en">
         <Page

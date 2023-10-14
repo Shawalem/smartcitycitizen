@@ -151,8 +151,7 @@ const App = () => {
           <Route path="/advertise-with-us" element={<Advertise />} />
           <Route path="/contact-us" element={<ContactUs />} />
 
-          <Route path="/news" element={  <News/>  } />
-          {/* <Route path="/news" element={ <PrivetRoute> <News/> </PrivetRoute> } /> */}
+          <Route path="/news" element={ <PrivetRoute> <News/> </PrivetRoute> } />
 
           {/* city */}
           <Route path="/city-profile" element={<CityProfile />} />
@@ -210,7 +209,7 @@ const App = () => {
           <Route path="/parks-greenspaces" element={<Parksandgreenspaces />} />
           <Route path="/smart-industries" element={<Smartindustries />} />
 
-          {/* mobility */}
+          {/* health */}
           <Route
             path="/citizen-health-wellbeing"
             element={<Citizenhealthwellbeing />}
@@ -226,7 +225,7 @@ const App = () => {
           />
           <Route path="/noise-air-quality" element={<Noiseairquality />} />
 
-          {/* urban space */}
+          {/* mobility*/}
           <Route
             path="/mobility-connectivity"
             element={<Mobilityconnectivity />}
@@ -242,6 +241,7 @@ const App = () => {
           <Route path="/public-transport" element={<Publictransport />} />
           <Route path="/traffic-congestion" element={<Trafficcongestion />} />
 
+            {/* energy environment */}
           <Route path="/energy-environment" element={<Energyenvironment />} />
           <Route path="/clean-energy" element={<Cleanenergy />} />
           <Route path="/waste-management" element={<Wastemanagement />} />
@@ -251,8 +251,7 @@ const App = () => {
 
           <Route path="/city-lights" element={<Footercitylights />} />
           {/* news details */}
-          <Route path="/details/:collection/:id" element={ <NewsDetails />} />
-          {/* <Route path="/details/:collection/:id" element={ <PrivetRoute> <NewsDetails /> </PrivetRoute>} /> */}
+          <Route path="/details/:collection/:id" element={ <PrivetRoute> <NewsDetails /> </PrivetRoute>} />
           {/* search  */}
           <Route path="/search" element={<SearchPage />} />
 

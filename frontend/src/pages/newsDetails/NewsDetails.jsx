@@ -3,6 +3,7 @@ import { SideBar } from "../../components";
 import "./details.scss";
 import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { Helmet } from "react-helmet";
 // import { FacebookShareButton, TwitterShareButton, LinkedinShareButton } from 'react-share';
 
 const NewsDetails = () => {
@@ -688,6 +689,15 @@ const NewsDetails = () => {
     municipalbuildingsData?.description;
   return (
     <>
+    <Helmet>
+      <title> {`${title}`}  - Smart City Citizen</title>
+    <meta charSet="utf-8"/>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="description" content="news about the world" />
+        <link rel="canonical" href={window.location.href} />
+    </Helmet>
       <section>
         <div className="container">
           <div className="news_details_wrapper">
