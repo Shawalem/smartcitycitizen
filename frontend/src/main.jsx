@@ -13,18 +13,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </UserContext>
   </BrowserRouter>
 );
-
-// const main = (
-//   <BrowserRouter>
-//     <UserContext>
-//       <App />
-//     </UserContext>
-//   </BrowserRouter>
-// );
-
-// const root = document.getElementById("root");
-// if (root.hasChildNodes()) {
-//   hydrate(main, root);
-// } else {
-//   render(main, root);
-// }

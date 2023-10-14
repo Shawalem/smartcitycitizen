@@ -15,11 +15,13 @@ const Safetysecurity = () => {
   return (
     <>
       <Helmet>
-        <title>Governance And Citizen - Smart City Citizen</title>
-        <meta
-          name="description"
-          content="Citizens are at the heart of every city and leaders need to focus on the likes of security"
-        />
+        <title>Safety Security - Smart City Citizen</title>
+        <meta charSet="utf-8"/>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="description" content="news about the world" />
+        <link rel="canonical" href={window.location.href} />
       </Helmet>
 
       <section className="">

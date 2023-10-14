@@ -15,11 +15,13 @@ const Mobilityconnectivity = () => {
   return (
     <>
       <Helmet>
-        <title>Urban Space - Smart City Citizen</title>
-        <meta
-          name="description"
-          content="The latest news on urban space - whether cultural or office space, residential or municipal buildings, parks and green space or recreational areas. It's the topography of each city that makes it unique and a challenge to handle through planning and redevelopment."
-        />
+        <title>Mobility & Connectivity - Smart City Citizen</title>
+        <meta charSet="utf-8"/>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="description" content="news about the world" />
+        <link rel="canonical" href={window.location.href} />
       </Helmet>
       <section className="city_en">
       <Page

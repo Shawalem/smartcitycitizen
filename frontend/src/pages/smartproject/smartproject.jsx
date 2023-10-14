@@ -29,7 +29,12 @@ const Smartproject = () => {
     <>
       <Helmet>
         <title>Smart City Projects - Smart City Citizen</title>
-        <meta name="description" content="City Lights is a Q&A series where we ask city leaders and experts a series of questions across a range of topics.  If you would like to contribute and you work for a city authority then please contact our editor Luke Antoniou on lukea@smartcitiesworld.net" />
+        <meta charSet="utf-8"/>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="description" content="smart city project" />
+        <link rel="canonical" href={window.location.href} />
       </Helmet>
       <section>
         <div className="container">

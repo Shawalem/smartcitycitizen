@@ -15,11 +15,13 @@ const Emergencysystem = () => {
   return (
     <>
     <Helmet>
-        <title>Citizen Security - Smart City Citizen</title>
-        <meta
-          name="description"
-          content="The latest news on citizen security for smart city projects across the world."
-        />
+        <title>Emergency System - Smart City Citizen</title>
+        <meta charSet="utf-8"/>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="description" content="news about the world" />
+        <link rel="canonical" href={window.location.href} />
       </Helmet>
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.emergencysystem_title}
