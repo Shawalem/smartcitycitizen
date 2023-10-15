@@ -21,11 +21,11 @@ const News = () => {
     <>
       <Helmet>
         <meta charSet="utf-8"/>
-        <title>Latest News And Case Studies - Smart City Citizen</title>
+        <title>Latest News - Smart City Citizen</title>
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="keywords" content="news,smartcitycitizen, world news"/>
-        <meta name="description" content="news about the world" />
+        <meta name="keywords" content="news,smartcitycitizen, smartcity, india, news"/>
+        <meta name="description" content="Stay Informed: News on Advancing Smart Cities in India" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
       <section>

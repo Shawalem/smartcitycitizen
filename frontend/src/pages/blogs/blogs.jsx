@@ -25,10 +25,10 @@ const Blogs = () => {
         <title>Blogs - Smart City Citizen</title>
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="keywords" content="news,smartcitycitizen, blogs, world news"/>
         <meta
           name="description"
-          content="blogs"
+          content="Blogs section of SmartCityCitizen.com, your virtual library of knowledge and insights dedicated to the fascinating world of smart cities in India."
         />
         <link rel="canonical" href={window.location.href} />
       </Helmet>

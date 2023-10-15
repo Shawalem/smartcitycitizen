@@ -83,10 +83,10 @@ const Podcast = () => {
         <meta charSet="utf-8"/>
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="keywords" content="news,smartcitycitizen, podcust, world news"/>
         <meta
           name="description "
-          content="Podcast"
+          content="Welcome to the Podcasts section of SmartCityCitizen.com, where knowledge meets convenience in an auditory exploration of smart cities in India."
         />
         <link rel="canonical" href={window.location.href} />
       </Helmet>

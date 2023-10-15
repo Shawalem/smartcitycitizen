@@ -29,7 +29,7 @@ const Opinions = () => {
         <meta name="keywords" content="news,smartcitycitizen, world news"/>
         <meta
           name="description "
-          content="We ask cities and industry experts from around the world to give us their opinion on smart city technology and challenges."
+          content="Opinion of Smart City Experts section, where we provide a platform for distinguished experts to share their valuable insights"
         />
         <link rel="canonical" href={window.location.href} />
       </Helmet>

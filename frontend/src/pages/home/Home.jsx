@@ -56,8 +56,8 @@ const Home = () => {
         <title>Smart City Citizen - Latest news</title>
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="keywords" content="news,smartcitycitizen, world news"/>
-        <meta name="description" content="news about the world" />
+        <meta name="keywords" content="news,smartcitycitizen, India,news"/>
+        <meta name="description" content="Empowering Citizens for a Smarter Future: At Smart City Citizens India, we firmly believe that citizens play a vital role in shaping the future of their cities." />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
       <section id="Home">

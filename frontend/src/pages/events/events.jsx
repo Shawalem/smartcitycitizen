@@ -26,10 +26,10 @@ const Events = () => {
         <title>Events - Smart City Citizen</title>
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="keywords" content="news,smartcitycitizen, events, world news"/>
         <meta
           name="description"
-          content="Here at SmartCitiesCitizen, we produce Special Reports on a weekly basis. If you would like to contribute to any special report or opinion pieces please contact our editor Luke Antoniou on lukea@smartcitiesworld.net"
+          content="Event page of SmartCityCitizen.com, your gateway to discovering the vibrant world of smart city development, citizen engagement projects, surveys, talk shows, "
         />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
