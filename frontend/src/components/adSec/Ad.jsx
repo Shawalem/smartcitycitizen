@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const Ad = () => {
 
   const { data: adpanels } = useFetch("/adpanels?populate=*")
-  console.log(adpanels);
 
   if (!adpanels) {
     return null; // or you can return a placeholder component or message
@@ -13,7 +12,6 @@ const Ad = () => {
 
   const adImg = adpanels?.[0]?.attributes?.img?.data?.attributes?.url;
   const adLinks = adpanels?.[0]?.attributes?.adlink;
-  console.log(adImg)
   
   return (
     <div className='container'>

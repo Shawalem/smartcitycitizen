@@ -3,6 +3,7 @@ import { BiUser } from "react-icons/bi";
 import "./bar.scss";
 import { Link } from "react-router-dom";
 import NavImg from "../../assets/logo.png";
+import useFetch from "../../hooks/useFetch";
 
 const SideBar = () => {
   const [firstName, setFirstName] = useState("");
@@ -13,6 +14,14 @@ const SideBar = () => {
   const [errorMessage, setErrorMessage] = useState("");
   
   const usedEmails = []; // You can populate this array with existing emails
+
+  const {data: sideadpanels} = useFetch("/sideadpanels?populate=*")
+  if(!sideadpanels) {
+    return null
+  }
+
+  const sideAdImg = sideadpanels?.[0]?.attributes?.img?.data?.attributes?.url;
+  const sideAdLinks = sideadpanels?.[0]?.attributes?.adlink;
 
   const handleSignUp = () => {
     if (firstName && lastName && city && email) {
@@ -70,8 +79,8 @@ const SideBar = () => {
         </div>
       </div>
       <div className="tab-2">
-        <a href="/">
-        <img src={`./images/ad.gif`} alt="ad" />
+        <a href={`${sideAdLinks}`}>
+        <img src={`${sideAdImg}`} alt="ad" />
         </a>
       </div>
       <div className="tab-4">

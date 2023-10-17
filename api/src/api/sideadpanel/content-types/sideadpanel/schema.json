@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "adpanels",
+  "collectionName": "sideadpanels",
   "info": {
-    "singularName": "adpanel",
-    "pluralName": "adpanels",
-    "displayName": "Top AdPanel ",
+    "singularName": "sideadpanel",
+    "pluralName": "sideadpanels",
+    "displayName": "Side AdPanel ",
     "description": ""
   },
   "options": {
