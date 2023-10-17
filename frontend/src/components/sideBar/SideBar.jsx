@@ -79,7 +79,7 @@ const SideBar = () => {
         </div>
       </div>
       <div className="tab-2">
-        <a href={`${sideAdLinks}`}>
+        <a href={`${sideAdLinks}`} target="_blank">
         <img src={`${sideAdImg}`} alt="ad" />
         </a>
       </div>
