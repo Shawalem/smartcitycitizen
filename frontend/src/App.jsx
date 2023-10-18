@@ -77,6 +77,7 @@ import Smartcities from "./pages/smartcities/smartcities";
 
 import PrivateRoute from './hooks/PrivetRoute'
 import PrivetRoute from "./hooks/PrivetRoute";
+import XMLSitemap from "./pages/sitemap/sitemap";
 
 
 const App = () => {
@@ -152,6 +153,10 @@ const App = () => {
           <Route path="/contact-us" element={<ContactUs />} />
 
           <Route path="/news" element={ <PrivetRoute> <News/> </PrivetRoute> } />
+
+          {/* site  */}
+          <Route path="/sitemap.xml" element={<XMLSitemap />} />
+          
 
           {/* city */}
           <Route path="/city-profile" element={<CityProfile />} />

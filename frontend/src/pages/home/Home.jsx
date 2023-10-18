@@ -45,9 +45,9 @@ const Home = () => {
   // Heading and paragraph
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
