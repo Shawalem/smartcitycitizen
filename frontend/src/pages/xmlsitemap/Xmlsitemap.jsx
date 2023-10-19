@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-const XMLSitemap = () => {
+const Xmlsitemap = () => {
   return (
     <>
-      
+      this is sitemap
     </>
   );
 };
 
-export default XMLSitemap;
+export default Xmlsitemap;

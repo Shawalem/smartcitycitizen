@@ -25,6 +25,7 @@ import {
   Webinars,
   WhitePaper,
 } from "./pages";
+import Xmlsitemap from "./pages/xmlsitemap/Xmlsitemap";
 import Footer from "./components/footer/Footer";
 import SearchPage from "./pages/search/SearchPage";
 import Events from "./pages/events/events";
@@ -75,9 +76,7 @@ import Footercitylights from "./pages/footercitylights/footercitylights";
 import Smartcities from "./pages/smartcities/smartcities";
 // import Citylights from "./pages/citylights/citylights";
 
-import PrivateRoute from './hooks/PrivetRoute'
 import PrivetRoute from "./hooks/PrivetRoute";
-import XMLSitemap from "./pages/sitemap/sitemap";
 
 
 const App = () => {
@@ -155,7 +154,7 @@ const App = () => {
           <Route path="/news" element={ <PrivetRoute> <News/> </PrivetRoute> } />
 
           {/* site  */}
-          <Route path="/sitemap.xml" element={<XMLSitemap />} />
+          <Route path="/sitemap.xml" element={<Xmlsitemap />} />
           
 
           {/* city */}
