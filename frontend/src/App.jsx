@@ -26,6 +26,7 @@ import {
   WhitePaper,
 } from "./pages";
 import Xmlsitemap from "./pages/xmlsitemap/Xmlsitemap";
+import Robot from "./pages/robots/Robot";
 import Footer from "./components/footer/Footer";
 import SearchPage from "./pages/search/SearchPage";
 import Events from "./pages/events/events";
@@ -155,6 +156,7 @@ const App = () => {
 
           {/* site  */}
           <Route path="/sitemap.xml" element={<Xmlsitemap />} />
+          <Route path="/robots.txt" element={<Robot />} />
           
 
           {/* city */}
