@@ -159,7 +159,7 @@ const Header = () => {
           ) : (
             <>
               <div className="link">
-                <Link to="/login">Login</Link>
+                <Link to="/login">Login with</Link>
               </div>
               <div className="link">
                 <Link to="/register">Register</Link>
