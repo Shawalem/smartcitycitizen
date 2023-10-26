@@ -33,6 +33,8 @@ const Team = () => {
               heading="Chris is an entrepreneur with over 23 years’ experience in launching, growing, acquiring, divesting media and events business brands."
               details="His focus has been on technology driven markets. Smart Cities is an incredible sector to be involved in as it impacts over 55% of the world’s population today growing to 68% in by 2050.Digital transformation is revolutionising the design and function of urban spaces and how citizens live in and interact with them and he finds that fascinating.He is collaborative by nature and enjoys building long term partnerships that deliver ongoing value for all involved."
             /> */}
+
+            {/* this is for testing perpus  */}
             </div>
           </div>
         </div>
