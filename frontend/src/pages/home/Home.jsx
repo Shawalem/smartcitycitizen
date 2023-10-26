@@ -73,7 +73,7 @@ const Home = () => {
                     </ReactMarkdown>
                   </div>
                 </div>
-                <h1>Latest</h1>
+                <h1>Latest News</h1>
                 <div className="newses">
                   {allnewses?.slice(0, 4).map((allnewse) => (
                     <NewsCard
