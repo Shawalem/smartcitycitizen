@@ -6,8 +6,6 @@ import useFetch from "../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Link } from "react-router-dom";
 
-// this is for test
-
 // for verification
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/UserContext";
