@@ -21,6 +21,19 @@ const EditorsBlog = () => {
       <Helmet>
         <title>Editors Blog - Smart City Citizen</title>
         <meta name="description" content="Our editor, gives his take on how smart cities are evolving. If you would like to receive these direct to your inbox as part of our weekly newsletter, make sure you sign up as a member (free!)." />
+
+        <script>
+          {(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, "script", "dataLayer", "GTM-NDTMGD29")}
+        </script>
       </Helmet>
       <section>
         <div className="container">
@@ -47,6 +60,15 @@ const EditorsBlog = () => {
             </div>
           </div>
         </div>
+
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NDTMGD29"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          ></iframe>
+        </noscript>
       </section>
     </>
   );

@@ -1,60 +1,3 @@
-// import { SideBar, NewsCard } from "../../components";
-// import { Helmet } from 'react-helmet';
-// import './podcast.scss'
-// // useFetch
-// import useFetch from "../../hooks/useFetch";
-// import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-
-// const Podcast = () => {
-//   const { data: prodcasts } = useFetch("/prodcasts?populate=*");
-//   console.log(prodcasts);
-
-//   const { data: opinions } = useFetch('/opinions?populate=*');
-
-//   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
-
-//   return (
-//     <>
-//     <Helmet>
-//         <title>Podcasts - Smart City Citizen</title>
-//         <meta name="description " content="The latest podcasts on smart city projects and initiatives across the world." />
-//     </Helmet>
-//       <section>
-//         <div className="container">
-//           <div className="podcast_wrapper">
-//             <div className="heading">
-//               <h1>{headerparagraphs?.[0]?.attributes.podcasts_title}</h1>
-//               <ReactMarkdown>
-//               {headerparagraphs?.[0]?.attributes.podcasts_paragraph}
-//               </ReactMarkdown>
-//             </div>
-//             <div className="latest_news">
-//               <div className="news_sec">
-//                 <div className="newses">
-//                 {prodcasts?.map((prodcast) => (
-//                     <NewsCard key={prodcast.id} allnews={prodcast} collection="prodcasts" />
-//                   ))}
-//                 </div>
-//               </div>
-//               <SideBar />
-//             </div>
-//             <div className="webinar">
-//               <h1>Opinions</h1>
-//               <div className="webinar_wrapper">
-//               {opinions?.slice(0, 4).map((opinion) => (
-//                     <NewsCard key={opinion.id} allnews={opinion} collection="opinions" />
-//                   ))}
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//     </>
-//   )
-// }
-
-// export default Podcast
-
 import "./podcast.scss";
 import { SideBar, NewsCard, Loader } from "../../components";
 import { Helmet } from "react-helmet";
@@ -89,6 +32,18 @@ const Podcast = () => {
           content="Welcome to the Podcasts section of SmartCityCitizen.com, where knowledge meets convenience in an auditory exploration of smart cities in India."
         />
         <link rel="canonical" href={window.location.href} />
+        <script>
+          {(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, "script", "dataLayer", "GTM-NDTMGD29")}
+        </script>
       </Helmet>
       <section>
         <div className="container">
@@ -127,6 +82,15 @@ const Podcast = () => {
             </div>
           </div>
         </div>
+
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NDTMGD29"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          ></iframe>
+        </noscript>
       </section>
     </>
   );

@@ -5,49 +5,68 @@ import useFetch from "../../../hooks/useFetch";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Opinions = () => {
-
-  // get opinions 
-  const { data: opinions, isLoading } = useFetch('/opinions?sort[0]=date:desc&populate=*');
+  // get opinions
+  const { data: opinions, isLoading } = useFetch(
+    "/opinions?sort[0]=date:desc&populate=*"
+  );
   console.log(opinions);
 
-  // get city Webinar 
+  // get city Webinar
   const { data: events } = useFetch("/events?sort[0]=date:desc&populate=*");
 
   const { data: headerparagraphs } = useFetch("/headerparagraphs?populate=*");
 
   if (isLoading) {
-    return <Loader />
+    return <Loader />;
   }
 
   return (
     <>
       <Helmet>
         <title>Opinions - Smart City Citizen</title>
-        <meta charSet="utf-8"/>
+        <meta charSet="utf-8" />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="keywords" content="news,smartcitycitizen, world news"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="news,smartcitycitizen, world news" />
         <meta
           name="description "
           content="Opinion of Smart City Experts section, where we provide a platform for distinguished experts to share their valuable insights"
         />
         <link rel="canonical" href={window.location.href} />
+
+        <script>
+          {(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, "script", "dataLayer", "GTM-NDTMGD29")}
+        </script>
+
+        
       </Helmet>
       <section>
         <div className="container">
           <div className="Opinions_wrapper">
-            
             <div className="latest_news">
               <div className="news_sec">
-              <h1>{headerparagraphs?.[0]?.attributes.opinions_title}</h1>
-              <div className="news_paragraph">
-                <ReactMarkdown>
-                  {headerparagraphs?.[0]?.attributes.opinions_paragraph}
-                </ReactMarkdown>
-              </div>
+                <h1>{headerparagraphs?.[0]?.attributes.opinions_title}</h1>
+                <div className="news_paragraph">
+                  <ReactMarkdown>
+                    {headerparagraphs?.[0]?.attributes.opinions_paragraph}
+                  </ReactMarkdown>
+                </div>
                 <div className="newses">
                   {opinions?.map((opinion) => (
-                    <NewsCard key={opinion.id} allnews={opinion} collection="opinions" />
+                    <NewsCard
+                      key={opinion.id}
+                      allnews={opinion}
+                      collection="opinions"
+                    />
                   ))}
                 </div>
               </div>
@@ -56,13 +75,28 @@ const Opinions = () => {
             <div className="webinar">
               <h1>Events</h1>
               <div className="webinar_wrapper">
-              {events?.slice(0, 4).map((event) => (
-                    <NewsCard key={event.id} allnews={event} collection="events" />
-                  ))}
+                {events?.slice(0, 4).map((event) => (
+                  <NewsCard
+                    key={event.id}
+                    allnews={event}
+                    collection="events"
+                  />
+                ))}
               </div>
             </div>
           </div>
         </div>
+
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NDTMGD29"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          ></iframe>
+        </noscript>
+
+
       </section>
     </>
   );
