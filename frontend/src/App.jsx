@@ -75,10 +75,7 @@ import Jobs from "./pages/jobs/jobs";
 import Partners from "./pages/partners/partners";
 import Footercitylights from "./pages/footercitylights/footercitylights";
 import Smartcities from "./pages/smartcities/smartcities";
-// import Citylights from "./pages/citylights/citylights";
-
-import PrivetRoute from "./hooks/PrivetRoute";
-
+import PrivateRoute from './hooks/PrivetRoute'
 
 const App = () => {
 
@@ -152,7 +149,7 @@ const App = () => {
           <Route path="/advertise-with-us" element={<Advertise />} />
           <Route path="/contact-us" element={<ContactUs />} />
 
-          <Route path="/news" element={ <PrivetRoute> <News/> </PrivetRoute> } />
+          <Route path="/news" element={   <PrivateRoute><News/></PrivateRoute>  } />
 
           {/* site  */}
           <Route path="/sitemap.xml" element={<Xmlsitemap />} />
@@ -257,7 +254,7 @@ const App = () => {
 
           <Route path="/city-lights" element={<Footercitylights />} />
           {/* news details */}
-          <Route path="/details/:collection/:id" element={ <PrivetRoute> <NewsDetails /> </PrivetRoute>} />
+          <Route path="/details/:collection/:id" element={ <NewsDetails /> } />
           {/* search  */}
           <Route path="/search" element={<SearchPage />} />
 
