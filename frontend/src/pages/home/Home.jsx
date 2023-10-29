@@ -81,10 +81,13 @@ const Home = () => {
                 <div className="intro">
                   <h1>{headerparagraphs?.[0]?.attributes.home_title}</h1>
                   <div className="news_paragraph">
+                    
+                    
                     <ReactMarkdown>
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/n-V5ZXqlTV8?si=vQUrNDWaFjxkZgbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                       {headerparagraphs?.[0]?.attributes.home_paragraph}
                     </ReactMarkdown>
+
+                    
                   </div>
                 </div>
                 <h1>Latest News</h1>
