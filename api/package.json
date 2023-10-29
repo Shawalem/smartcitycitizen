@@ -21,6 +21,7 @@
     "koa-router": "^12.0.0",
     "pg": "^8.11.2",
     "pg-connection-string": "^2.6.2",
+    "strapi-plugin-import-export-entries": "^1.21.1",
     "strapi-provider-upload-do": "^3.6.9",
     "uuid": "^9.0.0",
     "v4": "^0.0.1"
