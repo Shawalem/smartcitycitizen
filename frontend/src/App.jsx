@@ -76,6 +76,7 @@ import Partners from "./pages/partners/partners";
 import Footercitylights from "./pages/footercitylights/footercitylights";
 import Smartcities from "./pages/smartcities/smartcities";
 import PrivateRoute from './hooks/PrivetRoute'
+import ReportIssue from "./pages/reportIssue/ReportIssue";
 
 const App = () => {
 
@@ -261,6 +262,8 @@ const App = () => {
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/parners" element={<Partners />} />
           <Route path="/rewardtoken" element={ <TokenReward/> }  />
+
+          <Route path="/report-issue" element={ <ReportIssue/> } />
         </Routes>
         <ToastContainer />
       </main>

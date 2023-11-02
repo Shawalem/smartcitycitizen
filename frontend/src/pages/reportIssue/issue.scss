@@ -1,0 +1,27 @@
+.issue_wrapper{
+    form{
+        margin-top: 100px;
+        border: 1px solid gray;
+        width: 500px;
+        padding: 1rem;
+        h1{
+            margin: 0;
+        }
+        textarea{
+            width: 100%;
+            resize: vertical;
+            height: 170px;
+            padding: .5rem;
+            outline: none;
+        }
+        select{
+            width: 100%;
+            outline: none;
+            font-size: 1rem;
+            padding: .4rem;
+        }
+        .form_input{
+            margin-bottom: 20px;
+        }
+    }
+}
