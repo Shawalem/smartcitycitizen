@@ -13,7 +13,11 @@
     "source": "dist",
     "destination": "snapshots",
     "skipThirdPartyRequests": true,
-    "urls":["http://localhost:5173/","http://localhost:5173/city-profile","http://localhost:5173/news"]
+    "urls": [
+      "http://localhost:5173/",
+      "http://localhost:5173/city-profile",
+      "http://localhost:5173/news"
+    ]
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -29,6 +33,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.45.4",
     "react-icons": "^4.11.0",
+    "react-leaflet": "^4.2.1",
     "react-markdown": "^8.0.7",
     "react-router-dom": "^6.11.2",
     "react-share": "^4.4.1",
