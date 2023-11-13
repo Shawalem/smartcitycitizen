@@ -1,0 +1,14 @@
+.sidebar {
+  grid-column: 1 / 2;
+  background-color: #333;
+  color: white;
+  height: 100vh;
+  a {
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+  }
+}
