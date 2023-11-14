@@ -8,7 +8,6 @@ export const AuthContext = createContext()
 const UserContext = ({children}) => {
     const [user,setUser] = useState({});
     const [vUser,set_vUser] = useState({})
-    console.log(user);
     useEffect(()=>{
       const localData = JSON.parse(localStorage.getItem('smartCityCitizen'))
       const vLocalData = JSON.parse(localStorage.getItem('vSmartCityCitizen'))
@@ -19,7 +18,6 @@ const UserContext = ({children}) => {
           isVerified: localData.iv
         }
         setUser(data)
-        console.log(data);
       }else{
         setUser({})
       }
