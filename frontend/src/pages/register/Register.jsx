@@ -42,6 +42,7 @@ const Register = () => {
 
           }
           const user = {
+            n:bycript.encode(userinfo.user.first_name),
             x: bycript.encode(userinfo.user.email),
             t: bycript.encode(userinfo.jwt),
             iv:false
@@ -68,7 +69,7 @@ const Register = () => {
 
           localStorage.setItem("smartCityCitizen", JSON.stringify(user));
           localStorage.setItem("vSmartCityCitizen", JSON.stringify(vInfo));
-          setUser({ email: userinfo.user.email, jwt: userinfo.jwt, isVerified:false });
+          setUser({ name:userinfo.user.first_name,email: userinfo.user.email, jwt: userinfo.jwt, isVerified:false });
           set_vUser({email:userinfo.user.email, verify_code:randomNumber})
           reset();
         }

@@ -41,6 +41,7 @@ const Login = () => {
             .then((response) => {
               if (response.data.data[0]?.attributes?.email === res.data.user.email) {
                 const userInformation = {
+                  n:bcrypt.encode(res.data.user.first_name),
                   x: bcrypt.encode(res.data.user.email),
                   t: bcrypt.encode(res.data.jwt),
                   iv: true,
@@ -50,6 +51,7 @@ const Login = () => {
                   JSON.stringify(userInformation)
                 );
                 setUser({
+                  name:res.data.user.first_name,
                   email: res.data.user.email,
                   jwt: res.data.jwt,
                   isVerified: true,
@@ -59,6 +61,7 @@ const Login = () => {
                 toast.success("Login successfully");
               } else {
                 const userInformation = {
+                  n:bcrypt.encode(res.data.user.first_name),
                   x: bcrypt.encode(res.data.user.email),
                   t: bcrypt.encode(res.data.jwt),
                   iv:false
@@ -68,6 +71,7 @@ const Login = () => {
                   JSON.stringify(userInformation)
                 );
                 setUser({
+                  name:res.data.user.first_name,
                   email: res.data.user.email,
                   jwt: res.data.jwt,
                   isVerified: false,

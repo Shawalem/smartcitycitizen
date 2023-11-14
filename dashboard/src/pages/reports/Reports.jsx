@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ReportContext } from "../../../contexts/DataContext";
 
 const Reports = () => {
-  const reports = useContext(ReportContext)
+  const {reports} = useContext(ReportContext)
   console.log(reports);
   return (
     <div className="reports_wrapper">
