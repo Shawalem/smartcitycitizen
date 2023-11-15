@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import "./issue.scss";
+import { AuthContext } from "../../contexts/UserContext";
+import axios from "axios";
+import {toast} from 'react-toastify'
 
 const ReportIssue = () => {
+  const {user} = useContext(AuthContext)
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    const form = e.target;
+    const description = form.description.value;
+    const category = form.category.value;
+    const file = form.file.value;
+    const data = {
+      description,
+      category,
+      image:file,
+      name:user.name,
+      email:user.email
+    }
+    axios.post(`${import.meta.env.VITE_REACT_APP_URL_EXPRESS}/issues`,data)
+    .then(res=>{
+      toast.success('submit successful')
+    })
+    .catch(er=>{
+      console.log(er.message);
+    })
+  }
   return (
     <>
       <Helmet>
@@ -21,15 +46,15 @@ const ReportIssue = () => {
       <section>
         <div className="container">
           <div className="issue_wrapper">
-            <form>
+            <form onSubmit={handleSubmit}>
               <h1>Report an infrastructure issue:</h1>
               <div className="form_input">
                 <p>Describe issue</p>
-                <textarea placeholder="Enter details of the issue here..." />
+                <textarea placeholder="Enter details of the issue here..." name="description" />
               </div>
               <div className="form_input">
                 <p>Select Issue Category:</p>
-                <select id="issueCategory">
+                <select id="issueCategory" name="category">
                   <option value="roads">Roads</option>
                   <option value="public_transport">
                     Public Transportation
@@ -39,10 +64,11 @@ const ReportIssue = () => {
               </div>
               <div className="form_input">
                 <p>Upload Image (optional):</p>
-                <input type="file" id="imageUpload" accept="image/*" />
+                <input type="file" id="imageUpload" accept="image/*" name="file" />
               </div>
               <div className="form_input">
               </div>
+              <button>submit</button>
             </form>
           </div>
         </div>

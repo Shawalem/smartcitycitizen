@@ -317,7 +317,7 @@ const App = () => {
           <Route path="/editors-blog" element={<EditorsBlog />} />
           <Route path="/opinions" element={<Opinions />} />
 
-          <Route path="/reports" element={<SpecialReport />} />
+          {/* <Route path="/reports" element={<SpecialReport />} /> */}
           <Route path="/events" element={<Events />} />
           <Route path="/blogs" element={<Blogs />} />
 
@@ -411,7 +411,7 @@ const App = () => {
           <Route path="/parners" element={<Partners />} />
           <Route path="/rewardtoken" element={<TokenReward />} />
 
-          <Route path="/report-issue" element={<ReportIssue />} />
+          <Route path="/reports" element={<ReportIssue />} />
         </Routes>
         <ToastContainer />
       </main>
