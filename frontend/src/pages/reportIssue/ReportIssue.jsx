@@ -3,31 +3,70 @@ import { Helmet } from "react-helmet";
 import "./issue.scss";
 import { AuthContext } from "../../contexts/UserContext";
 import axios from "axios";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 
 const ReportIssue = () => {
-  const {user} = useContext(AuthContext)
-  const handleSubmit = (e)=>{
-    e.preventDefault()
+  const { user } = useContext(AuthContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const form = e.target;
     const description = form.description.value;
     const category = form.category.value;
     const file = form.file.value;
-    const data = {
+    const info = {
       description,
       category,
-      image:file,
-      name:user.name,
-      email:user.email
-    }
-    axios.post(`${import.meta.env.VITE_REACT_APP_URL_EXPRESS}/issues`,data)
-    .then(res=>{
-      toast.success('submit successful')
-    })
-    .catch(er=>{
-      console.log(er.message);
-    })
-  }
+      image: file,
+      name: user.name,
+      email: user.email,
+    };
+    const userinfo = {
+      name: user.name,
+      email: user.email,
+    };
+    axios
+      .get(
+        `${import.meta.env.VITE_REACT_APP_URL_EXPRESS}/users?name=${
+          user.name
+        }&email=${user.email}`
+      )
+      .then((userRes) => {
+        const isExist = userRes.data[0];
+        if (isExist) {
+          info.userId = userRes.data[0]._id;
+          axios
+            .post(`${import.meta.env.VITE_REACT_APP_URL_EXPRESS}/issues`, info)
+            .then((res) => {
+              toast.success("Issue Submitted");
+            })
+            .catch((er) => console.log(er.message));
+        } else {
+          axios
+            .post(
+              `${import.meta.env.VITE_REACT_APP_URL_EXPRESS}/users`,
+              userinfo
+            )
+            .then((userRes) => {
+              info.userId = userRes.data._id;
+              axios
+                .post(
+                  `${import.meta.env.VITE_REACT_APP_URL_EXPRESS}/issues`,
+                  info
+                )
+                .then((res) => {
+                  toast.success("Issue Submitted");
+                })
+                .catch((er) => console.log(er.message));
+            })
+            .catch((er) => {
+              console.log(er.message);
+            });
+        }
+      })
+      .catch((er) => {
+        console.log(er.message);
+      });
+  };
   return (
     <>
       <Helmet>
@@ -50,7 +89,10 @@ const ReportIssue = () => {
               <h1>Report an infrastructure issue:</h1>
               <div className="form_input">
                 <p>Describe issue</p>
-                <textarea placeholder="Enter details of the issue here..." name="description" />
+                <textarea
+                  placeholder="Enter details of the issue here..."
+                  name="description"
+                />
               </div>
               <div className="form_input">
                 <p>Select Issue Category:</p>
@@ -64,10 +106,14 @@ const ReportIssue = () => {
               </div>
               <div className="form_input">
                 <p>Upload Image (optional):</p>
-                <input type="file" id="imageUpload" accept="image/*" name="file" />
+                <input
+                  type="file"
+                  id="imageUpload"
+                  accept="image/*"
+                  name="file"
+                />
               </div>
-              <div className="form_input">
-              </div>
+              <div className="form_input"></div>
               <button>submit</button>
             </form>
           </div>
