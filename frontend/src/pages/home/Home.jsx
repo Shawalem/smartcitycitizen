@@ -82,7 +82,7 @@ const Home = () => {
                   <h1>{headerparagraphs?.[0]?.attributes.home_title}</h1>
 
                   {/* past any video iframe here */}
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/XUfGzUD_tsw?si=KImQotv-th6Cy4z8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe width="800" height="315" src="https://www.youtube.com/embed/XUfGzUD_tsw?si=KImQotv-th6Cy4z8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   
                   <div className="news_paragraph">  
                     <ReactMarkdown>
