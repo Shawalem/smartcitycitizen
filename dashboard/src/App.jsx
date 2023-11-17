@@ -2,7 +2,7 @@ import './app.scss'
 import Sidebar from "./components/sidebar/Sidebar"
 import {Routes,Route} from 'react-router-dom'
 import Reports from './pages/reports/Reports'
-import Communication from './pages/communication/Communication'
+import ReportDetails from './pages/reportDetails/ReportDetails'
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
           <div className='dashboard_content'>
             <Routes>
               <Route path='/' element={<Reports />} />
-              <Route path='/communication' element={<Communication />} />
+              <Route path='/details/:id' element={<ReportDetails />} />
             </Routes>
           </div>
         </div> 

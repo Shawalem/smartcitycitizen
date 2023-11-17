@@ -10,30 +10,35 @@
   }
   .list_body {
     margin-top: 10px;
-      .report {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        margin-bottom: 10px;
-        border: 1px solid #3498db;
-        align-items: center;
-        padding: 1rem;
-        border-radius: 7px;
-      .action_btn{
-        button{
+    .report {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin-bottom: 10px;
+      border: 1px solid #3498db;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 7px;
+      .action_btn {
+        button {
           border: none;
-          padding: .5rem 1rem;
+          padding: 0.5rem 1rem;
           cursor: pointer;
           border-radius: 5px;
-          font-size: .9rem;
+          font-size: 0.9rem;
           font-weight: bold;
-          &:nth-child(1){
-            background-color: rgb(214, 248, 214);
-            color: green;
-          }
-          &:nth-child(2){
-            background-color: rgb(249, 216, 216);
-            color: red;
-          }
+          background-color: rgb(249, 216, 216);
+          color: red;
+        }
+        a {
+          border: none;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          border-radius: 5px;
+          font-size: 0.9rem;
+          font-weight: bold;
+          background-color: rgb(206, 247, 206);
+          color: green;
+          text-decoration: none;
         }
       }
     }

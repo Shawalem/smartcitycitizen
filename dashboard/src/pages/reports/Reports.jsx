@@ -1,9 +1,20 @@
 import "./reports.scss";
 import { useContext } from "react";
 import { ReportContext } from "../../../contexts/DataContext";
+import axios from "axios";
+import {Link} from 'react-router-dom'
 
 const Reports = () => {
-  const {reports} = useContext(ReportContext)
+  const {reports,Refetch} = useContext(ReportContext)
+  const handleDelete = (id)=>{
+
+    axios.delete(`${import.meta.env.VITE_REACT_APP_API_URL}/issues/${id}`)
+    .then(()=>{
+      Refetch(prev=> !prev)
+    })
+    .catch(err => console.log(err))
+
+  }
   return (
     <div className="reports_wrapper">
       <h1>View Reports</h1>
@@ -34,7 +45,7 @@ const Reports = () => {
               <div>{issue.category}</div>
               <div>{issue.status}</div>
               <div className="action_btn">
-                <button>View</button> <button>delete</button>
+                <Link to={`/details/${issue._id}`}>View</Link> <button onClick={()=>handleDelete(issue._id)}>delete</button>
               </div>
             </div>
           ))}
