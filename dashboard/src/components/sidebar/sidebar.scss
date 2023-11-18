@@ -1,17 +1,51 @@
 .sidebar {
-  background-color: #0a6ebd;
+  background: linear-gradient(to bottom, #007BFF, #6700b3);
   height: 100%;
-  .sidebar_wrapper{
+  overflow: hidden;
+  padding: 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('path/to/your-pattern.png'); /* Replace with your pattern image */
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  .sidebar_wrapper {
     grid-column: 1 / 2;
     color: white;
     height: 100%;
+
     a {
-      padding: 20px;
+      padding: 15px;
       text-decoration: none;
       color: white;
-      border-bottom: 1px solid white;
       display: flex;
       flex-direction: column;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+
+      &:hover {
+        box-shadow: 0px 0px 10px -3px #ffffff;
+        color: #ffffff;
+        border-radius: 10px;
+      }
+
+      .icon {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .label {
+        font-weight: bold;
+        font-size: 14px;
+      }
     }
   }
 }
