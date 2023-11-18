@@ -1,14 +1,17 @@
 .sidebar {
-  grid-column: 1 / 2;
   background-color: #0a6ebd;
-  color: white;
-  height: 100vh;
-  a {
-    padding: 20px;
-    text-decoration: none;
+  height: 100%;
+  .sidebar_wrapper{
+    grid-column: 1 / 2;
     color: white;
-    border-bottom: 1px solid white;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    a {
+      padding: 20px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid white;
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

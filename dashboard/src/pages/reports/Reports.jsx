@@ -1,11 +1,14 @@
 import "./reports.scss";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ReportContext } from "../../../contexts/DataContext";
 import axios from "axios";
 import {Link} from 'react-router-dom'
 
 const Reports = () => {
   const {reports,Refetch} = useContext(ReportContext)
+  useEffect(()=>{
+    Refetch(prev=> !prev)
+  },[Refetch])
   const handleDelete = (id)=>{
 
     axios.delete(`${import.meta.env.VITE_REACT_APP_API_URL}/issues/${id}`)
