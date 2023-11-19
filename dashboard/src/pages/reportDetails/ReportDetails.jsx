@@ -23,6 +23,8 @@ const ReportDetails = () => {
     axios
       .post(`${import.meta.env.VITE_REACT_APP_API_URL}/issues/${id}/reply`, {
         reply,
+        userId:report.userId,
+        question:report.description
       })
       .then((res) => {
         setReport(res.data);
