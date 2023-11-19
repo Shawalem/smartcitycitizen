@@ -48,7 +48,7 @@ const ReportDetails = () => {
               <img src="/arrow.png" alt="arrow" />
             </div>
             <p>
-              {reply.message}
+              {reply.ans}
             </p>
             </div>
           </div>
