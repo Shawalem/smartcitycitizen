@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 const Header = () => {
-  const { user: userInfo, setUser, vUser } = useContext(AuthContext);
+  const { user: userInfo, setUser, vUser, support } = useContext(AuthContext);
   const verifyBox = useRef(HTMLDivElement);
   const dActive = useRef(HTMLDivElement);
   const navigate = useNavigate();
@@ -70,7 +70,7 @@ const Header = () => {
           "https://backend-app-lft6m.ondigitalocean.app/api/vusers",
           {
             data: {
-              email: userInfo?.email ||vUser.email,
+              email: userInfo?.email || vUser.email,
             },
           },
           {
@@ -81,12 +81,19 @@ const Header = () => {
           }
         )
         .then((res) => {
-          const localData = JSON.parse(localStorage.getItem("smartCityCitizen"))
+          const localData = JSON.parse(
+            localStorage.getItem("smartCityCitizen")
+          );
           localData.iv = true;
-          localStorage.setItem("smartCityCitizen",JSON.stringify(localData));
-          setUser({name:userInfo?.name,email:userInfo?.email,jwt:userInfo?.jwt, isVerified:true})
+          localStorage.setItem("smartCityCitizen", JSON.stringify(localData));
+          setUser({
+            name: userInfo?.name,
+            email: userInfo?.email,
+            jwt: userInfo?.jwt,
+            isVerified: true,
+          });
           localStorage.removeItem("vSmartCityCitizen");
-          toast.success("Registration Successful!🎉"); 
+          toast.success("Registration Successful!🎉");
         })
         .catch((err) => {
           console.log(err.message);
@@ -99,7 +106,7 @@ const Header = () => {
   };
   return (
     <div className="container">
-      { userInfo.isVerified === false ? (
+      {userInfo.isVerified === false ? (
         <div className="notify">
           <p className="notify_p">
             Verify your email <u onClick={handleBox}>Click Here!</u>
@@ -155,7 +162,12 @@ const Header = () => {
             subLinks={subLinks}
           />
           {userInfo?.email ? (
-            <button className="logout_btn" onClick={handleLogout}>log out</button>
+            <>
+              <button className="logout_btn" onClick={handleLogout}>
+                log out
+              </button>
+              <Link to='/support' className="support_btn">Support</Link>
+            </>
           ) : (
             <>
               <div className="link">

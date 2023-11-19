@@ -1,5 +1,20 @@
 @use "../../variable.scss" as *;
 
+@mixin HeaderBth() {
+  outline: none;
+  font-size: 16px;
+  padding: .7rem 1rem;
+  border: none;
+  color: white;
+  background: #0a6ebd;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    background: black;
+  }
+}
+
 .notify {
   text-align: center;
   margin: 20px;
@@ -7,15 +22,15 @@
   background-color: #374151;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
+
   .notify_p {
     font-size: 18px;
     margin: 10px 0;
     color: white;
-    
+
     u {
       cursor: pointer;
-      color: #10B981;
+      color: #10b981;
     }
   }
 
@@ -56,14 +71,11 @@
       background-color: #0056b3;
     }
   }
-
 }
-
 
 .header_wrapper {
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   .social {
     display: flex;
@@ -113,21 +125,14 @@
         }
       }
     }
-
-    .logout_btn {
-      outline: none;
-      font-size: 16px;
-      padding: 12px 20px;
-      border: none;
-      color: white;
-      background: #0a6ebd;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: 0.2s;
+    .support_btn {
+      @include HeaderBth();
+      font-size: .9rem
     }
 
-    .logout_btn:hover {
-      background: black;
+    .logout_btn {
+      @include HeaderBth();
+      margin: 0 10px;
     }
   }
 }
@@ -155,7 +160,7 @@
     left: 50%;
     top: 50%;
     z-index: 3;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     padding: 2rem;
     background-color: white;
     box-shadow: 4px 3px 17px 8px #0a6ebd69;

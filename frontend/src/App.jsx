@@ -78,6 +78,7 @@ import Smartcities from "./pages/smartcities/smartcities";
 import PrivateRoute from "./hooks/PrivetRoute";
 import ReportIssue from "./pages/reportIssue/ReportIssue";
 import AdminForm from "./pages/admin/AdminForm";
+import Support from "./pages/support/Support";
 
 const App = () => {
   const TRACKING_ID = "G-77C21C31E4";
@@ -411,7 +412,22 @@ const App = () => {
           <Route path="/parners" element={<Partners />} />
           <Route path="/rewardtoken" element={<TokenReward />} />
 
-          <Route path="/reports" element={<ReportIssue />} />
+          <Route
+            path="/reports"
+            element={
+              <PrivateRoute>
+                <ReportIssue />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/support"
+            element={
+              <PrivateRoute>
+                <Support />
+              </PrivateRoute>
+            }
+          />
         </Routes>
         <ToastContainer />
       </main>
