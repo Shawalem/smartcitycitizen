@@ -1,27 +1,81 @@
-.issue_wrapper{
-    form{
-        margin-top: 100px;
-        border: 1px solid gray;
-        width: 500px;
-        padding: 1rem;
-        h1{
-            margin: 0;
+.issue_wrapper {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+  
+    form {
+      margin: auto;
+      padding: 2rem;
+      border-radius: 10px;
+      border: 2px solid #1e90ff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+  
+      h1 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+  
+      textarea {
+        width: 100%;
+        resize: vertical;
+        height: 150px;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-family: 'Poppins';
+        transition: border-color 0.3s;
+        outline-color: #3498db;
+  
+        &:focus {
+          border-color: #3498db;
         }
-        textarea{
-            width: 100%;
-            resize: vertical;
-            height: 170px;
-            padding: .5rem;
-            outline: none;
+      }
+  
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+  
+        &:focus {
+          border-color: #3498db;
         }
-        select{
-            width: 100%;
-            outline: none;
-            font-size: 1rem;
-            padding: .4rem;
+      }
+  
+      .form_input {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+  
+      button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 12px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+  
+        &:hover {
+          background-color: #267bb5;
         }
-        .form_input{
-            margin-bottom: 20px;
-        }
+      }
     }
-}
+  
+    @media screen and (max-width: 600px) {
+      form {
+        padding: 1rem;
+      }
+    }
+  }
+  

@@ -38,18 +38,22 @@ const Support = () => {
     <section>
       <div className="container">
         <div className="support_wrapper">
-          <h1>Your issue reports</h1>
-          <div className="qna">
-            {
-              support?.user_replies?.map((qna,idx)=>(
+          <div className="support_box">
+            <h1>Your issue reports</h1>
+            <div className="qna">
+              {support?.user_replies?.map((qna, idx) => (
                 <div>
-                  <h2>{qna.question}</h2>
-                  <div>
-                    <p>{qna.ans}</p>
+                  <p className="question_para">{qna.question}</p>
+
+                  <div className="ans_box">
+                    <i><h2>Answered by author</h2></i>
+                    <div className="answer">
+                      <p className="ans_para">{qna.ans}</p>
+                    </div>
                   </div>
                 </div>
-              ))
-            }
+              ))}
+            </div>
           </div>
         </div>
       </div>

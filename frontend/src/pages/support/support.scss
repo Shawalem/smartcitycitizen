@@ -1,4 +1,45 @@
-.support_wrapper{
-    margin-top: 70px;
+.support_wrapper {
+  margin-top: 70px;
+  padding: 2rem;
+}
+
+.support_box {
+    width: 70%;
     padding: 2rem;
+
+    h1 {
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .question_para {
+        font-size: 17px;
+        color: #747d8c;
+    }
+
+    .ans_box {
+        padding: 2rem;
+
+        h2 {
+            padding-bottom: 0.5rem;
+            font-weight: 500;
+            color: #57606f;
+        }
+
+        .answer {
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: #28C76F;
+
+            .ans_para {
+                color: white;
+            }
+        }
+    }    
+
+}
+
+
+.answer {
+    color: #28C76F;    
 }
