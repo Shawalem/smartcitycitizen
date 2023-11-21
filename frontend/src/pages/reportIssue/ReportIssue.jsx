@@ -95,6 +95,10 @@ const ReportIssue = () => {
                 />
               </div>
               <div className="form_input">
+                <p>Location</p>
+                <input className="input_location" type="text" />
+              </div>
+              <div className="form_input">
                 <p>Select Issue Category:</p>
                 <select id="issueCategory" name="category">
                   <option value="roads">Roads</option>
@@ -153,7 +157,7 @@ const ReportIssue = () => {
                   name="file"
                 />
               </div>
-              <div className="form_input"></div>
+              
               <button>submit</button>
             </form>
           </div>

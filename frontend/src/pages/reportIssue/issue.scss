@@ -53,6 +53,16 @@
       .form_input {
         margin-bottom: 20px;
         text-align: left;
+
+        .input_location {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 1rem;
+          outline-color: #3498db;
+        }
       }
   
       button {
