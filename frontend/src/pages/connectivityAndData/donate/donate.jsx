@@ -38,12 +38,13 @@ const Donate = () => {
           })(window, document, "script", "dataLayer", "GTM-NDTMGD29")}
         </script>
       </Helmet>
-      
+      <div className="donates-page">
       <Page
         pageHeading={headerparagraphs?.[0]?.attributes.donate_title}
         pagePara={headerparagraphs?.[0]?.attributes.donate_paragraph}
         donates={donates}
       />
+      </div>
 
       <noscript>
         <iframe
